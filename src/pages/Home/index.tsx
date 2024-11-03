@@ -30,7 +30,6 @@ export default function Home() {
         title = "Sobre Mim";
         return <AboutMe />;
       case "habilidades":
-        title = "Habilidades";
         return <Skills />;
       case "projetos":
         title = "Projetos";

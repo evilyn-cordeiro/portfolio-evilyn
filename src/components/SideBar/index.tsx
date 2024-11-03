@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ buttons }) => {
           },
         }}
       >
-        <List>
+        <List sx={{ background: "#95003a", height: "100%" }}>
           {buttons.map((button, index) => (
             <ListItemStyled
               key={index}
@@ -70,7 +70,7 @@ const Sidebar: React.FC<SidebarProps> = ({ buttons }) => {
               {button.icon && (
                 <ListItemIcon
                   sx={{
-                    color: selectedIndex === index ? "#44021e" : "inherit",
+                    color: selectedIndex === index ? "white" : "white",
                   }}
                 >
                   {button.icon}

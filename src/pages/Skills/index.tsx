@@ -109,9 +109,6 @@ const Skills = () => {
 
   return (
     <Box sx={{ padding: 2 }}>
-      <Typography variant="h4" gutterBottom>
-        Habilidades
-      </Typography>
       {renderSkillsSection("Desenvolvimento Web", skills.frontend)}
       {renderSkillsSection("Back-end", skills.backend)}
       {renderSkillsSection("Banco de Dados", skills.database)}

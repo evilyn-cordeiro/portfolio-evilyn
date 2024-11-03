@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 export const ListItemStyled = styled(ListItem)`
   cursor: pointer;
+  color: white;
   &:hover {
-    background-color: rgb(68, 2, 30, 0.1);
+    background-color: rgb(255, 255, 255, 0.2);
   }
 
   &.selected {
-    background-color: rgb(68, 2, 30, 0.2);
-    color: #44021e;
+    background-color: rgb(255, 255, 255, 0.2);
   }
 `;
 

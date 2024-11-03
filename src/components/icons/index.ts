@@ -5,6 +5,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export {
   Face2Icon as FaceIcon,
@@ -14,4 +15,5 @@ export {
   SchoolIcon,
   StarRateIcon as StarIcon,
   ContactMailIcon as ContactIcon,
+  LinkedInIcon,
 };
