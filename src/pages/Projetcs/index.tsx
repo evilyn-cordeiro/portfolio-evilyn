@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { Card } from "../../components";
+import { Card, Title } from "../../components";
 
 const projects = [
   {
@@ -55,9 +55,12 @@ const projects = [
 const Projects = () => {
   return (
     <Box sx={{ flexGrow: 1, padding: 2 }}>
-      <Typography variant="h5" gutterBottom>
-        Meus Projetos
-      </Typography>
+      <Title
+        title={"Projetos"}
+        description={
+          "Nesta seção, você encontrará uma seleção dos meus principais projetos, que refletem minha experiência e paixão pela tecnologia. Cada projeto é acompanhado de detalhes sobre os objetivos, as tecnologias utilizadas e os resultados alcançados."
+        }
+      />
       <Grid container spacing={4}>
         {projects.map((project, index) => (
           <Grid item key={index} xs={12} sm={6} md={4}>
