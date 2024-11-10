@@ -23,16 +23,15 @@ export const darkTheme = createTheme({
       main: "#FF5555", // Vermelho
     },
     background: {
-      default: "#282A36", // Fundo escuro
-      paper: "#44475A", // Fundo de papel escuro
+      default: "#282A36",
+      paper: "#44475A",
     },
     text: {
-      primary: "#FFFFFF", // Texto claro
-      secondary: "#8692b6", // Texto secundário
+      primary: "#FFFFFF",
+      secondary: "#8692b6",
     },
   },
   typography: {
-    fontFamily: "Roboto, sans-serif",
     h1: {
       fontWeight: "bold",
       fontSize: "2.5rem",
@@ -133,7 +132,6 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto, sans-serif",
     h1: {
       fontWeight: "bold",
       fontSize: "2.5rem",

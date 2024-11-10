@@ -13,6 +13,10 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailIcon from "@mui/icons-material/Email";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DownloadIcon from "@mui/icons-material/Download";
 
 export {
   Face2Icon as FaceIcon,
@@ -31,4 +35,8 @@ export {
   LanguageIcon,
   BedtimeIcon,
   LightModeIcon,
+  ExpandMoreIcon,
+  ExpandLessIcon,
+  MoreVertIcon,
+  DownloadIcon,
 };

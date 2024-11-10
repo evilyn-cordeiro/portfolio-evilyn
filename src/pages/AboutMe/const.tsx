@@ -1,4 +1,10 @@
 import "devicon/devicon.min.css";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  LocationOnIcon,
+  WorkIcon,
+} from "../../components/icons";
 export const projects = [
   {
     title: "Piloto React",
@@ -19,7 +25,7 @@ export const projects = [
     colors: ["#E34F26", "#1572B6"],
   },
   {
-    title: "Piloto Provedor Internet",
+    title: "Piloto Provedor",
     description: "CRUD simples em PHP com banco de dados local em JSON.",
     image: "https://i.imgur.com/l8n7ekH.jpg",
     link: "https://github.com/evilyn-cordeiro/crud-php-provedor-internet",
@@ -53,4 +59,56 @@ export const technologies = [
   { name: "Ant Design", icon: "devicon-antdesign-plain" },
   { name: "Figma", icon: "devicon-figma-plain" },
   { name: "SQL", icon: "devicon-mysql-plain" },
+];
+
+interface AboutMeItem {
+  title: string;
+  icon: JSX.Element;
+}
+
+export const aboutMeInfo = (currentTheme: any): AboutMeItem[] => [
+  {
+    title: "Ceará, Brasil",
+    icon: (
+      <LocationOnIcon
+        sx={{
+          fontSize: 24,
+          color: currentTheme.palette.primary.main,
+        }}
+      />
+    ),
+  },
+  {
+    title: "Senior Sistemas",
+    icon: (
+      <WorkIcon
+        sx={{
+          fontSize: 24,
+          color: currentTheme.palette.primary.main,
+        }}
+      />
+    ),
+  },
+  {
+    title: "evilyn-cordeiro", // Nome do usuário no GitHub
+    icon: (
+      <GitHubIcon
+        sx={{
+          fontSize: 24,
+          color: currentTheme.palette.primary.main,
+        }}
+      />
+    ),
+  },
+  {
+    title: "evilynprofile-dev", // Nome do usuário no LinkedIn
+    icon: (
+      <LinkedInIcon
+        sx={{
+          fontSize: 24,
+          color: currentTheme.palette.primary.main,
+        }}
+      />
+    ),
+  },
 ];
