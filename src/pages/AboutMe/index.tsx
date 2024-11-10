@@ -19,6 +19,8 @@ const AboutMe: React.FC = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
+        padding: "1rem",
+        alignItems: "center",
       }}
     >
       <Grid container spacing={3}>
@@ -28,7 +30,6 @@ const AboutMe: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               gap: 3,
-              padding: 2,
             }}
           >
             <ProjectCard
@@ -205,6 +206,7 @@ const AboutMe: React.FC = () => {
               display: "flex",
               alignItems: "center",
               height: "86px",
+              gap: 3,
               padding: 2,
               backgroundColor: theme.palette.background.paper,
               boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
