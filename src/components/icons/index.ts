@@ -11,6 +11,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailIcon from "@mui/icons-material/Email";
+import BedtimeIcon from "@mui/icons-material/Bedtime";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 export {
   Face2Icon as FaceIcon,
@@ -27,4 +29,6 @@ export {
   EmailIcon,
   GitHubIcon,
   LanguageIcon,
+  BedtimeIcon,
+  LightModeIcon,
 };

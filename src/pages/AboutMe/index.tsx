@@ -1,7 +1,6 @@
-import React from "react";
-import { Avatar, Box, Grid, Stack, Typography } from "@mui/material";
-import "slick-carousel/slick/slick-theme.css";
+import { Box, Grid, Typography, Avatar, Stack } from "@mui/material";
 import { ProjectCard } from "../../components";
+import { technologies, projects } from "./const";
 import {
   EmailIcon,
   GitHubIcon,
@@ -9,27 +8,30 @@ import {
   LocationOnIcon,
   WorkIcon,
 } from "../../components/icons";
-import { theme } from "../../theme";
 import { Folder } from "@mui/icons-material";
-import { projects } from "./const";
 
-const AboutMe: React.FC = () => {
+interface AboutMeProps {
+  currentTheme: any;
+}
+
+const AboutMe = ({ currentTheme }: AboutMeProps) => {
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        padding: "1rem",
+        padding: "2rem",
         alignItems: "center",
+        backgroundColor: currentTheme.palette.background.default,
       }}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={2.5}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              gap: 3,
+              gap: 2,
             }}
           >
             <ProjectCard
@@ -40,6 +42,11 @@ const AboutMe: React.FC = () => {
                 justifyContent: "center",
                 padding: 2,
                 textAlign: "center",
+                backgroundColor: currentTheme.palette.background.paper,
+                boxShadow:
+                  currentTheme.palette.mode === "dark"
+                    ? "0px 4px 6px rgba(0, 0, 0, 0.3)"
+                    : "0px 4px 6px rgba(0, 0, 0, 0.1)",
               }}
             >
               <Avatar
@@ -53,6 +60,7 @@ const AboutMe: React.FC = () => {
                 sx={{
                   fontWeight: "bold",
                   fontSize: "25px",
+                  color: currentTheme.palette.text.primary,
                 }}
               >
                 Evilyn Cordeiro
@@ -63,7 +71,9 @@ const AboutMe: React.FC = () => {
                   fontWeight: "light",
                   fontSize: "16px",
                   marginTop: 1,
+                  color: currentTheme.palette.text.secondary,
                 }}
+                letterSpacing={1}
               >
                 Software Developer Full-Stack
               </Typography>
@@ -75,6 +85,11 @@ const AboutMe: React.FC = () => {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "20px",
+                backgroundColor: currentTheme.palette.background.paper,
+                boxShadow:
+                  currentTheme.palette.mode === "dark"
+                    ? "0px 4px 6px rgba(0, 0, 0, 0.3)"
+                    : "0px 4px 6px rgba(0, 0, 0, 0.1)",
               }}
             >
               <Typography
@@ -82,44 +97,100 @@ const AboutMe: React.FC = () => {
                 sx={{
                   fontSize: "20px",
                   fontWeight: "bold",
+                  color: currentTheme.palette.text.primary,
                 }}
               >
                 Sobre Mim
               </Typography>
               <Stack direction="row" alignItems="center" spacing={2}>
-                <LocationOnIcon sx={{ fontSize: 24 }} />
-                <Typography variant="body2" sx={{ fontSize: "13px" }}>
+                <LocationOnIcon
+                  sx={{
+                    fontSize: 24,
+                    color: currentTheme.palette.primary.main,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "15px",
+                    color: currentTheme.palette.text.primary,
+                  }}
+                >
                   Juazeiro do Norte, Ceará, Brasil
                 </Typography>
               </Stack>
 
               <Stack direction="row" alignItems="center" spacing={2}>
-                <WorkIcon sx={{ fontSize: 24 }} />
-                <Typography variant="body2" sx={{ fontSize: "13px" }}>
+                <WorkIcon
+                  sx={{
+                    fontSize: 24,
+                    color: currentTheme.palette.primary.main,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "15px",
+                    color: currentTheme.palette.text.primary,
+                  }}
+                >
                   Senior Sistemas
                 </Typography>
               </Stack>
 
               {/* GitHub */}
               <Stack direction="row" alignItems="center" spacing={2}>
-                <GitHubIcon sx={{ fontSize: 24 }} />
-                <Typography variant="body2" sx={{ fontSize: "13px" }}>
+                <GitHubIcon
+                  sx={{
+                    fontSize: 24,
+                    color: currentTheme.palette.primary.main,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "15px",
+                    color: currentTheme.palette.text.primary,
+                  }}
+                >
                   evilyn-cordeiro
                 </Typography>
               </Stack>
 
               {/* LinkedIn */}
               <Stack direction="row" alignItems="center" spacing={2}>
-                <LinkedInIcon sx={{ fontSize: 24 }} />
-                <Typography variant="body2" sx={{ fontSize: "13px" }}>
+                <LinkedInIcon
+                  sx={{
+                    fontSize: 24,
+                    color: currentTheme.palette.primary.main,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "15px",
+                    color: currentTheme.palette.text.primary,
+                  }}
+                >
                   evilynprofile-dev
                 </Typography>
               </Stack>
 
               {/* E-mail */}
               <Stack direction="row" alignItems="center" spacing={2}>
-                <EmailIcon sx={{ fontSize: 24 }} />
-                <Typography variant="body2" sx={{ fontSize: "13px" }}>
+                <EmailIcon
+                  sx={{
+                    fontSize: 24,
+                    color: currentTheme.palette.primary.main,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "15px",
+                    color: currentTheme.palette.text.primary,
+                  }}
+                >
                   evilyndeveloper@gmail.com
                 </Typography>
               </Stack>
@@ -148,51 +219,36 @@ const AboutMe: React.FC = () => {
 
               <Grid
                 container
-                spacing={1}
-                sx={{ textAlign: "center", display: "flex", gap: "10px" }}
+                spacing={2}
+                sx={{
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "10px",
+                }}
               >
-                {[
-                  "JAVASCRIPT",
-                  "REACT",
-                  "TYPESCRIPT",
-                  "NODEJS",
-                  "MATERIAL UI",
-                  "GIT",
-                  "CSS",
-                  "HTML",
-                  "NEXT.JS",
-                  "SASS",
-                  "PHP",
-                  "PYTHON",
-                  "API REST",
-                  "STYLED-COMPONENT",
-                  "ANT DESIGN",
-                  "FIGMA",
-                  "UX/UI DESIGN",
-                  "SQL",
-                ].map((tech, index) => (
+                {technologies.map((tech, index) => (
                   <Grid
                     item
                     key={index}
                     sx={{
-                      padding: "10px",
-                      backgroundColor: theme.palette.primary.dark,
-                      borderRadius: "10px",
-                      textTransform: "uppercase",
-                      alignItems: "center",
+                      display: "flex",
                       justifyContent: "center",
+                      alignItems: "center",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "scale(1.1)",
+                      },
                     }}
                   >
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontSize: "10px",
-                        color: theme.palette.text.primary,
-                        fontWeight: "bold",
+                    <i
+                      className={`devicon ${tech.icon}`}
+                      style={{
+                        color: currentTheme.palette.primary.main,
+                        fontSize: "34px",
+                        transition: "transform 0.3s ease",
                       }}
-                    >
-                      {tech}
-                    </Typography>
+                    ></i>
                   </Grid>
                 ))}
               </Grid>
@@ -205,43 +261,56 @@ const AboutMe: React.FC = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              height: "86px",
-              gap: 3,
+              height: "60px",
+              gap: 2,
               padding: 2,
-              backgroundColor: theme.palette.background.paper,
-              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              backgroundColor: currentTheme.palette.background.paper,
+              boxShadow:
+                currentTheme.palette.mode === "dark"
+                  ? "0px 4px 6px rgba(0, 0, 0, 0.3)"
+                  : "0px 4px 6px rgba(0, 0, 0, 0.1)",
               borderRadius: "10px",
-              marginTop: 3,
             }}
           >
-            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-              Meus projetos
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                color: currentTheme.palette.text.primary,
+              }}
+            >
+              Meus Projetos
             </Typography>
           </Box>
 
-          <Grid container spacing={2} sx={{ marginTop: 3 }}>
-            {/* Primeiro Repositório */}
+          <Grid container spacing={2} sx={{ marginTop: 1 }}>
+            {/* Projetos */}
             {projects.map((item, index) => (
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6} key={index}>
                 <Box
                   sx={{
                     padding: 3,
                     borderRadius: "10px",
-                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                    height: "200px",
-                    backgroundColor: theme.palette.background.paper,
+                    boxShadow:
+                      currentTheme.palette.mode === "dark"
+                        ? "0px 4px 6px rgba(0, 0, 0, 0.3)"
+                        : "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                    minHeight: "fit-content",
+                    backgroundColor: currentTheme.palette.background.paper,
                     transition: "all 0.3s ease",
                     "&:hover": {
                       boxShadow: "0px 8px 12px rgba(0, 0, 0, 0.5)",
                       transform: "scale(1.02)",
-                      cursor: "pointer",
                     },
                   }}
                 >
                   <Box>
                     <Stack direction="row" alignItems="center" spacing={1}>
                       <Folder
-                        sx={{ fontSize: 24, color: theme.palette.primary.main }}
+                        sx={{
+                          fontSize: 24,
+                          color: currentTheme.palette.primary.main,
+                        }}
                       />
                       <a
                         href={item.link}
@@ -254,7 +323,7 @@ const AboutMe: React.FC = () => {
                       >
                         <Typography
                           variant="h6"
-                          color={theme.palette.primary.main}
+                          color={currentTheme.palette.primary.main}
                           sx={{ fontWeight: "bold", cursor: "pointer" }}
                         >
                           {item.title}
@@ -265,11 +334,11 @@ const AboutMe: React.FC = () => {
                       height={"100px"}
                       overflow={"hidden"}
                       textOverflow={"ellipsis"}
+                      sx={{ color: currentTheme.palette.text.primary }}
                     >
                       {item.description}
                     </Typography>
 
-                    {/* Tecnologias Usadas */}
                     {/* Tecnologias Usadas */}
                     <Stack direction="row" spacing={1} sx={{ display: "flex" }}>
                       {item.technologies.map((textTec, index) => (
@@ -299,6 +368,10 @@ const AboutMe: React.FC = () => {
             ))}
           </Grid>
         </Grid>
+      </Grid>
+
+      <Grid sx={{ marginTop: 2, color: currentTheme.palette.text.secondary }}>
+        🟣 Portfólio Evilyn v1.0
       </Grid>
     </Box>
   );
