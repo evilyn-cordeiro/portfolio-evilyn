@@ -10,11 +10,11 @@ export const projects = [
     colors: ["#61DAFB", "#F7DF1E"],
   },
   {
-    title: "Spotify Clone",
+    title: "Spotify",
     description:
       "Clone da landing page do Spotify, focado em layout e design responsivo.",
     image: "https://i.imgur.com/l8n7ekH.jpg",
-    link: "https://github.com/evilyn-cordeiro/spotify-clone",
+    link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS"],
     colors: ["#E34F26", "#1572B6"],
   },
