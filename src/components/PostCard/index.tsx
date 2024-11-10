@@ -22,6 +22,7 @@ const PostCard: React.FC<PostCardProps> = ({ image, description, link }) => {
         position: "relative",
         overflow: "visible",
         borderRadius: 2,
+        height: "200px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         "&:before": {
           content: '""',
@@ -56,9 +57,7 @@ const PostCard: React.FC<PostCardProps> = ({ image, description, link }) => {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Ir para a Publicação
-        </Button>
+        ></Button>
       </CardActions>
     </Card>
   );
