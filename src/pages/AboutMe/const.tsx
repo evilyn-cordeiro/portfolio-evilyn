@@ -52,8 +52,9 @@ export const projects = [
   },
   {
     title: "Ponto da Comida",
-    description: "Landinpage  projetada para restaurantes de comidas naturais.",
-    image: "/projeto-4.png",
+    description:
+      "Landinpage  projetada para restaurantes de comidas saudáveis.",
+    image: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
     technologies: ["HTML", "CSS"],
     colors: ["#E34F26", "#1572B6"],
