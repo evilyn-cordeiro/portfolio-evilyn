@@ -50,6 +50,14 @@ export const projects = [
     technologies: ["PHP", "JavaScript", "Docker"],
     colors: ["#8993BE", "#F7DF1E", "#2496ED"],
   },
+  {
+    title: "Ponto da Comida",
+    description: "Landinpage  projetada para restaurantes de comidas naturais.",
+    image: "/projeto-4.png",
+    link: "https://food-point-beryl.vercel.app/",
+    technologies: ["HTML", "CSS"],
+    colors: ["#E34F26", "#1572B6"],
+  },
 ];
 
 export const technologies = [

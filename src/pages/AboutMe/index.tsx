@@ -547,13 +547,13 @@ const AboutMe = ({ currentTheme }: AboutMeProps) => {
                     }}
                   >
                     <EmailIcon />
-                    Envie-me um e-mail
+                    Entre em contato
                   </Button>
 
                   <Button
                     variant="contained"
                     color="secondary"
-                    href="https://drive.google.com/file/d/1Pz-lpvAmA_oaywIR_P9kot9uJqDevOkm/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1U47MRQlauKZROvWnm0vo1u_zdTFeK05p/view?usp=drive_link"
                     target="_blank"
                     sx={{
                       padding: "1rem 2rem",
