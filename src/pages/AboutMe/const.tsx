@@ -135,19 +135,19 @@ export const experience = [
   {
     title: "Senior Sistemas",
     work: "Software Developer I",
-    date: "até o momento",
+    date: " Abril de 2024 até o momento",
     city: "Blumenau, Santa Catarina, Brasil",
   },
   {
     title: "Konviva Edtech",
     work: "Desenvolvedora Front-end Jr II",
-    date: "Maio de 2023 à Agosto",
+    date: "Dezembro de 2023 à Abril de 2024",
     city: "Florianópolis, Santa Catarina, Brasil",
   },
   {
     title: "Konviva Edtech",
     work: "Desenvolvedora Front-end Jr I",
-    date: "Maio de 2023 à 2024",
+    date: "Maio à Dezembro de 2023",
     city: "Florianópolis, Santa Catarina, Brasil",
   },
   {
