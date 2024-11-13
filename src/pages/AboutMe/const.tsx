@@ -135,47 +135,47 @@ export const experience = [
   {
     title: "Senior Sistemas",
     work: "Software Developer I",
-    date: " Abril de 2024 até o momento",
+    date: " 2024 até o momento",
     city: "Blumenau, Santa Catarina, Brasil",
   },
   {
     title: "Konviva Edtech",
     work: "Desenvolvedora Front-end Jr II",
-    date: "Dezembro de 2023 à Abril de 2024",
+    date: "2023 - 2024",
     city: "Florianópolis, Santa Catarina, Brasil",
   },
   {
     title: "Konviva Edtech",
     work: "Desenvolvedora Front-end Jr I",
-    date: "Maio à Dezembro de 2023",
+    date: "2023 - 2024",
     city: "Florianópolis, Santa Catarina, Brasil",
   },
   {
     title: "Toukio",
     work: "Desenvolvedora Front-end Jr",
-    date: "Fevereiro de 2022 à 2023",
+    date: "2022 - 2023",
     city: "Barbalha, Ceará, Brasil",
   },
   {
     title: "Toukio",
     work: "Desenvolvimento Front-end (Estágio)",
-    date: "Novembro de 2021 à 2022",
+    date: "2021 - 2022",
     city: "Barbalha, Ceará, Brasil",
   },
   {
     title: "E.E.E.P Otília Correia Saraiva",
     work: "Aluna Pesquisadora",
-    date: "Junho de 2019 à 2021",
+    date: "2019 - 2021",
     city: "Barbalha, Ceará, Brasil",
   },
 ];
 
 export const study = [
   {
-    title: "Análises e Desenvolvimento de Sistemas",
+    title: "Análises e Desenvolvimento de Sistemas (Tecnólogo)",
     date: "2023 - 2025",
   },
-  { title: "Redes de Computadores", date: "2019 - 2021" },
+  { title: "Redes de Computadores (Técnico)", date: "2019 - 2021" },
 ];
 export const posts = [
   {
