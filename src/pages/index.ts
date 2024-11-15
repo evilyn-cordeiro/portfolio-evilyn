@@ -1,3 +1,3 @@
-import AboutMe from "./AboutMe";
+import AboutMe from "./LandingPage";
 
 export { AboutMe };

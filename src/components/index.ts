@@ -1,6 +1,4 @@
-import ProjectCard from "./Card";
-import Title from "./Title";
-import FixedButton from "./FixedButton";
-import PostCard from "./PostCard";
+import Hero from "./Hero";
+import Tech from "./Tech";
 
-export { ProjectCard, Title, FixedButton, PostCard };
+export { Hero, Tech };

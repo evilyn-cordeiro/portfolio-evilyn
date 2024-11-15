@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DownloadIcon from "@mui/icons-material/Download";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 export {
   Face2Icon as FaceIcon,
@@ -39,4 +40,5 @@ export {
   ExpandLessIcon,
   MoreVertIcon,
   DownloadIcon,
+  KeyboardDoubleArrowDownIcon,
 };

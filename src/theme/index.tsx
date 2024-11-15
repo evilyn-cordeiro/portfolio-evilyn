@@ -1,60 +1,67 @@
 import { createTheme } from "@mui/material";
 
-// Tema Escuro (Dark)
 export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#BD93F9", // Roxo mais vibrante para destaque
+      main: "#673AB7", // Roxo escuro como cor primária
     },
     secondary: {
-      main: "#FF79C6", // Rosa vibrante
+      main: "#9575CD", // Roxo mais claro para a cor secundária
     },
     info: {
-      main: "#8BE9FD", // Azul claro
+      main: "#BB86FC", // Roxo suave para info
     },
     success: {
-      main: "#50FA7B", // Verde claro
+      main: "#4CAF50", // Verde mais sóbrio
     },
     warning: {
-      main: "#F1FA8C", // Amarelo
+      main: "#FFEB3B", // Amarelo suave e discreto
     },
     error: {
-      main: "#FF5555", // Vermelho
+      main: "#F44336", // Vermelho mais suave
     },
     background: {
-      default: "#282A36",
-      paper: "#44475A",
+      default: "#212121", // Fundo muito escuro, quase preto
+      paper: "#424242", // Fundo de cartões mais suave
     },
     text: {
-      primary: "#FFFFFF",
-      secondary: "#8692b6",
+      primary: "#E0E0E0", // Texto claro
+      secondary: "#B0BEC5", // Texto secundário mais suave
     },
   },
   typography: {
     h1: {
+      fontFamily: "Source Code Pro, monospace",
       fontWeight: "bold",
       fontSize: "2.5rem",
-      color: "#F8F8F2",
+      color: "#E0E0E0",
     },
     h2: {
+      fontFamily: "Source Code Pro, monospace",
       fontWeight: "bold",
       fontSize: "2rem",
-      color: "#FF79C6",
+      color: "#9575CD", // Roxo mais claro
+    },
+    h3: {
+      fontFamily: "Source Code Pro, monospace",
+    },
+    h4: {
+      fontFamily: "Source Code Pro, monospace",
     },
     body1: {
       fontSize: "1rem",
-      color: "#F8F8F2",
+      color: "#E0E0E0",
     },
   },
   components: {
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: "#44475A",
-          color: "#F8F8F2",
+          backgroundColor: "#424242", // Fundo de cartão suave
+          color: "#E0E0E0", // Texto claro
           borderRadius: "20px",
-          border: "2px solid #BD93F9",
+          border: "2px solid #673AB7", // Roxo escuro no border
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
         },
       },
@@ -62,12 +69,12 @@ export const darkTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#BD93F9", // Roxo vibrante
-          color: "#F8F8F2", // Texto claro
+          backgroundColor: "#673AB7", // Roxo escuro
+          color: "#FFFFFF", // Texto branco
           borderRadius: "10px",
           padding: "10px 20px",
           "&:hover": {
-            backgroundColor: "#9E7DF7", // Roxo mais suave no hover
+            backgroundColor: "#512DA8", // Roxo mais escuro no hover
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
           },
         },
@@ -76,23 +83,23 @@ export const darkTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: "#F8F8F2",
+          color: "#E0E0E0",
         },
         h2: {
-          color: "#FF79C6",
+          color: "#9575CD",
         },
         body1: {
-          color: "#F8F8F2",
+          color: "#E0E0E0",
         },
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#8BE9FD",
+          color: "#BB86FC", // Roxo suave
           textDecoration: "none",
           "&:hover": {
-            color: "#50FA7B",
+            color: "#4CAF50", // Verde discreto no hover
           },
         },
       },
@@ -100,51 +107,50 @@ export const darkTheme = createTheme({
   },
 });
 
-// Tema Claro (Light)
 export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#6A5ACD", // Cor roxa suave
+      main: "#673AB7",
     },
     secondary: {
-      main: "#FF69B4", // Cor rosa suave
+      main: "#9575CD",
     },
     info: {
-      main: "#00BFFF", // Azul claro
+      main: "#BB86FC",
     },
     success: {
-      main: "#32CD32", // Verde claro
+      main: "#4CAF50",
     },
     warning: {
-      main: "#FFD700", // Amarelo
+      main: "#FFEB3B",
     },
     error: {
-      main: "#FF6347", // Tom mais claro de vermelho
+      main: "#F44336",
     },
     background: {
-      default: "#ffebff", // Fundo claro
-      paper: "#FFFFFF", // Fundo branco para os cartões
+      default: "#FAFAFA",
+      paper: "#FFFFFF",
     },
     text: {
-      primary: "#333333", // Texto escuro
-      secondary: "#666666", // Texto secundário
+      primary: "#212121", // Texto escuro
+      secondary: "#757575", // Texto secundário mais suave
     },
   },
   typography: {
     h1: {
       fontWeight: "bold",
       fontSize: "2.5rem",
-      color: "#333333",
+      color: "#212121",
     },
     h2: {
       fontWeight: "bold",
       fontSize: "2rem",
-      color: "#FF69B4",
+      color: "#9575CD", // Roxo mais claro
     },
     body1: {
       fontSize: "1rem",
-      color: "#333333",
+      color: "#212121",
     },
   },
   components: {
@@ -152,8 +158,8 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          border: "2px solid #6A5ACD",
-          color: "#333333",
+          border: "2px solid #673AB7", // Roxo escuro no border
+          color: "#212121", // Texto escuro
           borderRadius: "20px",
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
         },
@@ -162,12 +168,12 @@ export const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#6A5ACD", // Roxo mais suave para o botão primário
-          color: "#FFFFFF", // Texto claro
+          backgroundColor: "#673AB7", // Roxo escuro
+          color: "#FFFFFF", // Texto branco
           borderRadius: "10px",
           padding: "10px 20px",
           "&:hover": {
-            backgroundColor: "#5A4BCF", // Roxo um pouco mais escuro no hover
+            backgroundColor: "#512DA8", // Roxo mais escuro no hover
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
           },
         },
@@ -176,23 +182,23 @@ export const lightTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: "#333333",
+          color: "#212121",
         },
         h2: {
-          color: "#FF69B4",
+          color: "#9575CD",
         },
         body1: {
-          color: "#333333",
+          color: "#212121",
         },
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#00BFFF", // Azul claro
+          color: "#BB86FC", // Roxo suave
           textDecoration: "none",
           "&:hover": {
-            color: "#32CD32", // Verde claro
+            color: "#4CAF50", // Verde discreto no hover
           },
         },
       },
