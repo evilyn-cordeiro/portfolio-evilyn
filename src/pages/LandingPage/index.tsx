@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Hero, Tech } from "../../components";
+import { Experiences, Hero, Tech } from "../../components";
 import Info from "../../components/Info";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
@@ -10,7 +10,6 @@ interface LandingPageProps {
 }
 
 const LandingPage = ({ currentTheme }: LandingPageProps) => {
-  // Crie a referência para o componente Projects
   const projectsRef = useRef<HTMLElement | null>(null);
 
   return (
@@ -20,11 +19,10 @@ const LandingPage = ({ currentTheme }: LandingPageProps) => {
         overflowX: "hidden",
       }}
     >
-      {/* Passe a referência para o Hero */}
       <Hero currentTheme={currentTheme} scrollTo={projectsRef} />
       <Tech currentTheme={currentTheme} />
       <Info currentTheme={currentTheme} />
-      {/* Passe a ref para o Projects */}
+      <Experiences currentTheme={currentTheme} />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Footer currentTheme={currentTheme} />
     </Box>

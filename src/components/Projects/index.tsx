@@ -32,7 +32,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
           <Box
             sx={{
               height: "4px",
-              width: "60px",
+              width: "200px",
               backgroundColor: currentTheme.palette.primary.main,
               position: "absolute",
               bottom: "-10px",

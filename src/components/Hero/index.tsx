@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { KeyboardDoubleArrowDownIcon } from "../icons";
 import { motion } from "framer-motion";
@@ -46,6 +46,71 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
         position: "relative",
       }}
     >
+      {/* Header
+      <AppBar
+        sx={{
+          top: 0,
+          left: 0,
+          right: 0,
+          background: "transparent",
+          boxShadow: "none",
+          zIndex: 100,
+        }}
+      >
+        <Toolbar
+          sx={{
+            justifyContent: "center",
+            padding: "1rem 0",
+            color: currentTheme.palette.primary.main,
+          }}
+        >
+          <Button
+            sx={{
+              color: currentTheme.palette.primary.main,
+              background: "transparent",
+            }}
+            href="#home"
+          >
+            Home
+          </Button>
+          <Button
+            sx={{
+              color: currentTheme.palette.primary.main,
+              background: "transparent",
+            }}
+            href="#sobre"
+          >
+            Sobre Mim
+          </Button>
+          <Button
+            sx={{
+              color: currentTheme.palette.primary.main,
+              background: "transparent",
+            }}
+            href="#experiencias"
+          >
+            Experiências
+          </Button>
+          <Button
+            sx={{
+              color: currentTheme.palette.primary.main,
+              background: "transparent",
+            }}
+            href="#projetos"
+          >
+            Meus Projetos
+          </Button>
+          <Button
+            sx={{
+              color: currentTheme.palette.primary.main,
+              background: "transparent",
+            }}
+            href="#contato"
+          >
+            Contatos
+          </Button>
+        </Toolbar>
+      </AppBar> */}
       {currentTheme.palette.mode === "dark" ? (
         <video
           autoPlay
@@ -89,7 +154,6 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           Seu navegador não suporta o elemento de vídeo.
         </video>
       )}
-
       <Box sx={{ maxWidth: "600px", padding: "20px", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +193,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
                 sm: "1.1rem",
                 md: "1.4rem",
                 lg: "1.5rem",
-                xl: "1.6rem",
+                xl: "1.rem",
               },
             }}
           >
@@ -137,7 +201,6 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           </Typography>
         </motion.div>
       </Box>
-
       <motion.div
         style={{
           position: "absolute",
