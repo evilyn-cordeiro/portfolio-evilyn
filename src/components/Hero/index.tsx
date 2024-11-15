@@ -100,11 +100,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
             variant="h3"
             sx={{
               fontSize: {
-                xs: "1.3rem",
+                xs: "1.4rem",
                 sm: "1.5rem",
-                md: "2.5rem",
+                md: "2.6rem",
                 lg: "3rem",
-                xl: "3.4rem",
+                xl: "3.2rem",
               },
               letterSpacing: 5,
               color: textColor,
@@ -126,10 +126,10 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
               marginBottom: 3,
               fontSize: {
                 xs: "1rem",
-                sm: "1.2rem",
+                sm: "1.1rem",
                 md: "1.4rem",
                 lg: "1.5rem",
-                xl: "1.5rem",
+                xl: "1.6rem",
               },
             }}
           >
@@ -141,7 +141,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
       <motion.div
         style={{
           position: "absolute",
-          bottom: "40px",
+          bottom: "80px",
           zIndex: 1,
         }}
         animate={{

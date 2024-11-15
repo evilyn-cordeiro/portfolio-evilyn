@@ -76,12 +76,9 @@ export default function Info({ currentTheme }: InfoProps) {
           Atualmente, estou concluindo minha graduação e me preparando para uma
           pós-graduação em desenvolvimento web full stack, além de desenvolver
           projetos pessoais que impulsionam minha evolução técnica. Minha
-          jornada na tecnologia começou cedo e, agora,{" "}
-          <strong style={{ color: `${currentTheme.palette.secondary.main}` }}>
-            tenho objetivos claros para minha carreira, incluindo o compromisso
-            de excelência em minha área. Busco aprender e compartilhar
-            conhecimentos mutuamente.
-          </strong>
+          jornada na tecnologia começou cedo e, agora, tenho objetivos claros
+          para minha carreira, incluindo o compromisso de excelência em minha
+          área. Busco aprender e compartilhar conhecimentos mutuamente.
         </Typography>
       </Box>
 
@@ -93,7 +90,7 @@ export default function Info({ currentTheme }: InfoProps) {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: { xs: "100%", sm: "100%", md: "100%", lg: "80%" },
+          height: { xs: "400px", sm: "500px", md: "600px", lg: "80%" },
           position: "relative",
           display: "flex",
           alignItems: "center",
