@@ -63,21 +63,62 @@ export const projects = [
 ];
 
 export const technologies = [
-  { name: "JavaScript", icon: "devicon-javascript-plain" },
-  { name: "React", icon: "devicon-react-plain" },
-  { name: "TypeScript", icon: "devicon-typescript-plain" },
-  { name: "NodeJS", icon: "devicon-nodejs-plain" },
-  { name: "Material UI", icon: "devicon-materialui-plain" },
-  { name: "Git", icon: "devicon-git-plain" },
-  { name: "CSS", icon: "devicon-css3-plain" },
-  { name: "HTML", icon: "devicon-html5-plain" },
-  { name: "Next.js", icon: "devicon-nextjs-plain" },
-  { name: "SASS", icon: "devicon-sass-plain" },
-  { name: "PHP", icon: "devicon-php-plain" },
-  { name: "Python", icon: "devicon-python-plain" },
-  { name: "Ant Design", icon: "devicon-antdesign-plain" },
-  { name: "Figma", icon: "devicon-figma-plain" },
-  { name: "SQL", icon: "devicon-mysql-plain" },
+  {
+    name: "JavaScript",
+    icon: "devicon-javascript-plain",
+    experience: 4,
+    description:
+      "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
+  },
+  {
+    name: "React",
+    icon: "devicon-react-plain",
+    experience: 4,
+    description:
+      "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
+  },
+  {
+    name: "TypeScript",
+    icon: "devicon-typescript-plain",
+    experience: 4,
+    description:
+      "Superset do JavaScript que adiciona tipagem estática e recursos de orientação a objetos, tornando o código mais seguro e escalável.",
+  },
+  {
+    name: "CSS",
+    icon: "devicon-css3-plain",
+    experience: 4,
+    description:
+      "Linguagem de estilização usada para descrever a apresentação de um documento HTML, incluindo cores, layouts e fontes.",
+  },
+  {
+    name: "HTML",
+    icon: "devicon-html5-plain",
+    experience: 4,
+    description:
+      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+  },
+  {
+    name: "PHP",
+    icon: "devicon-php-plain",
+    experience: 1,
+    description:
+      "Linguagem de programação amplamente utilizada no desenvolvimento web, especialmente no lado do servidor para criar sites dinâmicos e interativos.",
+  },
+  {
+    name: "SQL",
+    icon: "devicon-mysql-plain",
+    experience: 1,
+    description:
+      "Linguagem de consulta estruturada usada para gerenciar e consultar dados em bancos de dados relacionais como MySQL, PostgreSQL e outros.",
+  },
+  {
+    name: "Laravel",
+    icon: "devicon-laravel-plain",
+    experience: 1,
+    description:
+      "Framework PHP robusto para o desenvolvimento de aplicações web, com foco em simplicidade, elegância e uma estrutura de código limpa e modular.",
+  },
 ];
 
 interface AboutMeItem {
@@ -177,18 +218,4 @@ export const study = [
     date: "2023 - 2025",
   },
   { title: "Redes de Computadores (Técnico)", date: "2019 - 2021" },
-];
-export const posts = [
-  {
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D22AQFP0tM1_suZ5A/feedshare-shrink_800/feedshare-shrink_800/0/1729649041066?e=1733356800&v=beta&t=c1n0S0zMn6-yC4gO4lDwMl8KxhBgok35mn0MPhX683Q",
-    description: "Apresentação do Resumo Expandido em 24 de Outubro de 2024",
-    link: "https://www.linkedin.com/posts/evilyn-araujo-profiledev_hoje-apresentei-um-resumo-expandido-que-activity-7254673895348166656-lmY6?utm_source=share&utm_medium=member_desktop",
-  },
-  {
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D22AQHT_TwGtZjYLg/feedshare-shrink_800/feedshare-shrink_800/0/1729872979713?e=1733356800&v=beta&t=tZi323hEiiaX8_O8fM8CGx9w-i8_XkwsSylChYku_YQ",
-    description: "Veja algumas reflexões sobre crescimento profissional!",
-    link: "https://www.linkedin.com/posts/evilyn-araujo-profiledev_desenvolvimentopessoal-frontend-backend-activity-7258883622001098753-9",
-  },
 ];
