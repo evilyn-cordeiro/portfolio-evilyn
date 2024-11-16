@@ -194,9 +194,8 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
                 xl: "1.2rem",
               },
             }}
-            letterSpacing={3}
           >
-            Analista e Desenvolvedora de Softwares
+            Desenvolvedora de Softwares Full-stack
           </Typography>
         </motion.div>
       </Box>
