@@ -126,7 +126,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
             height: "100%",
             objectFit: "cover",
             zIndex: 0,
-            filter: "brightness(0.2)",
+            filter: "brightness(0.5)",
           }}
         >
           <source src={"/heroDark.mp4"} type="video/mp4" />
@@ -147,7 +147,6 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
             height: "100%",
             objectFit: "cover",
             zIndex: 0,
-            filter: "blur(10px) brightness(1)",
           }}
         >
           <source src={"/heroLigth.mp4"} type="video/mp4" />
@@ -164,13 +163,12 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
             variant="h3"
             sx={{
               fontSize: {
-                xs: "1.4rem",
-                sm: "1.5rem",
-                md: "2.6rem",
-                lg: "3rem",
-                xl: "3.2rem",
+                xs: "2rem",
+                sm: "3rem",
+                md: "3.1rem",
+                lg: "3.2rem",
+                xl: "3.3rem",
               },
-              letterSpacing: 5,
               color: textColor,
             }}
           >
@@ -191,11 +189,12 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
               fontSize: {
                 xs: "1rem",
                 sm: "1.1rem",
-                md: "1.4rem",
-                lg: "1.5rem",
-                xl: "1.rem",
+                md: "1.2rem",
+                lg: "1.2rem",
+                xl: "1.2rem",
               },
             }}
+            letterSpacing={3}
           >
             Analista e Desenvolvedora de Softwares
           </Typography>
@@ -211,7 +210,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           y: [0, 10, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           ease: "easeInOut",
           repeat: Infinity,
         }}

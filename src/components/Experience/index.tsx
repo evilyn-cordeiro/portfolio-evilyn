@@ -1,16 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { experience } from "../../pages/LandingPage/const";
-
-interface ExperienceItem {
-  title: string;
-  work: string;
-  date: string;
-  city: string;
-  description?: string;
-  techUsed?: string[];
-  projectLink?: string;
-}
 
 const Experiences = ({ currentTheme }: { currentTheme: any }) => {
   return (
@@ -21,7 +11,6 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
         backgroundColor: currentTheme.palette.background.default,
       }}
     >
-      {/* Título e introdução da seção de Experiências Profissionais */}
       <Typography
         variant="h4"
         sx={{
@@ -51,7 +40,6 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
           justifyContent: "space-between",
         }}
       >
-        {/* Texto explicativo sobre a experiência */}
         <Box
           sx={{
             flex: 1,
@@ -74,9 +62,11 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
             Ao longo dos anos, tenho me especializado em desenvolvimento
             front-end, com experiência no design e implementação de interfaces
             responsivas e intuitivas, enquanto continuo aprimorando meus
-            conhecimentos em back-end e integração de APIs. Acredito que a
-            evolução contínua é essencial, e estou sempre em busca de novos
-            desafios e oportunidades para crescer.
+            conhecimentos em back-end e integração de APIs.{" "}
+            <strong style={{ color: `${currentTheme.palette.secondary.main}` }}>
+              Acredito que a evolução contínua é essencial, e estou sempre em
+              busca de novos desafios e oportunidades para crescer.
+            </strong>
           </Typography>
         </Box>
 
@@ -88,18 +78,17 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
             maxWidth: "800px",
           }}
         >
-          {/* Linha central da linha do tempo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             style={{
               position: "absolute",
-              left: "30px", // Posiciona a linha à esquerda
+              left: "30px",
               top: "0",
               width: "2px",
               height: "100%",
-              backgroundColor: currentTheme.palette.primary.main, // Cor primária
+              backgroundColor: currentTheme.palette.primary.main,
             }}
           />
 
@@ -112,7 +101,7 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
               style={{
                 position: "relative",
                 marginBottom: "2rem",
-                display: "flex", // Flexbox para alinhar os itens horizontalmente
+                display: "flex",
                 alignItems: "center",
               }}
             >
@@ -123,7 +112,7 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
                   width: "30px",
                   height: "30px",
                   backgroundColor: currentTheme.palette.primary.main,
-                  borderRadius: "50%",
+                  borderRadius: "100%",
                   marginLeft: 2,
                   border: `3px solid ${currentTheme.palette.primary.dark}`,
                   zIndex: 1,
@@ -171,21 +160,6 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
                 >
                   {item.city}
                 </Typography>
-
-                {/* Descrição detalhada */}
-                {item.description && (
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      marginTop: "1rem",
-                      color: currentTheme.palette.text.secondary,
-                      fontStyle: "italic",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    {item.description}
-                  </Typography>
-                )}
               </Box>
             </motion.div>
           ))}

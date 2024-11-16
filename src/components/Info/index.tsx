@@ -84,13 +84,23 @@ export default function Info({ currentTheme }: InfoProps) {
 
       <Box
         sx={{
-          width: { xs: "100%", sm: "100%", md: "100%", lg: "40%" },
+          width: {
+            xs: "100%",
+            sm: "80%",
+            md: "50%",
+            lg: "40%",
+          },
           marginTop: { xs: "2rem", md: "0" },
-          backgroundImage: 'url("/hero-info.png")',
+          backgroundImage: 'url("/evilyn.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: { xs: "400px", sm: "500px", md: "600px", lg: "80%" },
+          height: {
+            xs: "350px",
+            sm: "450px",
+            md: "550px",
+            lg: "680px",
+          },
           position: "relative",
           display: "flex",
           alignItems: "center",

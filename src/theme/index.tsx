@@ -44,7 +44,7 @@ export const darkTheme = createTheme({
       color: "#9575CD", // Roxo mais claro
     },
     h3: {
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "Zilla Slab, serif",
     },
     h4: {
       fontFamily: "Source Code Pro, monospace",

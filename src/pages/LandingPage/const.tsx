@@ -138,8 +138,6 @@ export const experience = [
     work: "Software Developer I",
     date: " 2024 até o momento",
     city: "Blumenau, Santa Catarina, Brasil",
-    description: "Atuando no time de manutenção e sustentação",
-    techUsed: ["Angular Js", "HTML", "CSS"],
   },
   {
     title: "Konviva Edtech",
