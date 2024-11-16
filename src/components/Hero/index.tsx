@@ -114,11 +114,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
               variant="h3"
               sx={{
                 fontSize: {
-                  xs: "2rem", // Tamanho para dispositivos muito pequenos (xs)
-                  sm: "2.5rem", // Tamanho para dispositivos pequenos (sm)
-                  md: "3.3rem", // Tamanho médio para dispositivos médios (md)
-                  lg: "3.5rem", // Tamanho grande para dispositivos grandes (lg)
-                  xl: "4rem", // Tamanho maior para dispositivos extra grandes (xl)
+                  xs: "2rem",
+                  sm: "2.5rem",
+                  md: "3.3rem",
+                  lg: "3.5rem",
+                  xl: "4rem",
                 },
               }}
             >

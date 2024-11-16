@@ -10,7 +10,7 @@ export default function Info({ currentTheme }: InfoProps) {
     <Box
       sx={{
         height: { sm: "fit-content", md: "fit-content", lg: "850px" },
-        padding: { xs: "3rem 1rem", sm: "4rem", md: "5rem" },
+        padding: { xs: "3rem 1rem", sm: "3rem", md: "3rem", lg: "5rem" },
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         backgroundColor: currentTheme.palette.background.paper,
@@ -75,10 +75,7 @@ export default function Info({ currentTheme }: InfoProps) {
         >
           Atualmente, estou concluindo minha graduação e me preparando para uma
           pós-graduação em desenvolvimento web full stack, além de desenvolver
-          projetos pessoais que impulsionam minha evolução técnica. Minha
-          jornada na tecnologia começou cedo e, agora, tenho objetivos claros
-          para minha carreira, incluindo o compromisso de excelência em minha
-          área. Busco aprender e compartilhar conhecimentos mutuamente.
+          projetos pessoais que impulsionam minha evolução técnica.
         </Typography>
       </Box>
 
@@ -86,8 +83,8 @@ export default function Info({ currentTheme }: InfoProps) {
         sx={{
           width: {
             xs: "100%",
-            sm: "75%",
-            md: "45%",
+            sm: "65%",
+            md: "55%",
             lg: "35%",
           },
           marginTop: { xs: "2rem", md: "0" },
@@ -96,9 +93,9 @@ export default function Info({ currentTheme }: InfoProps) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: {
-            xs: "400px",
-            sm: "450px",
-            md: "560px",
+            xs: "300px",
+            sm: "500px",
+            md: "660px",
             lg: "600px",
           },
           position: "relative",

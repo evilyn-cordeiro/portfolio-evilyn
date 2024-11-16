@@ -215,7 +215,12 @@ export const experience = [
 export const study = [
   {
     title: "Análises e Desenvolvimento de Sistemas (Tecnólogo)",
+    school: "Centro Universitário Paraíso",
     date: "2023 - 2025",
   },
-  { title: "Redes de Computadores (Técnico)", date: "2019 - 2021" },
+  {
+    title: "Redes de Computadores (Técnico)",
+    school: "E.E.E.P Otília Correia Saraiva",
+    date: "2019 - 2021",
+  },
 ];

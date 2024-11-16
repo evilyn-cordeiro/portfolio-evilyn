@@ -1,9 +1,15 @@
 import { Box } from "@mui/material";
-import { Experiences, Hero, Tech } from "../../components";
+import {
+  EducationCertification,
+  Experiences,
+  Hero,
+  Tech,
+} from "../../components";
 import Info from "../../components/Info";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import { useRef } from "react";
+import { study } from "./const";
 
 interface LandingPageProps {
   currentTheme: any;
@@ -23,6 +29,7 @@ const LandingPage = ({ currentTheme }: LandingPageProps) => {
       <Tech currentTheme={currentTheme} />
       <Info currentTheme={currentTheme} />
       <Experiences currentTheme={currentTheme} />
+      <EducationCertification currentTheme={currentTheme} study={study} />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Footer currentTheme={currentTheme} />
     </Box>
