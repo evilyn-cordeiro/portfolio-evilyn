@@ -21,6 +21,7 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
           color: currentTheme.palette.text.primary,
           position: "relative",
           textAlign: "center",
+          fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
         }}
       >
         Experiências Profissionais

@@ -86,9 +86,9 @@ export default function Info({ currentTheme }: InfoProps) {
         sx={{
           width: {
             xs: "100%",
-            sm: "80%",
-            md: "50%",
-            lg: "40%",
+            sm: "75%",
+            md: "45%",
+            lg: "35%",
           },
           marginTop: { xs: "2rem", md: "0" },
           backgroundImage: 'url("/evilyn.png")',
@@ -96,10 +96,10 @@ export default function Info({ currentTheme }: InfoProps) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: {
-            xs: "350px",
+            xs: "400px",
             sm: "450px",
-            md: "550px",
-            lg: "680px",
+            md: "560px",
+            lg: "600px",
           },
           position: "relative",
           display: "flex",

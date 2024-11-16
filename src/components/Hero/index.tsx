@@ -1,11 +1,11 @@
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { KeyboardDoubleArrowDownIcon } from "../icons";
 import { motion } from "framer-motion";
 
 interface HeroProps {
   currentTheme: any;
-  scrollTo: React.RefObject<HTMLElement>; // Recebe a referência como prop
+  scrollTo: React.RefObject<HTMLElement>;
 }
 
 const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
@@ -46,71 +46,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
         position: "relative",
       }}
     >
-      {/* Header
-      <AppBar
-        sx={{
-          top: 0,
-          left: 0,
-          right: 0,
-          background: "transparent",
-          boxShadow: "none",
-          zIndex: 100,
-        }}
-      >
-        <Toolbar
-          sx={{
-            justifyContent: "center",
-            padding: "1rem 0",
-            color: currentTheme.palette.primary.main,
-          }}
-        >
-          <Button
-            sx={{
-              color: currentTheme.palette.primary.main,
-              background: "transparent",
-            }}
-            href="#home"
-          >
-            Home
-          </Button>
-          <Button
-            sx={{
-              color: currentTheme.palette.primary.main,
-              background: "transparent",
-            }}
-            href="#sobre"
-          >
-            Sobre Mim
-          </Button>
-          <Button
-            sx={{
-              color: currentTheme.palette.primary.main,
-              background: "transparent",
-            }}
-            href="#experiencias"
-          >
-            Experiências
-          </Button>
-          <Button
-            sx={{
-              color: currentTheme.palette.primary.main,
-              background: "transparent",
-            }}
-            href="#projetos"
-          >
-            Meus Projetos
-          </Button>
-          <Button
-            sx={{
-              color: currentTheme.palette.primary.main,
-              background: "transparent",
-            }}
-            href="#contato"
-          >
-            Contatos
-          </Button>
-        </Toolbar>
-      </AppBar> */}
+      {/* Background Vídeo */}
       {currentTheme.palette.mode === "dark" ? (
         <video
           autoPlay
@@ -153,27 +89,42 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           Seu navegador não suporta o elemento de vídeo.
         </video>
       )}
+
       <Box sx={{ maxWidth: "600px", padding: "20px", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <Typography
-            variant="h3"
-            sx={{
-              fontSize: {
-                xs: "2rem",
-                sm: "3rem",
-                md: "3.1rem",
-                lg: "3.2rem",
-                xl: "3.3rem",
-              },
+          <motion.div
+            style={{
               color: textColor,
+              display: "inline-block", // Para manter o texto em linha
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+            }}
+            initial={{ width: 0 }}
+            animate={{ width: "auto" }}
+            transition={{
+              duration: 2.5,
+              delay: 1,
             }}
           >
-            EVILYN CORDEIRO
-          </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontSize: {
+                  xs: "2rem", // Tamanho para dispositivos muito pequenos (xs)
+                  sm: "2.5rem", // Tamanho para dispositivos pequenos (sm)
+                  md: "3.3rem", // Tamanho médio para dispositivos médios (md)
+                  lg: "3.5rem", // Tamanho grande para dispositivos grandes (lg)
+                  xl: "4rem", // Tamanho maior para dispositivos extra grandes (xl)
+                },
+              }}
+            >
+              EVILYN CORDEIRO
+            </Typography>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -195,10 +146,12 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
               },
             }}
           >
-            Desenvolvedora de Softwares Full-stack
+            Desenvolvedora de Softwares Full Stack
           </Typography>
         </motion.div>
       </Box>
+
+      {/* Setando o ícone para rolar para o próximo conteúdo */}
       <motion.div
         style={{
           position: "absolute",
