@@ -82,11 +82,13 @@ export default function Info({ currentTheme }: InfoProps) {
       <Box
         sx={{
           width: {
-            xs: "100%",
-            sm: "65%",
-            md: "55%",
-            lg: "35%",
+            xs: "90%",
+            sm: "60%",
+            md: "40%",
+            lg: "30%",
           },
+          borderRadius: "10px",
+          boxShadow: `12px 10px 50px 17px ${currentTheme.palette.secondary.main}`,
           marginTop: { xs: "2rem", md: "0" },
           backgroundImage: 'url("/evilyn.png")',
           backgroundSize: "cover",
@@ -94,9 +96,9 @@ export default function Info({ currentTheme }: InfoProps) {
           backgroundRepeat: "no-repeat",
           height: {
             xs: "300px",
-            sm: "500px",
-            md: "660px",
-            lg: "600px",
+            sm: "400px",
+            md: "500px",
+            lg: "550px",
           },
           position: "relative",
           display: "flex",

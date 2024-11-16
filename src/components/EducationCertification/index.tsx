@@ -8,7 +8,7 @@ interface EducationCertificationProps {
     title: string;
     school: string;
     date: string;
-  }[]; // Tipando o array de formação acadêmica
+  }[];
 }
 
 export default function EducationCertification({
@@ -37,7 +37,7 @@ export default function EducationCertification({
           sx={{
             fontWeight: "bold",
             color: currentTheme.palette.text.primary,
-            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
             position: "relative",
             textAlign: "center",
             marginBottom: 3,
@@ -57,7 +57,6 @@ export default function EducationCertification({
           />
         </Typography>
       </motion.div>
-
       <Box
         sx={{
           display: "flex",
@@ -67,14 +66,13 @@ export default function EducationCertification({
           marginTop: "2rem",
         }}
       >
-        {/* Mapeando as formações acadêmicas */}
         {study.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -100 }} // Inicia invisível e deslocado para a esquerda
-            whileInView={{ opacity: 1, x: 0 }} // Aparece com o scroll
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }} // A animação dispara uma vez quando entra em vista
+            viewport={{ once: true }}
             style={{ width: "100%", maxWidth: "350px", textAlign: "center" }}
           >
             <Box
@@ -95,7 +93,7 @@ export default function EducationCertification({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: `0 4px 12px ${currentTheme.palette.secondary.main}`,
+                  boxShadow: `0 4px 12px ${currentTheme.palette.primary.main}`,
                   filter: "blur(6px)",
                   position: "absolute",
                   zIndex: 1,
@@ -110,7 +108,7 @@ export default function EducationCertification({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: `0 4px 12px ${currentTheme.palette.primary.main}`, // Sombra no círculo
+                  boxShadow: `0 4px 12px ${currentTheme.palette.primary.main}`,
                   zIndex: 2,
                 }}
               >

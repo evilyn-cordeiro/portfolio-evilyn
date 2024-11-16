@@ -1,6 +1,7 @@
-import React, { ForwardedRef } from "react";
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import React from "react";
+import { Box, Typography } from "@mui/material";
 import { projects } from "../../pages/LandingPage/const";
+import CarouselComponent from "../Carousel";
 
 interface ProjectsProps {
   currentTheme: any;
@@ -42,51 +43,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
             }}
           />
         </Typography>
-        <Grid container spacing={4} sx={{ marginTop: 3 }}>
-          {projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper
-                sx={{
-                  position: "relative",
-                  padding: 3,
-                  borderRadius: "10px",
-                  background: `url(${project.image}) no-repeat center center/cover`,
-                  height: 300,
-                  transition:
-                    "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
-                  },
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: "1rem",
-                    background: "rgba(0, 0, 0, 0.5)",
-                    color: "#fff",
-                    borderBottomLeftRadius: "10px",
-                    borderBottomRightRadius: "10px",
-                  }}
-                >
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ marginTop: 1 }}>
-                    {project.description}
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+        <CarouselComponent slides={projects} />
       </Box>
     );
   }
