@@ -1,11 +1,13 @@
 import React from "react";
 import { Carousel } from "primereact/carousel";
 import { Box, Typography, Grid, Paper } from "@mui/material";
+import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
 
 interface Slide {
   title: string;
   description: string;
   imageUrl?: string;
+  link?: string;
 }
 
 interface CarouselProps {
@@ -19,16 +21,10 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
         <Paper
           sx={{
             position: "relative",
-            padding: 3,
+            padding: 2,
             borderRadius: "10px",
             background: `url(${project.imageUrl}) no-repeat center center/cover`,
             height: 300,
-            transition:
-              "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-            "&:hover": {
-              transform: "scale(1.05)",
-              boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
-            },
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-end",
@@ -41,14 +37,16 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
               left: 0,
               right: 0,
               padding: "1rem",
-              background: "rgba(0, 0, 0, 0.5)",
+              background: "rgba(0, 0, 0, 0.8)",
               color: "#fff",
               borderBottomLeftRadius: "10px",
               borderBottomRightRadius: "10px",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-              {project.title}
+              <a target="_blank" href={project.link} style={{ color: "white" }}>
+                {project.title}
+              </a>
             </Typography>
             <Typography variant="body2" sx={{ marginTop: 1 }}>
               {project.description}
@@ -62,6 +60,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
   return (
     <Box
       sx={{
+        borderRadius: "10px",
         maxWidth: { lg: "90%", sm: "100%" },
         margin: "0 auto",
         display: "flex",
@@ -73,9 +72,11 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
       <Carousel
         value={slides}
         itemTemplate={itemTemplate}
-        numVisible={2}
+        numVisible={3}
         numScroll={1}
         circular={true}
+        prevIcon={<ArrowBackIosIcon color={"info"} />}
+        nextIcon={<ArrowForwardIosIcon color={"info"} />}
         autoplayInterval={3000}
         responsiveOptions={[
           {

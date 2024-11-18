@@ -78,6 +78,13 @@ export const technologies = [
       "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
   },
   {
+    name: "Angular",
+    icon: "devicon-angular-plain",
+    experience: 2,
+    description:
+      "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
+  },
+  {
     name: "TypeScript",
     icon: "devicon-typescript-plain",
     experience: 4,

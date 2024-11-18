@@ -88,7 +88,7 @@ export default function Info({ currentTheme }: InfoProps) {
             lg: "30%",
           },
           borderRadius: "10px",
-          boxShadow: `12px 10px 50px 17px ${currentTheme.palette.secondary.main}`,
+          boxShadow: `10px 5px 25px 10px ${currentTheme.palette.secondary.main}`,
           marginTop: { xs: "2rem", md: "0" },
           backgroundImage: 'url("/evilyn.png")',
           backgroundSize: "cover",
