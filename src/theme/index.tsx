@@ -133,8 +133,8 @@ export const lightTheme = createTheme({
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#212121", // Texto escuro
-      secondary: "#757575", // Texto secundário mais suave
+      primary: "#212121",
+      secondary: "#757575",
     },
   },
   typography: {

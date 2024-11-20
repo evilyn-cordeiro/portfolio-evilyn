@@ -26,11 +26,11 @@ const LandingPage = ({ currentTheme }: LandingPageProps) => {
       }}
     >
       <Hero currentTheme={currentTheme} scrollTo={projectsRef} />
-      <Tech currentTheme={currentTheme} />
+      <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Info currentTheme={currentTheme} />
       <Experiences currentTheme={currentTheme} />
       <EducationCertification currentTheme={currentTheme} study={study} />
-      <Projects currentTheme={currentTheme} ref={projectsRef} />
+      <Tech currentTheme={currentTheme} />
       <Footer currentTheme={currentTheme} />
     </Box>
   );

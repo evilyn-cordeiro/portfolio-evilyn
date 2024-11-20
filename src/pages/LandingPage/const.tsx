@@ -71,6 +71,13 @@ export const technologies = [
       "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
   },
   {
+    name: "Node JS",
+    icon: "devicon-nodejs-plain",
+    experience: 2,
+    description:
+      "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
+  },
+  {
     name: "React",
     icon: "devicon-react-plain",
     experience: 4,
@@ -79,7 +86,7 @@ export const technologies = [
   },
   {
     name: "Angular",
-    icon: "devicon-angular-plain",
+    icon: "devicon-angularjs-plain",
     experience: 2,
     description:
       "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
@@ -102,6 +109,20 @@ export const technologies = [
     name: "HTML",
     icon: "devicon-html5-plain",
     experience: 4,
+    description:
+      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+  },
+  {
+    name: "Figma",
+    icon: "devicon-figma-plain",
+    experience: 3,
+    description:
+      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+  },
+  {
+    name: "Docker",
+    icon: "devicon-docker-plain",
+    experience: 1,
     description:
       "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
   },

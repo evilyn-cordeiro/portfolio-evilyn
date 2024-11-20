@@ -50,6 +50,7 @@ export default function Info({ currentTheme }: InfoProps) {
             marginTop: "2rem",
             color: currentTheme.palette.text.secondary,
             lineHeight: "1.8",
+            textAlign: "justify",
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
@@ -70,6 +71,7 @@ export default function Info({ currentTheme }: InfoProps) {
             marginTop: "1rem",
             color: currentTheme.palette.text.secondary,
             lineHeight: "1.8",
+            textAlign: "justify",
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
@@ -85,7 +87,7 @@ export default function Info({ currentTheme }: InfoProps) {
             xs: "90%",
             sm: "60%",
             md: "40%",
-            lg: "30%",
+            lg: "40%",
           },
           borderRadius: "10px",
           boxShadow: `10px 5px 25px 10px ${currentTheme.palette.secondary.main}`,
@@ -96,9 +98,9 @@ export default function Info({ currentTheme }: InfoProps) {
           backgroundRepeat: "no-repeat",
           height: {
             xs: "300px",
-            sm: "400px",
+            sm: "300px",
             md: "500px",
-            lg: "550px",
+            lg: "80%",
           },
           position: "relative",
           display: "flex",
