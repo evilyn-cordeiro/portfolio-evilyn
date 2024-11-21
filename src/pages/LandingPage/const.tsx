@@ -7,13 +7,22 @@ import {
 } from "../../components/icons";
 export const projects = [
   {
-    title: "Piloto React",
+    title: "Vitta Clinic",
     description:
-      "Projeto inicial em React JS, usando hooks e explorando novas funcionalidades.",
-    imageUrl: "/projeto-2.png",
-    link: "https://desafio-do-tempo-react.vercel.app/",
-    technologies: ["React", "JavaScript"],
-    colors: ["#61DAFB", "#F7DF1E"],
+      "Sistema de gestão de clínicas médicas, desenvolvido em parceria com colegas de faculdade.",
+    imageUrl: "/projeto-4.png",
+    link: "https://github.com/thigodev/VittaClinic",
+    technologies: ["PHP", "JavaScript", "Docker"],
+    colors: ["#8993BE", "#F7DF1E", "#2496ED"],
+  },
+  {
+    title: "Ponto da Comida",
+    description:
+      "Landinpage  projetada para restaurantes de comidas saudáveis.",
+    imageUrl: "/projeto-5.png",
+    link: "https://food-point-beryl.vercel.app/",
+    technologies: ["HTML", "CSS"],
+    colors: ["#E34F26", "#1572B6"],
   },
   {
     title: "Spotify",
@@ -23,6 +32,15 @@ export const projects = [
     link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS"],
     colors: ["#E34F26", "#1572B6"],
+  },
+  {
+    title: "Piloto React",
+    description:
+      "Projeto inicial em React JS, usando hooks e explorando novas funcionalidades.",
+    imageUrl: "/projeto-2.png",
+    link: "https://desafio-do-tempo-react.vercel.app/",
+    technologies: ["React", "JavaScript"],
+    colors: ["#61DAFB", "#F7DF1E"],
   },
   {
     title: "Piloto Provedor",
@@ -39,24 +57,6 @@ export const projects = [
       "Tela de login responsiva baseada no modelo desktop do Instagram.",
     imageUrl: "/projeto-3.png",
     link: "https://github.com/evilyn-cordeiro/instagram-login",
-    technologies: ["HTML", "CSS"],
-    colors: ["#E34F26", "#1572B6"],
-  },
-  {
-    title: "Vitta Clinic",
-    description:
-      "Sistema de gestão de clínicas médicas, desenvolvido em parceria com colegas de faculdade.",
-    imageUrl: "/projeto-4.png",
-    link: "https://github.com/thigodev/VittaClinic",
-    technologies: ["PHP", "JavaScript", "Docker"],
-    colors: ["#8993BE", "#F7DF1E", "#2496ED"],
-  },
-  {
-    title: "Ponto da Comida",
-    description:
-      "Landinpage  projetada para restaurantes de comidas saudáveis.",
-    imageUrl: "/projeto-5.png",
-    link: "https://food-point-beryl.vercel.app/",
     technologies: ["HTML", "CSS"],
     colors: ["#E34F26", "#1572B6"],
   },

@@ -1,24 +1,17 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { KeyboardDoubleArrowDownIcon } from "../icons";
+import { Brightness4, Brightness7 } from "@mui/icons-material"; // Importando os ícones
 import { motion } from "framer-motion";
 
 interface HeroProps {
   currentTheme: any;
+  toggleTheme: () => void; // Função para alternar o tema
   scrollTo: React.RefObject<HTMLElement>;
 }
 
-const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
+const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  const textColor = currentTheme.palette.mode === "dark" ? "#fff" : "#333";
-  const subTextColor =
-    currentTheme.palette.mode === "dark"
-      ? "rgba(255, 255, 255, 0.8)"
-      : "rgba(0, 0, 0, 0.8)";
-
-  const backgroundImage =
-    currentTheme.palette.mode === "dark" ? "/heroDark.mp4" : "/heroLigth.mp4";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,7 +20,6 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Função para rolar até o componente de destino
   const scrollToTarget = () => {
     if (scrollTo.current) {
       scrollTo.current.scrollIntoView({ behavior: "smooth" });
@@ -39,56 +31,33 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
       sx={{
         height: "100vh",
         display: "flex",
-        backgroundImage: `url(${backgroundImage})`,
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
         position: "relative",
       }}
     >
-      {/* Background Vídeo */}
-      {currentTheme.palette.mode === "dark" ? (
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-            filter: "brightness(0.5)",
-          }}
-        >
-          <source src={"/heroDark.mp4"} type="video/mp4" />
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      ) : (
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-          }}
-        >
-          <source src={"/heroLigth.mp4"} type="video/mp4" />
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      )}
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+          filter:
+            currentTheme.palette.mode === "dark" ? "brightness(0.4)" : "none",
+        }}
+      >
+        <source src={"/heroDark.mp4"} type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
 
       <Box sx={{ maxWidth: "600px", padding: "20px", zIndex: 1 }}>
         <motion.div
@@ -98,8 +67,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
         >
           <motion.div
             style={{
-              color: textColor,
-              display: "inline-block", // Para manter o texto em linha
+              display: "inline-block",
               whiteSpace: "nowrap",
               overflow: "hidden",
             }}
@@ -112,6 +80,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           >
             <Typography
               variant="h3"
+              color={"#fff"}
               sx={{
                 fontSize: {
                   xs: "2rem",
@@ -135,7 +104,6 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
           <Typography
             variant="h6"
             sx={{
-              color: subTextColor,
               marginBottom: 3,
               fontSize: {
                 xs: "1rem",
@@ -151,7 +119,26 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
         </motion.div>
       </Box>
 
-      {/* Setando o ícone para rolar para o próximo conteúdo */}
+      <Button
+        onClick={toggleTheme}
+        sx={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          background: "transparent",
+          padding: "0.5rem",
+          "&:hover": {
+            backgroundColor: currentTheme.palette.action.hover,
+          },
+        }}
+      >
+        {currentTheme.palette.mode === "dark" ? (
+          <Brightness7 />
+        ) : (
+          <Brightness4 />
+        )}
+      </Button>
+
       <motion.div
         style={{
           position: "absolute",
@@ -170,8 +157,8 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, scrollTo }) => {
         <KeyboardDoubleArrowDownIcon
           sx={{
             fontSize: "4rem",
-            color: textColor,
             cursor: "pointer",
+            color: "#fff",
             transition: "color 0.3s ease",
             "&:hover": {
               color: currentTheme.palette.primary.main,

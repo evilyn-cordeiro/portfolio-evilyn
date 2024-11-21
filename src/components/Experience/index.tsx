@@ -60,7 +60,7 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
             transition={{ duration: 1 }}
             style={{
               position: "absolute",
-              left: "30px",
+              left: "25px",
               top: "0",
               width: "2px",
               height: "100%",
@@ -84,12 +84,12 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
               <Box
                 sx={{
                   position: "relative",
-                  width: "30px",
-                  height: "30px",
+                  width: "20px",
+                  height: "20px",
                   backgroundColor: currentTheme.palette.primary.main,
                   borderRadius: "100px",
                   marginLeft: 2,
-                  border: `3px solid ${currentTheme.palette.primary.dark}`,
+                  border: `1px solid ${currentTheme.palette.primary.dark}`,
                   zIndex: 1,
                   filter: "brightness(1.5)",
                   boxShadow: `0 0 10px ${currentTheme.palette.primary.main}`,

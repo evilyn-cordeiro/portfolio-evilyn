@@ -24,7 +24,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
             padding: 2,
             borderRadius: "10px",
             background: `url(${project.imageUrl}) no-repeat center center/cover`,
-            height: 300,
+            height: 400,
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-end",
@@ -61,7 +61,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
     <Box
       sx={{
         borderRadius: "10px",
-        maxWidth: { lg: "90%", sm: "100%" },
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
@@ -71,13 +70,14 @@ const CarouselComponent: React.FC<CarouselProps> = ({ slides }) => {
     >
       <Carousel
         value={slides}
+        page={1}
         itemTemplate={itemTemplate}
         numVisible={3}
         numScroll={1}
         circular={true}
         prevIcon={<ArrowBackIosIcon color={"info"} />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
-        autoplayInterval={3000}
+        autoplayInterval={2500}
         responsiveOptions={[
           {
             breakpoint: "1024px",

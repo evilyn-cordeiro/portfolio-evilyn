@@ -14,7 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <LandingPage currentTheme={currentTheme} />
+      <LandingPage currentTheme={currentTheme} toggleTheme={toggleTheme} />
     </ThemeProvider>
   );
 }

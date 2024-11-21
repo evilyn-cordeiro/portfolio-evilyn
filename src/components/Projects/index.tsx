@@ -7,7 +7,6 @@ interface ProjectsProps {
   currentTheme: any;
 }
 
-// Passando a ref para o componente através de forwardRef
 const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
   ({ currentTheme }, ref) => {
     return (

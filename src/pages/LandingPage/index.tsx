@@ -13,9 +13,10 @@ import { study } from "./const";
 
 interface LandingPageProps {
   currentTheme: any;
+  toggleTheme: () => void;
 }
 
-const LandingPage = ({ currentTheme }: LandingPageProps) => {
+const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
   const projectsRef = useRef<HTMLElement | null>(null);
 
   return (
@@ -25,7 +26,11 @@ const LandingPage = ({ currentTheme }: LandingPageProps) => {
         overflowX: "hidden",
       }}
     >
-      <Hero currentTheme={currentTheme} scrollTo={projectsRef} />
+      <Hero
+        currentTheme={currentTheme}
+        scrollTo={projectsRef}
+        toggleTheme={toggleTheme}
+      />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Info currentTheme={currentTheme} />
       <Experiences currentTheme={currentTheme} />
