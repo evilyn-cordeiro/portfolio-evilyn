@@ -9,7 +9,7 @@ export const projects = [
   {
     title: "Vitta Clinic",
     description:
-      "Sistema de gestão de clínicas médicas, desenvolvido em parceria com colegas de faculdade.",
+      "Sistema de gestão de clínicas médicas, desenvolvido em parceria com colegas de faculdade. O sistema permite o gerenciamento completo dos pacientes, agendamentos, prontuários e faturamento. Utilizamos tecnologias modernas, como Docker para containerização, garantindo a escalabilidade e a flexibilidade da aplicação. Desafios incluíram a integração de diferentes módulos de forma eficiente e a criação de uma interface de usuário intuitiva.",
     imageUrl: "/projeto-4.png",
     link: "https://github.com/thigodev/VittaClinic",
     technologies: ["PHP", "JavaScript", "Docker"],
@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Ponto da Comida",
     description:
-      "Landinpage  projetada para restaurantes de comidas saudáveis.",
+      "Landing page projetada para restaurantes de comidas saudáveis, com foco em design simples e eficaz. O objetivo era criar uma página que destacasse os produtos e serviços do restaurante, proporcionando uma experiência de navegação agradável para o usuário. Além disso, foi importante garantir que a página fosse responsiva, adaptando-se bem a dispositivos móveis, já que muitos clientes acessam o site a partir de smartphones. O uso de HTML e CSS ajudou a criar uma estrutura leve e rápida.",
     imageUrl: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
     technologies: ["HTML", "CSS"],
@@ -27,7 +27,7 @@ export const projects = [
   {
     title: "Spotify",
     description:
-      "Clone da landing page do Spotify, focado em layout e design responsivo.",
+      "Clone da landing page do Spotify, focado em layout e design responsivo. O projeto envolveu a criação de um design semelhante ao original, utilizando técnicas de CSS avançadas para criar animações e transições suaves. Um dos maiores desafios foi garantir que o design fosse responsivo e funcionasse bem em diferentes tamanhos de tela, com destaque para a experiência mobile. A estrutura HTML foi otimizada para SEO, garantindo uma boa indexação nos motores de busca.",
     imageUrl: "/projeto-1.png",
     link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS"],
@@ -36,30 +36,31 @@ export const projects = [
   {
     title: "Piloto React",
     description:
-      "Projeto inicial em React JS, usando hooks e explorando novas funcionalidades.",
+      "Projeto inicial em React JS, usando hooks e explorando novas funcionalidades da biblioteca. A aplicação tem como objetivo permitir a manipulação de dados e interação com o usuário, implementando funcionalidades como estado global, navegação entre páginas e efeitos colaterais. Durante o desenvolvimento, aprendi bastante sobre a utilização de hooks como useState e useEffect, e como estas ferramentas podem tornar a aplicação mais reativa e fácil de gerenciar. O maior desafio foi aprender como lidar com o gerenciamento de estado de forma eficiente.",
     imageUrl: "/projeto-2.png",
     link: "https://desafio-do-tempo-react.vercel.app/",
     technologies: ["React", "JavaScript"],
     colors: ["#61DAFB", "#F7DF1E"],
   },
-  {
-    title: "Piloto Provedor",
-    description: "CRUD simples em PHP com banco de dados local em JSON.",
-    imageUrl:
-      "https://storage.googleapis.com/medium-feed.appspot.com/images%2F9353691196%2Fef3219930906-As-7-melhores-ferramentas-de-integracao-de-API-para-2024.jp.jpeg",
-    link: "https://github.com/evilyn-cordeiro/crud-php-provedor-internet",
-    technologies: ["PHP"],
-    colors: ["#8993BE"],
-  },
-  {
-    title: "Login Instagram",
-    description:
-      "Tela de login responsiva baseada no modelo desktop do Instagram.",
-    imageUrl: "/projeto-3.png",
-    link: "https://github.com/evilyn-cordeiro/instagram-login",
-    technologies: ["HTML", "CSS"],
-    colors: ["#E34F26", "#1572B6"],
-  },
+  // {
+  //   title: "Piloto Provedor",
+  //   description:
+  //     "CRUD simples em PHP com banco de dados local em JSON, onde o usuário pode adicionar, editar, excluir e listar dados sobre provedores de internet. A aplicação foi criada para ser simples e intuitiva, utilizando uma interface básica e funcional. Um dos principais desafios foi implementar um sistema de persistência de dados eficiente, utilizando o formato JSON para armazenar as informações localmente, sem a necessidade de um banco de dados relacional. Este projeto ajudou a reforçar meus conhecimentos em PHP e no uso de arquivos como banco de dados.",
+  //   imageUrl:
+  //     "https://storage.googleapis.com/medium-feed.appspot.com/images%2F9353691196%2Fef3219930906-As-7-melhores-ferramentas-de-integracao-de-API-para-2024.jp.jpeg",
+  //   link: "https://github.com/evilyn-cordeiro/crud-php-provedor-internet",
+  //   technologies: ["PHP"],
+  //   colors: ["#8993BE"],
+  // },
+  // {
+  //   title: "Login Instagram",
+  //   description:
+  //     "Tela de login responsiva baseada no modelo desktop do Instagram. O projeto foca na construção de uma interface limpa e direta, com elementos que imitam o design do Instagram, utilizando HTML e CSS. A principal preocupação foi garantir que a página fosse responsiva e que a estrutura ficasse visualmente semelhante à original. A maior dificuldade foi lidar com os detalhes de responsividade, ajustando a página para funcionar bem em diferentes dispositivos.",
+  //   imageUrl: "/projeto-3.png",
+  //   link: "https://github.com/evilyn-cordeiro/instagram-login",
+  //   technologies: ["HTML", "CSS"],
+  //   colors: ["#E34F26", "#1572B6"],
+  // },
 ];
 
 export const technologies = [
