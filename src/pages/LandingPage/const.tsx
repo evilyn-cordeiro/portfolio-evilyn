@@ -9,7 +9,7 @@ export const projects = [
   {
     title: "Vitta Clinic",
     description:
-      "Sistema de gestão de clínicas médicas, desenvolvido em parceria com colegas de faculdade. O sistema permite o gerenciamento completo dos pacientes, agendamentos, prontuários e faturamento. Utilizamos tecnologias modernas, como Docker para containerização, garantindo a escalabilidade e a flexibilidade da aplicação. Desafios incluíram a integração de diferentes módulos de forma eficiente e a criação de uma interface de usuário intuitiva.",
+      "Sistema de gestão para clínicas médicas, com módulos para pacientes, médicos e recepcionistas. Foi usado o Docker para escalabilidade e flexibilidade. Desafios incluem integração de módulos e criação de interface intuitiva.",
     imageUrl: "/projeto-4.png",
     link: "https://github.com/thigodev/VittaClinic",
     technologies: ["PHP", "JavaScript", "Docker"],
@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Ponto da Comida",
     description:
-      "Landing page projetada para restaurantes de comidas saudáveis, com foco em design simples e eficaz. O objetivo era criar uma página que destacasse os produtos e serviços do restaurante, proporcionando uma experiência de navegação agradável para o usuário. Além disso, foi importante garantir que a página fosse responsiva, adaptando-se bem a dispositivos móveis, já que muitos clientes acessam o site a partir de smartphones. O uso de HTML e CSS ajudou a criar uma estrutura leve e rápida.",
+      "Landing page para restaurante saudável, com design simples e responsivo. Focada na experiência de usuário em dispositivos móveis, utilizando HTML e CSS.",
     imageUrl: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
     technologies: ["HTML", "CSS"],
@@ -27,7 +27,7 @@ export const projects = [
   {
     title: "Spotify",
     description:
-      "Clone da landing page do Spotify, focado em layout e design responsivo. O projeto envolveu a criação de um design semelhante ao original, utilizando técnicas de CSS avançadas para criar animações e transições suaves. Um dos maiores desafios foi garantir que o design fosse responsivo e funcionasse bem em diferentes tamanhos de tela, com destaque para a experiência mobile. A estrutura HTML foi otimizada para SEO, garantindo uma boa indexação nos motores de busca.",
+      "Clone responsivo da landing page do Spotify, com animações CSS e design otimizado para SEO. Foco na adaptação para diferentes dispositivos.",
     imageUrl: "/projeto-1.png",
     link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS"],
@@ -36,7 +36,7 @@ export const projects = [
   {
     title: "Piloto React",
     description:
-      "Projeto inicial em React JS, usando hooks e explorando novas funcionalidades da biblioteca. A aplicação tem como objetivo permitir a manipulação de dados e interação com o usuário, implementando funcionalidades como estado global, navegação entre páginas e efeitos colaterais. Durante o desenvolvimento, aprendi bastante sobre a utilização de hooks como useState e useEffect, e como estas ferramentas podem tornar a aplicação mais reativa e fácil de gerenciar. O maior desafio foi aprender como lidar com o gerenciamento de estado de forma eficiente.",
+      "Aplicação simples em React JS, explorando hooks e navegação entre páginas. Aprendizado em gerenciamento de estado e interatividade com o usuário.",
     imageUrl: "/projeto-2.png",
     link: "https://desafio-do-tempo-react.vercel.app/",
     technologies: ["React", "JavaScript"],

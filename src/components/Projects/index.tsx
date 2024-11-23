@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { projects } from "../../pages/LandingPage/const";
 import CarouselComponent from "../Carousel";
 
@@ -13,7 +13,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
       <Box
         key={"project"}
         sx={{
-          padding: { xs: "3rem 1rem", sm: "2rem", md: "5rem" },
+          padding: { xs: "3rem 1rem", sm: "2rem", md: "5rem", lg: "1rem" },
           backgroundColor: currentTheme.palette.background.default,
         }}
         id="projetos"

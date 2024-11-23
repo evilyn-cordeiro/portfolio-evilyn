@@ -119,7 +119,7 @@ const Experiences = ({ currentTheme }: { currentTheme: any }) => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: currentTheme.palette.text.primary,
+                    color: currentTheme.palette.text.secondary,
                     marginBottom: "0.5rem",
                     fontSize: { xs: "0.8rem", sm: "0.9rem" },
                   }}
