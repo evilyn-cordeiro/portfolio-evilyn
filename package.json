@@ -28,6 +28,7 @@
     "react-typing-effect": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
+    "swiper": "^11.1.15",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

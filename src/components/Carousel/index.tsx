@@ -30,7 +30,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
   currentTheme,
 }) => {
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // Detecta se a tela é maior que 'md' (1024px)
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
   // Função para alterar a URL da imagem dependendo do tipo de dispositivo
   const getImageUrl = (imageUrl?: string) => {
@@ -49,7 +49,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         spacing={2}
         alignItems="center"
         justifyContent="center"
-        sx={{ padding: 2 }}
+        sx={{ padding: 1 }}
       >
         <Grid item xs={12} md={6}>
           {/* Imagem do projeto */}
@@ -57,8 +57,8 @@ const CarouselComponent: React.FC<CarouselProps> = ({
             sx={{
               height: { sm: 600, lg: "100%" },
               position: "relative",
-              borderRadius: "10px", // Para bordas arredondadas, se necessário
-              overflow: "hidden", // Garante que a imagem não ultrapasse os limites
+              borderRadius: "10px",
+              overflow: "hidden",
             }}
           >
             <img
@@ -67,13 +67,12 @@ const CarouselComponent: React.FC<CarouselProps> = ({
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "cover", // A imagem ocupa todo o espaço sem distorção
+                objectFit: "cover",
               }}
             />
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          {/* Descrição do projeto */}
           <Box sx={{ padding: 2 }}>
             <Typography
               variant="h4"
@@ -94,7 +93,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                     color: currentTheme.palette.primary.main,
                     position: "absolute",
                     top: "50%",
-                    right: "-30px",
+                    right: "-15px",
                     transform: "translateY(-50%)",
                     padding: 0,
                   }}
@@ -109,8 +108,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                   backgroundColor: currentTheme.palette.primary.main,
                   position: "absolute",
                   bottom: "-10px",
-                  left: "13%",
-                  transform: "translateX(-50%)",
                 }}
               />
             </Typography>
@@ -139,13 +136,12 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                     color: currentTheme.palette.text.primary,
                   }}
                 >
-                  {/* Círculo ao lado da tecnologia */}
                   <Box
                     sx={{
                       width: "12px",
                       height: "12px",
                       borderRadius: "50%",
-                      backgroundColor: project.colors[index], // Usando a cor correspondente à tecnologia
+                      backgroundColor: project.colors[index],
                     }}
                   />
                   <Typography
