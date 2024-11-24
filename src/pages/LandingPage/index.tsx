@@ -38,7 +38,7 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
         study={study}
         experience={experience}
       />
-      {/* <EducationCertification currentTheme={currentTheme} study={study} /> */}
+      <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
       <Footer currentTheme={currentTheme} />
     </Box>

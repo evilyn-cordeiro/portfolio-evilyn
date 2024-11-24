@@ -1,24 +1,26 @@
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+} from "@mui/material";
 import { motion } from "framer-motion"; // Importando o motion do framer-motion
-import { School } from "@mui/icons-material"; // Ícone de formatura (capelo)
+import { Link as LinkIcon, CheckCircleOutline } from "@mui/icons-material"; // Ícone de link e ícone de competência
+import { certifications } from "./const";
 
 interface EducationCertificationProps {
   currentTheme: any;
-  study: {
-    title: string;
-    school: string;
-    date: string;
-  }[];
 }
 
 export default function EducationCertification({
   currentTheme,
-  study,
 }: EducationCertificationProps) {
   return (
     <Box
       sx={{
-        padding: { xs: "3rem 1rem", sm: "4rem", md: "5rem" },
+        padding: "3rem 2rem",
         backgroundColor: currentTheme.palette.background.paper,
         display: "flex",
         flexDirection: "column",
@@ -27,10 +29,11 @@ export default function EducationCertification({
         textAlign: "center",
       }}
     >
+      {/* Título com animação */}
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <Typography
@@ -38,9 +41,11 @@ export default function EducationCertification({
           sx={{
             fontWeight: "bold",
             color: currentTheme.palette.text.primary,
-            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
+            fontSize: { xs: "1.8rem", sm: "2rem", md: "2.5rem" },
             position: "relative",
-            marginBottom: 3,
+            marginBottom: 4,
+            letterSpacing: "0.5px",
+            textAlign: "center", // Garantindo o alinhamento centralizado do título
           }}
         >
           Certificações
@@ -52,23 +57,23 @@ export default function EducationCertification({
               position: "absolute",
               bottom: "-10px",
               left: "50%",
-              transform: "translateX(-50%)",
+              transform: "translateX(-50%)", // Centralizando a linha abaixo do título
             }}
           />
         </Typography>
       </motion.div>
 
+      {/* Grid de Certificados */}
       <Box
         sx={{
+          width: "100%",
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
-          gap: "2rem",
           marginTop: "2rem",
           flexWrap: "wrap",
         }}
       >
-        {study.map((item, index) => (
+        {certifications.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -100 }}
@@ -77,11 +82,15 @@ export default function EducationCertification({
             viewport={{ once: true }}
             style={{
               width: "100%",
-              maxWidth: "350px",
+              maxWidth: "250px",
               textAlign: "center",
-              marginBottom: "2rem", // Adicionando margem para espaçamento
+              marginBottom: "2rem",
+              display: "flex",
+              flexDirection: "column",
+              margin: "2rem",
             }}
           >
+            {/* Seção da imagem e do card */}
             <Box
               sx={{
                 position: "relative",
@@ -91,78 +100,104 @@ export default function EducationCertification({
                 alignItems: "center",
               }}
             >
-              {/* Círculo de fundo com sombra */}
+              {/* Círculo com a imagem */}
               <Box
                 sx={{
-                  width: "130px",
-                  height: "130px",
-                  borderRadius: "50%",
-                  backgroundColor: currentTheme.palette.secondary.main,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  boxShadow: `0 6px 18px ${currentTheme.palette.secondary.main}`,
-                  filter: "blur(6px)",
-                  position: "absolute",
-                  zIndex: 1,
-                }}
-              />
-              {/* Círculo de ícone */}
-              <Box
-                sx={{
-                  width: "110px",
-                  height: "110px",
                   borderRadius: "50%",
                   backgroundColor: currentTheme.palette.background.paper,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: `0 4px 12px ${currentTheme.palette.primary.main}`,
+                  boxShadow: `2px 15px 25px ${currentTheme.palette.primary.main}`,
                   zIndex: 2,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    boxShadow: `2px 10px 20px ${currentTheme.palette.primary.light}`,
+                  },
                 }}
               >
-                <School
-                  sx={{
-                    fontSize: "60px",
-                    color: currentTheme.palette.primary.main,
+                <img
+                  src={item.imgUrl}
+                  alt={item.title}
+                  style={{
+                    width: "85px",
+                    height: "85px",
+                    objectFit: "cover",
+                    borderRadius: "50%",
                   }}
                 />
               </Box>
             </Box>
 
+            {/* Informações sobre o Certificado */}
             <Box
               sx={{
+                width: "250px",
                 backgroundColor: currentTheme.palette.background.default,
-                padding: "2rem",
-                minHeight: "fit-content",
-                borderRadius: "8px",
+                padding: "1rem",
+                borderRadius: "12px",
                 boxShadow: 2,
+                flexGrow: 1,
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-10px)",
-                  boxShadow: `0 12px 24px ${currentTheme.palette.primary.light}`,
-                },
               }}
             >
-              <Typography
-                variant="body1"
+              <Box
                 sx={{
-                  fontWeight: "bold",
-                  color: currentTheme.palette.text.primary,
+                  paddingBottom: 2,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                   marginBottom: "0.5rem",
+                  borderBottom: `1px solid ${currentTheme.palette.primary.light}`,
                 }}
               >
-                {item.title}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: currentTheme.palette.text.secondary,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                }}
-              >
-                {item.school} ({item.date})
-              </Typography>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: "bold",
+                    color: currentTheme.palette.text.primary,
+                    fontSize: "1.1rem",
+                    letterSpacing: "0.5px",
+                    textAlign: "center", // Alinhando o título do certificado ao centro
+                  }}
+                >
+                  {item.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: currentTheme.palette.text.secondary,
+                    marginTop: "0.5rem",
+                    fontSize: "0.9rem",
+                    fontStyle: "italic",
+                    textAlign: "center", // Centralizando a escola
+                  }}
+                >
+                  {item.school}
+                </Typography>
+              </Box>
+
+              {/* Lista de Competências */}
+              <Box sx={{ marginTop: "1rem", textAlign: "left" }}>
+                <List>
+                  {item.skills.map((skill, index) => (
+                    <ListItem key={index} sx={{ paddingLeft: "0" }}>
+                      <ListItemIcon>
+                        <CheckCircleOutline
+                          sx={{ color: currentTheme.palette.primary.main }}
+                        />
+                      </ListItemIcon>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: currentTheme.palette.text.secondary }}
+                      >
+                        {skill}
+                      </Typography>
+                    </ListItem>
+                  ))}
+                </List>
+              </Box>
             </Box>
           </motion.div>
         ))}
