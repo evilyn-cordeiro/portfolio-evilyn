@@ -21,8 +21,8 @@ export const projects = [
       "Landing page para restaurante saudável, com design simples e responsivo. Focada na experiência de usuário em dispositivos móveis, utilizando HTML e CSS.",
     imageUrl: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
-    technologies: ["HTML", "CSS"],
-    colors: ["#E34F26", "#1572B6"],
+    technologies: ["HTML", "CSS", "JavaScript"],
+    colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },
   {
     title: "Spotify",
@@ -30,8 +30,8 @@ export const projects = [
       "Clone responsivo da landing page do Spotify, com animações CSS e design otimizado para SEO. Foco na adaptação para diferentes dispositivos.",
     imageUrl: "/projeto-1.png",
     link: "https://spotify-ivory-sigma.vercel.app/",
-    technologies: ["HTML", "CSS"],
-    colors: ["#E34F26", "#1572B6"],
+    technologies: ["HTML", "CSS", "JavaScript"],
+    colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },
   {
     title: "Piloto React",

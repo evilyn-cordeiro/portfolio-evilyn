@@ -24,6 +24,7 @@ export default function EducationCertification({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        textAlign: "center",
       }}
     >
       <motion.div
@@ -39,11 +40,10 @@ export default function EducationCertification({
             color: currentTheme.palette.text.primary,
             fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
             position: "relative",
-            textAlign: "center",
             marginBottom: 3,
           }}
         >
-          Formação Acadêmica
+          Certificações
           <Box
             sx={{
               height: "4px",
@@ -57,13 +57,15 @@ export default function EducationCertification({
           />
         </Typography>
       </motion.div>
+
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          justifyContent: "space-between",
+          justifyContent: "center",
           gap: "2rem",
           marginTop: "2rem",
+          flexWrap: "wrap",
         }}
       >
         {study.map((item, index) => (
@@ -73,7 +75,12 @@ export default function EducationCertification({
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            style={{ width: "100%", maxWidth: "350px", textAlign: "center" }}
+            style={{
+              width: "100%",
+              maxWidth: "350px",
+              textAlign: "center",
+              marginBottom: "2rem", // Adicionando margem para espaçamento
+            }}
           >
             <Box
               sx={{
@@ -84,25 +91,27 @@ export default function EducationCertification({
                 alignItems: "center",
               }}
             >
+              {/* Círculo de fundo com sombra */}
               <Box
                 sx={{
-                  width: "120px",
-                  height: "120px",
+                  width: "130px",
+                  height: "130px",
                   borderRadius: "50%",
                   backgroundColor: currentTheme.palette.secondary.main,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: `0 4px 12px ${currentTheme.palette.secondary.main}`,
+                  boxShadow: `0 6px 18px ${currentTheme.palette.secondary.main}`,
                   filter: "blur(6px)",
                   position: "absolute",
                   zIndex: 1,
                 }}
               />
+              {/* Círculo de ícone */}
               <Box
                 sx={{
-                  width: "100px",
-                  height: "100px",
+                  width: "110px",
+                  height: "110px",
                   borderRadius: "50%",
                   backgroundColor: currentTheme.palette.background.paper,
                   display: "flex",
@@ -114,7 +123,7 @@ export default function EducationCertification({
               >
                 <School
                   sx={{
-                    fontSize: "50px",
+                    fontSize: "60px",
                     color: currentTheme.palette.primary.main,
                   }}
                 />
@@ -125,10 +134,14 @@ export default function EducationCertification({
               sx={{
                 backgroundColor: currentTheme.palette.background.default,
                 padding: "2rem",
-                height: "80px",
                 minHeight: "fit-content",
                 borderRadius: "8px",
                 boxShadow: 2,
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-10px)",
+                  boxShadow: `0 12px 24px ${currentTheme.palette.primary.light}`,
+                },
               }}
             >
               <Typography
@@ -145,6 +158,7 @@ export default function EducationCertification({
                 variant="body2"
                 sx={{
                   color: currentTheme.palette.text.secondary,
+                  fontSize: { xs: "0.9rem", sm: "1rem" },
                 }}
               >
                 {item.school} ({item.date})

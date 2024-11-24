@@ -9,7 +9,7 @@ import Info from "../../components/Info";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import { useRef } from "react";
-import { study } from "./const";
+import { experience, study } from "./const";
 
 interface LandingPageProps {
   currentTheme: any;
@@ -33,8 +33,12 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
       />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Info currentTheme={currentTheme} />
-      <Experiences currentTheme={currentTheme} />
-      <EducationCertification currentTheme={currentTheme} study={study} />
+      <Experiences
+        currentTheme={currentTheme}
+        study={study}
+        experience={experience}
+      />
+      {/* <EducationCertification currentTheme={currentTheme} study={study} /> */}
       <Tech currentTheme={currentTheme} />
       <Footer currentTheme={currentTheme} />
     </Box>
