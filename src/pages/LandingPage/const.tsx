@@ -33,15 +33,15 @@ export const projects = [
     technologies: ["HTML", "CSS", "JavaScript"],
     colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },
-  {
-    title: "Piloto React",
-    description:
-      "Aplicação simples em React JS, explorando hooks e navegação entre páginas. Aprendizado em gerenciamento de estado e interatividade com o usuário.",
-    imageUrl: "/projeto-2.png",
-    link: "https://desafio-do-tempo-react.vercel.app/",
-    technologies: ["React", "JavaScript"],
-    colors: ["#61DAFB", "#F7DF1E"],
-  },
+  // {
+  //   title: "Piloto React",
+  //   description:
+  //     "Aplicação simples em React JS, explorando hooks e navegação entre páginas. Aprendizado em gerenciamento de estado e interatividade com o usuário.",
+  //   imageUrl: "/projeto-2.png",
+  //   link: "https://desafio-do-tempo-react.vercel.app/",
+  //   technologies: ["React", "JavaScript"],
+  //   colors: ["#61DAFB", "#F7DF1E"],
+  // },
   // {
   //   title: "Piloto Provedor",
   //   description:
