@@ -8,7 +8,7 @@ import {
   useTheme,
   IconButton,
 } from "@mui/material";
-import LinkIcon from "@mui/icons-material/Link"; // Ícone de link
+import LinkIcon from "@mui/icons-material/Link";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
 
 interface Slide {
@@ -41,8 +41,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
   };
 
   const itemTemplate = (project: Slide) => {
-    const imageUrl = getImageUrl(project.imageUrl); // Adiciona ou remove '-desktop' da URL da imagem
-
+    const imageUrl = getImageUrl(project.imageUrl);
     return (
       <Grid
         container
@@ -175,23 +174,17 @@ const CarouselComponent: React.FC<CarouselProps> = ({
     >
       <Carousel
         value={slides}
-        numVisible={1} // Exibe uma imagem por vez
-        numScroll={1} // Permite rolar 1 item de cada vez
-        circular={true} // Carrossel circular
-        prevIcon={<ArrowBackIosIcon color={"info"} />}
+        numVisible={1}
+        numScroll={1}
+        circular={true}
+        prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
         autoplayInterval={2500}
+        footer
+        page={21}
         responsiveOptions={[
-          {
-            breakpoint: "1024px",
-            numVisible: 1,
-            numScroll: 1,
-          },
-          {
-            breakpoint: "600px",
-            numVisible: 1,
-            numScroll: 1,
-          },
+          { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
+          { breakpoint: "600px", numVisible: 1, numScroll: 1 },
         ]}
         itemTemplate={itemTemplate}
       />

@@ -100,10 +100,10 @@ export const darkTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#BB86FC", // Roxo suave
+          color: "#BB86FC",
           textDecoration: "none",
           "&:hover": {
-            color: "#4CAF50", // Verde discreto no hover
+            color: "#4CAF50",
           },
         },
       },
@@ -133,12 +133,12 @@ export const lightTheme = createTheme({
       main: "#F44336",
     },
     background: {
-      default: "#F5F5F5", // Fundo mais claro
+      default: "#F5F5F5",
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#000000", // Texto escuro
-      secondary: "#757575", // Texto secundário mais suave
+      primary: "#000000",
+      secondary: "#757575",
     },
   },
   typography: {
@@ -146,7 +146,7 @@ export const lightTheme = createTheme({
       fontFamily: "Source Code Pro, monospace",
       fontWeight: "bold",
       fontSize: "2.5rem",
-      color: "#212121", // Texto escuro para h1
+      color: "#212121",
     },
     h2: {
       fontFamily: "Source Code Pro, monospace",
