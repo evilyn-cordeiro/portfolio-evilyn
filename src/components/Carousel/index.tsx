@@ -32,7 +32,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
-  // Função para alterar a URL da imagem dependendo do tipo de dispositivo
   const getImageUrl = (imageUrl?: string) => {
     if (!imageUrl) return "";
     return isDesktop
@@ -51,7 +50,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         sx={{ padding: 1 }}
       >
         <Grid item xs={12} md={6}>
-          {/* Imagem do projeto */}
           <Box
             sx={{
               height: { sm: 600, lg: "100%" },
