@@ -84,6 +84,7 @@ export default function EducationCertification({
               width: "100%",
               maxWidth: "250px",
               textAlign: "center",
+              alignItems: "center",
               marginBottom: "2rem",
               display: "flex",
               flexDirection: "column",
@@ -121,8 +122,8 @@ export default function EducationCertification({
                   src={item.imgUrl}
                   alt={item.title}
                   style={{
-                    width: "85px",
-                    height: "85px",
+                    width: "90px",
+                    height: "90px",
                     objectFit: "cover",
                     borderRadius: "50%",
                   }}

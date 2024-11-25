@@ -22,6 +22,17 @@ export const certifications = [
     ],
   },
   {
+    title: "Modelagem de Dados",
+    school: "Alura",
+    imgUrl: "https://s.zst.com.br/prod/cupons/19290-Logo-200x200.png",
+    credentialing: "",
+    skills: [
+      "Desenho e normalização de banco de dados (diagramas ER)",
+      "Integração de dados com interfaces e sistemas front-end",
+      "Aplicação de princípios de usabilidade no design de dados",
+    ],
+  },
+  {
     title: "Figma Design de Interfaces",
     school: "Udemy",
     imgUrl: "https://www.langoly.com/wp-content/uploads/2022/09/udemy-logo.png",
@@ -31,17 +42,6 @@ export const certifications = [
       "Criação de guias de estilo completos (cores, componentes, tipografia)",
       "Desenvolvimento de protótipos interativos de alta fidelidade",
       "Colaboração e versionamento de design em equipe",
-    ],
-  },
-  {
-    title: "Modelagem de Dados",
-    school: "Alura",
-    imgUrl: "https://s.zst.com.br/prod/cupons/19290-Logo-200x200.png",
-    credentialing: "",
-    skills: [
-      "Desenho e normalização de banco de dados (diagramas ER)",
-      "Integração de dados com interfaces e sistemas front-end",
-      "Aplicação de princípios de usabilidade no design de dados",
     ],
   },
 ];
