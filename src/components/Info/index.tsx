@@ -1,11 +1,22 @@
-import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion"; // Importando o motion do framer-motion
+import { Box, Typography, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 interface InfoProps {
   currentTheme: any;
+  scrollTo: React.RefObject<HTMLElement>;
 }
 
-export default function Info({ currentTheme }: InfoProps) {
+export default function Info({ currentTheme, scrollTo }: InfoProps) {
+  // Referência para a seção do formulário
+  const formRef = useRef<HTMLElement>(null);
+
+  const scrollToTarget = () => {
+    if (scrollTo.current) {
+      scrollTo.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Box
       sx={{
@@ -41,6 +52,9 @@ export default function Info({ currentTheme }: InfoProps) {
               backgroundColor: currentTheme.palette.primary.main,
               position: "absolute",
               bottom: "-10px",
+              alignItems: "center",
+              justifyContent: "center",
+              display: "flex",
             }}
           />
         </Typography>
@@ -79,6 +93,46 @@ export default function Info({ currentTheme }: InfoProps) {
           pós-graduação em desenvolvimento web full stack, além de desenvolver
           projetos pessoais que impulsionam minha evolução técnica.
         </Typography>
+
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={{
+            lg: "flex-start",
+            sm: "center",
+            md: "center",
+            xs: "center",
+          }}
+          marginTop={3}
+        >
+          <Button
+            color="primary"
+            sx={{
+              mt: 2,
+              fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+              padding: "0.5rem 1.5rem",
+              borderRadius: "4px",
+              fontWeight: "normal",
+              display: "flex",
+              alignItems: "center",
+              textTransform: "none",
+            }}
+            onClick={scrollToTarget}
+          >
+            RECEBA O MEU CURRICULO POR E-MAIL
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 0.8,
+              }}
+              style={{ marginLeft: "10px", fontSize: "1.2rem" }} // Tamanho menor para o ícone
+            >
+              <ArrowDownwardIcon />
+            </motion.div>
+          </Button>
+        </Box>
       </Box>
 
       <Box

@@ -10,7 +10,7 @@ export default function Footer({ currentTheme }: FooterProps) {
     <Box
       sx={{
         padding: "2rem",
-        backgroundColor: currentTheme.palette.background.paper,
+        backgroundColor: currentTheme.palette.background.default,
       }}
     >
       <Grid container spacing={5} justifyContent="center" alignItems="center">

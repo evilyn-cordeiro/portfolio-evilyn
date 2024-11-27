@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import {
   EducationCertification,
   Experiences,
+  Form,
   Hero,
   Tech,
 } from "../../components";
@@ -18,6 +19,7 @@ interface LandingPageProps {
 
 const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
   const projectsRef = useRef<HTMLElement | null>(null);
+  const formRef = useRef<HTMLElement | null>(null);
 
   return (
     <Box
@@ -32,7 +34,7 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
         toggleTheme={toggleTheme}
       />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
-      <Info currentTheme={currentTheme} />
+      <Info currentTheme={currentTheme} scrollTo={formRef} />
       <Experiences
         currentTheme={currentTheme}
         study={study}
@@ -40,6 +42,7 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
       />
       <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
+      <Form currentTheme={currentTheme} ref={formRef} />
       <Footer currentTheme={currentTheme} />
     </Box>
   );

@@ -13,7 +13,7 @@ export const darkTheme = createTheme({
       main: "#BB86FC",
     },
     success: {
-      main: "#4CAF50",
+      main: "#8fe292",
     },
     warning: {
       main: "#FFEB3B",
