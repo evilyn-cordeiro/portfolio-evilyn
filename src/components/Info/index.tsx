@@ -1,7 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Box, Typography } from "@mui/material";
 
 interface InfoProps {
   currentTheme: any;
@@ -9,19 +6,10 @@ interface InfoProps {
 }
 
 export default function Info({ currentTheme, scrollTo }: InfoProps) {
-  // Referência para a seção do formulário
-  const formRef = useRef<HTMLElement>(null);
-
-  const scrollToTarget = () => {
-    if (scrollTo.current) {
-      scrollTo.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <Box
       sx={{
         height: { sm: "fit-content", md: "fit-content", lg: "850px" },
-        padding: { xs: "3rem 1rem", sm: "3rem", md: "3rem", lg: "5rem" },
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         backgroundColor: currentTheme.palette.background.paper,
@@ -32,6 +20,7 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
       <Box
         sx={{
           flex: 1,
+          padding: { xs: "3rem 1rem", sm: "3rem", md: "3rem", lg: "5rem" },
           maxWidth: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
         }}
       >
@@ -93,46 +82,6 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
           pós-graduação em desenvolvimento web full stack, além de desenvolver
           projetos pessoais que impulsionam minha evolução técnica.
         </Typography>
-
-        <Box
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={{
-            lg: "flex-start",
-            sm: "center",
-            md: "center",
-            xs: "center",
-          }}
-          marginTop={3}
-        >
-          <Button
-            color="primary"
-            sx={{
-              mt: 2,
-              fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
-              padding: "0.5rem 1.5rem",
-              borderRadius: "4px",
-              fontWeight: "normal",
-              display: "flex",
-              alignItems: "center",
-              textTransform: "none",
-            }}
-            onClick={scrollToTarget}
-          >
-            RECEBA O MEU CURRICULO POR E-MAIL
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 0.8,
-              }}
-              style={{ marginLeft: "10px", fontSize: "1.2rem" }} // Tamanho menor para o ícone
-            >
-              <ArrowDownwardIcon />
-            </motion.div>
-          </Button>
-        </Box>
       </Box>
 
       <Box
@@ -143,19 +92,11 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
             md: "40%",
             lg: "40%",
           },
-          borderRadius: "10px",
-          boxShadow: `10px 5px 25px 10px ${currentTheme.palette.secondary.main}`,
-          marginTop: { xs: "2rem", md: "0" },
           backgroundImage: 'url("/evilyn.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: {
-            xs: "300px",
-            sm: "300px",
-            md: "500px",
-            lg: "80%",
-          },
+          height: "100%",
           position: "relative",
           display: "flex",
           alignItems: "center",

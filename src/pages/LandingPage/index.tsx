@@ -42,7 +42,6 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
       />
       <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
-      <Form currentTheme={currentTheme} ref={formRef} />
       <Footer currentTheme={currentTheme} />
     </Box>
   );
