@@ -8,8 +8,8 @@ import {
   useTheme,
   IconButton,
 } from "@mui/material";
-import LinkIcon from "@mui/icons-material/Link";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
+import { LinkOffOutlined, LinkOutlined } from "@mui/icons-material";
 
 interface Slide {
   title: string;
@@ -95,7 +95,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                     padding: 0,
                   }}
                 >
-                  <LinkIcon />
+                  <LinkOutlined />
                 </IconButton>
               )}
               <Box
