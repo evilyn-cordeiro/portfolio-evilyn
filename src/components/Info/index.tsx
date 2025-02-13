@@ -9,7 +9,6 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
   return (
     <Box
       sx={{
-        height: { sm: "fit-content", md: "fit-content", lg: "850px" },
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         backgroundColor: currentTheme.palette.background.paper,
@@ -20,7 +19,7 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
       <Box
         sx={{
           flex: 1,
-          padding: { xs: "3rem 1rem", sm: "3rem", md: "3rem", lg: "5rem" },
+          padding: { xs: "3rem", sm: "3rem", md: "3rem", lg: "5rem" },
           maxWidth: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
         }}
       >
@@ -87,20 +86,20 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
       <Box
         sx={{
           width: {
-            xs: "90%",
-            sm: "60%",
-            md: "40%",
-            lg: "40%",
+            xs: "100%",
+            sm: "100%",
+            md: "50%",
+            lg: "50%",
           },
+          aspectRatio: "1",
           backgroundImage: 'url("/evilyn.png")',
           backgroundSize: "cover",
+          objectFit: "scale-down",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "100%",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          overflow: "hidden", // Garante que o conteúdo extra da imagem não apareça
+          transition: "all 0.3s ease-in-out", // Suaviza mudanças de layout
         }}
       ></Box>
     </Box>

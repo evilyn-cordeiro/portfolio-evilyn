@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { technologies } from "../../pages/LandingPage/const";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";

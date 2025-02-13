@@ -65,7 +65,7 @@ export default function Footer({ currentTheme }: FooterProps) {
           textAlign: "center",
         }}
       >
-        © 2024 Evilyn Cordeiro. Todos os direitos reservados.
+        © 2025 Evilyn Cordeiro. Todos os direitos reservados.
       </Typography>
     </Box>
   );
