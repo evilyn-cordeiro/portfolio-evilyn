@@ -67,7 +67,7 @@ export const technologies = [
   {
     name: "JavaScript",
     icon: "devicon-javascript-plain",
-    experience: 4,
+    experience: 5,
     description:
       "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
   },
@@ -81,42 +81,42 @@ export const technologies = [
   {
     name: "React",
     icon: "devicon-react-plain",
-    experience: 4,
+    experience: 5,
     description:
       "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
   },
   {
     name: "Angular",
     icon: "devicon-angularjs-plain",
-    experience: 2,
+    experience: 3,
     description:
       "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
   },
   {
     name: "TypeScript",
     icon: "devicon-typescript-plain",
-    experience: 4,
+    experience: 5,
     description:
       "Superset do JavaScript que adiciona tipagem estática e recursos de orientação a objetos, tornando o código mais seguro e escalável.",
   },
   {
     name: "CSS",
     icon: "devicon-css3-plain",
-    experience: 4,
+    experience: 5,
     description:
       "Linguagem de estilização usada para descrever a apresentação de um documento HTML, incluindo cores, layouts e fontes.",
   },
   {
     name: "HTML",
     icon: "devicon-html5-plain",
-    experience: 4,
+    experience: 5,
     description:
       "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
   },
   {
     name: "Figma",
     icon: "devicon-figma-plain",
-    experience: 3,
+    experience: 4,
     description:
       "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
   },
