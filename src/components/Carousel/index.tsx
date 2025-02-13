@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
 import {
   Box,
@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
-import { LinkOffOutlined, LinkOutlined } from "@mui/icons-material";
+import { LinkOutlined } from "@mui/icons-material";
 
 interface Slide {
   title: string;
@@ -31,6 +31,17 @@ const CarouselComponent: React.FC<CarouselProps> = ({
 }) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+
+  // Estado para garantir que o código só roda no cliente
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Só no cliente
+  }, []);
+
+  if (!isClient) {
+    return null; // Não renderiza nada no SSR
+  }
 
   const getImageUrl = (imageUrl?: string) => {
     if (!imageUrl) return "";
@@ -178,13 +189,11 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
         autoplayInterval={2500}
-        footer
-        page={21}
+        itemTemplate={itemTemplate}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
           { breakpoint: "600px", numVisible: 1, numScroll: 1 },
         ]}
-        itemTemplate={itemTemplate}
       />
     </Box>
   );
