@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import {
   EducationCertification,
   Experiences,
-  Form,
   Hero,
   Tech,
 } from "../../components";
@@ -15,9 +14,14 @@ import { experience, study } from "./const";
 interface LandingPageProps {
   currentTheme: any;
   toggleTheme: () => void;
+  changeLanguage: (lang: string) => void;
 }
 
-const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
+const LandingPage = ({
+  currentTheme,
+  toggleTheme,
+  changeLanguage,
+}: LandingPageProps) => {
   const projectsRef = useRef<HTMLElement | null>(null);
   const formRef = useRef<HTMLElement | null>(null);
 
@@ -42,7 +46,7 @@ const LandingPage = ({ currentTheme, toggleTheme }: LandingPageProps) => {
       />
       <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
-      <Footer currentTheme={currentTheme} />
+      <Footer currentTheme={currentTheme} changeLanguage={changeLanguage} />
     </Box>
   );
 };

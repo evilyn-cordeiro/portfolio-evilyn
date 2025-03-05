@@ -82,6 +82,15 @@ export const darkTheme = createTheme({
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
           },
         },
+        text: {
+          backgroundColor: "transparent", // Fundo transparente
+          color: "#E0E0E0", // Cor do texto padrão
+          "&:hover": {
+            boxShadow: "none",
+            backgroundColor: "transparent", // Fundo permanece transparente
+            color: "#BB86FC", // Altera a cor do texto no hover
+          },
+        },
       },
     },
     MuiTypography: {
@@ -133,7 +142,7 @@ export const lightTheme = createTheme({
       main: "#F44336",
     },
     background: {
-      default: "#F5F5F5",
+      default: "#E9E9E9",
       paper: "#FFFFFF",
     },
     text: {
@@ -191,6 +200,15 @@ export const lightTheme = createTheme({
           "&:hover": {
             backgroundColor: "#7E3BA5", // Roxo mais suave no hover
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
+          },
+        },
+        text: {
+          backgroundColor: "transparent", // Fundo transparente
+          color: "#212121", // Cor do texto padrão
+          "&:hover": {
+            boxShadow: "none",
+            backgroundColor: "transparent", // Fundo permanece transparente
+            color: "#7E3BA5", // Altera a cor do texto no hover
           },
         },
       },

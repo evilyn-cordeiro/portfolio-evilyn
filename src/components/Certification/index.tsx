@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  Link,
-  List,
-  ListItem,
-  ListItemIcon,
-} from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemIcon } from "@mui/material";
 import { motion } from "framer-motion"; // Importando o motion do framer-motion
 import { Link as LinkIcon, CheckCircleOutline } from "@mui/icons-material"; // Ícone de link e ícone de competência
 import { certifications } from "./const";

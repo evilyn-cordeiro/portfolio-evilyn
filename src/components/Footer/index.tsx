@@ -1,31 +1,59 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import { EmailIcon, GitHubIcon, LinkedInIcon } from "../icons";
+import { useTranslation } from "react-i18next";
+import { Box, Grid, Typography, Button, Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
+import { Language } from "@mui/icons-material";
 
 interface FooterProps {
   currentTheme: any;
+  changeLanguage: (lang: string) => void;
 }
 
-export default function Footer({ currentTheme }: FooterProps) {
+export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
+  const { t, i18n } = useTranslation();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (lang: string) => {
+    changeLanguage(lang);
+    setAnchorEl(null);
+  };
+
   return (
     <Box
       sx={{
         padding: "2rem",
-        backgroundColor: currentTheme.palette.background.default,
+        backgroundColor: currentTheme.palette.background.paper,
       }}
     >
-      <Grid container spacing={5} justifyContent="center" alignItems="center">
-        <Grid item xs={12} sm={6} md={3} textAlign="center">
+      <Grid
+        container
+        spacing={5}
+        justifyContent="center"
+        alignItems="center"
+        textAlign="center"
+      >
+        <Grid item xs={12} sm={4}>
           <Typography
             variant="h6"
             sx={{
               color: currentTheme.palette.text.primary,
               fontWeight: "bold",
-              marginBottom: 2,
+              marginBottom: 1,
             }}
           >
-            Redes Sociais
+            {t("footer.rede-social")}
           </Typography>
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <a
               style={{
                 textTransform: "none",
@@ -36,7 +64,7 @@ export default function Footer({ currentTheme }: FooterProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedInIcon fontSize="large" />
+              LinkedIn
             </a>
             <a
               style={{
@@ -48,25 +76,51 @@ export default function Footer({ currentTheme }: FooterProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHubIcon
-                color={currentTheme.palette.text.secondary}
-                fontSize="large"
-              />
+              GitHub
             </a>
+            <Button
+              type="button"
+              variant="text"
+              startIcon={
+                <Language sx={{ color: currentTheme.palette.text.secondary }} />
+              }
+              onClick={handleClick}
+              sx={{
+                color: currentTheme.palette.text.secondary,
+                textTransform: "none",
+                padding: 0,
+              }}
+            >
+              {i18n.language === "en"
+                ? t("footer.lang-ingles")
+                : t("footer.lang-portugues")}
+            </Button>
+
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={() => setAnchorEl(null)}
+            >
+              <MenuItem onClick={() => handleClose("pt")}>
+                {t("footer.lang-portugues")}
+              </MenuItem>
+              <MenuItem onClick={() => handleClose("en")}>
+                {t("footer.lang-ingles")}
+              </MenuItem>
+            </Menu>
           </Box>
+
+          <Typography
+            variant="body2"
+            sx={{
+              color: currentTheme.palette.text.secondary,
+              marginTop: 2,
+            }}
+          >
+            {t("footer.copywriter")}
+          </Typography>
         </Grid>
       </Grid>
-
-      <Typography
-        variant="body2"
-        sx={{
-          marginTop: 3,
-          color: currentTheme.palette.text.secondary,
-          textAlign: "center",
-        }}
-      >
-        © 2025 Evilyn Cordeiro. Todos os direitos reservados.
-      </Typography>
     </Box>
   );
 }

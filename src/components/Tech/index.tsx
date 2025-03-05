@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
 import { technologies } from "../../pages/LandingPage/const";
 import { useEffect, useState } from "react";
@@ -8,12 +9,12 @@ interface TechProps {
 }
 
 export default function Tech({ currentTheme }: TechProps) {
+  const { t } = useTranslation();
   const [scrollingDown, setScrollingDown] = useState<boolean>(false);
 
   // Função para detectar rolagem
   const handleScroll = () => {
     if (window.scrollY > 100) {
-      // Aplica a animação quando a página for rolada para baixo
       setScrollingDown(true);
     } else {
       setScrollingDown(false);
@@ -44,7 +45,7 @@ export default function Tech({ currentTheme }: TechProps) {
           fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
         }}
       >
-        Principais Tecnologias
+        {t("tech.titulo")}
         <Box
           sx={{
             height: "4px",
@@ -58,20 +59,19 @@ export default function Tech({ currentTheme }: TechProps) {
         />
       </Typography>
 
-      {/* Aqui a animação para os itens da lista de tecnologias */}
       <Grid container spacing={4} justifyContent="center" marginTop={3}>
         {technologies.map((tech, index) => (
           <Grid item key={index} xs={6} sm={4} md={3}>
             <motion.div
-              initial={{ opacity: 0, y: 50 }} // Início da animação (invisível e com deslocamento)
+              initial={{ opacity: 0, y: 50 }}
               animate={{
-                opacity: scrollingDown ? 1 : 0, // Aparece quando rola para baixo
-                y: scrollingDown ? 0 : 50, // Volta para o lugar quando rola para cima
+                opacity: scrollingDown ? 1 : 0,
+                y: scrollingDown ? 0 : 50,
               }}
               transition={{
-                duration: 0.9, // Duração da animação
-                delay: index * 0.1, // Delay para cada item aparecer um pouco após o outro
-                ease: "easeOut", // Efeito suave
+                duration: 0.9,
+                delay: index * 0.1,
+                ease: "easeOut",
               }}
             >
               <Box

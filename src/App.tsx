@@ -1,20 +1,29 @@
+import "./i18n";
 import { useState } from "react";
 import { ThemeProvider } from "@mui/material";
 import { darkTheme, lightTheme } from "./theme";
 import LandingPage from "./pages/LandingPage";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { i18n } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const currentTheme = isDarkMode ? darkTheme : lightTheme;
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      <LandingPage currentTheme={currentTheme} toggleTheme={toggleTheme} />
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <LandingPage
+        currentTheme={isDarkMode ? darkTheme : lightTheme}
+        toggleTheme={toggleTheme}
+        changeLanguage={changeLanguage}
+      />
     </ThemeProvider>
   );
 }
