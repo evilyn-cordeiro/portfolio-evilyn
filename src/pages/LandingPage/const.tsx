@@ -139,7 +139,7 @@ export const aboutMeInfo = (currentTheme: any): AboutMeItem[] => [
     ),
   },
   {
-    title: "evilyn-cordeiro", // Nome do usuário no GitHub
+    title: "evilyn-cordeiro",
     icon: (
       <GitHubIcon
         sx={{
@@ -150,7 +150,7 @@ export const aboutMeInfo = (currentTheme: any): AboutMeItem[] => [
     ),
   },
   {
-    title: "evilynprofile-dev", // Nome do usuário no LinkedIn
+    title: "evilynprofile-dev",
     icon: (
       <LinkedInIcon
         sx={{

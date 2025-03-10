@@ -178,8 +178,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         circular={true}
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
-        autoplayInterval={2500}
-        footer
+        autoplayInterval={1800}
         page={21}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
