@@ -102,7 +102,7 @@ export default function Tech({ currentTheme }: TechProps) {
                     fontWeight: "bold",
                   }}
                 >
-                  {tech.name}
+                  {t(tech.name)}
                 </Typography>
 
                 {tech.experience && (
@@ -115,8 +115,9 @@ export default function Tech({ currentTheme }: TechProps) {
                       fontSize: "0.875rem",
                     }}
                   >
-                    {tech.experience} {tech.experience > 1 ? "anos" : "ano"} de
-                    experiência
+                    {tech.experience}{" "}
+                    {tech.experience > 1 ? t("anos") : t("ano")} {t("de")}{" "}
+                    {t("experiencia")}
                   </Typography>
                 )}
               </Box>

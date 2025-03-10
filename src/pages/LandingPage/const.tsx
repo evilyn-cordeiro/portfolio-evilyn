@@ -33,120 +33,80 @@ export const projects = [
     technologies: ["HTML", "CSS", "JavaScript"],
     colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },
-  // {
-  //   title: "Piloto React",
-  //   description:
-  //     "Aplicação simples em React JS, explorando hooks e navegação entre páginas. Aprendizado em gerenciamento de estado e interatividade com o usuário.",
-  //   imageUrl: "/projeto-2.png",
-  //   link: "https://desafio-do-tempo-react.vercel.app/",
-  //   technologies: ["React", "JavaScript"],
-  //   colors: ["#61DAFB", "#F7DF1E"],
-  // },
-  // {
-  //   title: "Piloto Provedor",
-  //   description:
-  //     "CRUD simples em PHP com banco de dados local em JSON, onde o usuário pode adicionar, editar, excluir e listar dados sobre provedores de internet. A aplicação foi criada para ser simples e intuitiva, utilizando uma interface básica e funcional. Um dos principais desafios foi implementar um sistema de persistência de dados eficiente, utilizando o formato JSON para armazenar as informações localmente, sem a necessidade de um banco de dados relacional. Este projeto ajudou a reforçar meus conhecimentos em PHP e no uso de arquivos como banco de dados.",
-  //   imageUrl:
-  //     "https://storage.googleapis.com/medium-feed.appspot.com/images%2F9353691196%2Fef3219930906-As-7-melhores-ferramentas-de-integracao-de-API-para-2024.jp.jpeg",
-  //   link: "https://github.com/evilyn-cordeiro/crud-php-provedor-internet",
-  //   technologies: ["PHP"],
-  //   colors: ["#8993BE"],
-  // },
-  // {
-  //   title: "Login Instagram",
-  //   description:
-  //     "Tela de login responsiva baseada no modelo desktop do Instagram. O projeto foca na construção de uma interface limpa e direta, com elementos que imitam o design do Instagram, utilizando HTML e CSS. A principal preocupação foi garantir que a página fosse responsiva e que a estrutura ficasse visualmente semelhante à original. A maior dificuldade foi lidar com os detalhes de responsividade, ajustando a página para funcionar bem em diferentes dispositivos.",
-  //   imageUrl: "/projeto-3.png",
-  //   link: "https://github.com/evilyn-cordeiro/instagram-login",
-  //   technologies: ["HTML", "CSS"],
-  //   colors: ["#E34F26", "#1572B6"],
-  // },
 ];
 
 export const technologies = [
   {
-    name: "JavaScript",
+    name: "tech-javascript",
     icon: "devicon-javascript-plain",
     experience: 5,
-    description:
-      "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
+    description: "tech-javascript-description",
   },
   {
-    name: "Node JS",
+    name: "tech-nodejs",
     icon: "devicon-nodejs-plain",
     experience: 2,
-    description:
-      "Linguagem de programação essencial para o desenvolvimento web, usada tanto no lado do cliente (frontend) quanto no servidor (backend, com Node.js).",
+    description: "tech-nodejs-description",
   },
   {
-    name: "React",
+    name: "tech-react",
     icon: "devicon-react-plain",
     experience: 5,
-    description:
-      "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
+    description: "tech-react-description",
   },
   {
-    name: "Angular",
+    name: "tech-angular",
     icon: "devicon-angularjs-plain",
     experience: 3,
-    description:
-      "Biblioteca JavaScript para construir interfaces de usuário dinâmicas e reativas, especialmente para Single Page Applications (SPA).",
+    description: "tech-angular-description",
   },
   {
-    name: "TypeScript",
+    name: "tech-typescript",
     icon: "devicon-typescript-plain",
     experience: 5,
-    description:
-      "Superset do JavaScript que adiciona tipagem estática e recursos de orientação a objetos, tornando o código mais seguro e escalável.",
+    description: "tech-typescript-description",
   },
   {
-    name: "CSS",
+    name: "tech-css",
     icon: "devicon-css3-plain",
     experience: 5,
-    description:
-      "Linguagem de estilização usada para descrever a apresentação de um documento HTML, incluindo cores, layouts e fontes.",
+    description: "tech-css-description",
   },
   {
-    name: "HTML",
+    name: "tech-html",
     icon: "devicon-html5-plain",
     experience: 5,
-    description:
-      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+    description: "tech-html-description",
   },
   {
-    name: "Figma",
+    name: "tech-figma",
     icon: "devicon-figma-plain",
     experience: 4,
-    description:
-      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+    description: "tech-figma-description",
   },
   {
-    name: "Docker",
+    name: "tech-docker",
     icon: "devicon-docker-plain",
     experience: 1,
-    description:
-      "Linguagem de marcação usada para estruturar conteúdo na web, definindo elementos como cabeçalhos, parágrafos, links e imagens.",
+    description: "tech-docker-description",
   },
   {
-    name: "PHP",
+    name: "tech-php",
     icon: "devicon-php-plain",
     experience: 1,
-    description:
-      "Linguagem de programação amplamente utilizada no desenvolvimento web, especialmente no lado do servidor para criar sites dinâmicos e interativos.",
+    description: "tech-php-description",
   },
   {
-    name: "SQL",
+    name: "tech-sql",
     icon: "devicon-mysql-plain",
     experience: 1,
-    description:
-      "Linguagem de consulta estruturada usada para gerenciar e consultar dados em bancos de dados relacionais como MySQL, PostgreSQL e outros.",
+    description: "tech-sql-description",
   },
   {
-    name: "Laravel",
+    name: "tech-laravel",
     icon: "devicon-laravel-plain",
     experience: 1,
-    description:
-      "Framework PHP robusto para o desenvolvimento de aplicações web, com foco em simplicidade, elegância e uma estrutura de código limpa e modular.",
+    description: "tech-laravel-description",
   },
 ];
 
