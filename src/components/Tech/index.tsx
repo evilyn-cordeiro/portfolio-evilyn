@@ -12,7 +12,6 @@ export default function Tech({ currentTheme }: TechProps) {
   const { t }: { t: any } = useTranslation();
   const [scrollingDown, setScrollingDown] = useState<boolean>(false);
 
-  // Função para detectar rolagem
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setScrollingDown(true);
