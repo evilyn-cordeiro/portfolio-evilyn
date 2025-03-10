@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Carousel } from "primereact/carousel";
 import {
   Box,
@@ -10,7 +11,6 @@ import {
 } from "@mui/material";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
 import { LinkOutlined } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
 
 interface Slide {
   title: string;
@@ -36,10 +36,9 @@ const CarouselComponent: React.FC<CarouselProps> = ({
 
   const getImageUrl = (imageUrl?: string) => {
     if (!imageUrl) return "";
-    const newUrl = isDesktop
+    return isDesktop
       ? imageUrl.replace(/(\.)(jpg|jpeg|png|gif)$/i, "-desktop$1$2")
       : imageUrl.replace("-desktop", "");
-    return newUrl;
   };
 
   const itemTemplate = (project: Slide) => {
@@ -180,7 +179,8 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         circular={true}
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
-        autoplayInterval={1800}
+        autoplayInterval={2500}
+        footer
         page={21}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
