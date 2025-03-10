@@ -5,7 +5,7 @@ interface InfoProps {
   scrollTo: React.RefObject<HTMLElement>;
 }
 
-export default function Info({ currentTheme, scrollTo }: InfoProps) {
+export default function Info({ currentTheme }: InfoProps) {
   return (
     <Box
       sx={{
@@ -98,8 +98,8 @@ export default function Info({ currentTheme, scrollTo }: InfoProps) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "100%",
-          overflow: "hidden", // Garante que o conteúdo extra da imagem não apareça
-          transition: "all 0.3s ease-in-out", // Suaviza mudanças de layout
+          overflow: "hidden",
+          transition: "all 0.3s ease-in-out",
         }}
       ></Box>
     </Box>

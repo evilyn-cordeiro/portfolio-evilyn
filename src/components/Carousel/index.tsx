@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
 import { LinkOutlined } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 interface Slide {
   title: string;
@@ -31,6 +32,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
 }) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+  const { t }: { t: any } = useTranslation();
 
   const getImageUrl = (imageUrl?: string) => {
     if (!imageUrl) return "";
@@ -82,7 +84,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                 marginBottom: 6,
               }}
             >
-              {project.title}
+              {t(project.title)}
               {project.link && (
                 <IconButton
                   href={project.link}
@@ -118,7 +120,7 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                 fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
               }}
             >
-              {project.description}
+              {t(project.description)}
             </Typography>
 
             <Box

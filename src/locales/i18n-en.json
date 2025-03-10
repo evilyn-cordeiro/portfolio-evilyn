@@ -48,5 +48,11 @@
   "ano": "year",
   "anos": "years",
   "de": "of",
-  "experiencia": "experience"
+  "experiencia": "experience",
+  "projeto-vitta-clinic-titulo": "Vitta Clinic",
+  "projeto-vitta-clinic-descricao": "Management system for medical clinics, with modules for patients, doctors, and receptionists. Docker was used for scalability and flexibility. Challenges include module integration and creating an intuitive interface.",
+  "projeto-ponto-da-comida-titulo": "Food Point",
+  "projeto-ponto-da-comida-descricao": "Landing page for a healthy restaurant, with simple and responsive design. Focused on user experience on mobile devices, using HTML and CSS.",
+  "projeto-spotify-titulo": "Spotify",
+  "projeto-spotify-descricao": "Responsive clone of the Spotify landing page, with CSS animations and SEO-optimized design. Focused on adapting to different devices."
 }

@@ -7,27 +7,24 @@ import {
 } from "../../components/icons";
 export const projects = [
   {
-    title: "Vitta Clinic",
-    description:
-      "Sistema de gestão para clínicas médicas, com módulos para pacientes, médicos e recepcionistas. Foi usado o Docker para escalabilidade e flexibilidade. Desafios incluem integração de módulos e criação de interface intuitiva.",
+    title: "projeto-vitta-clinic-titulo",
+    description: "projeto-vitta-clinic-descricao",
     imageUrl: "/projeto-4.png",
     link: "https://github.com/thigodev/VittaClinic",
     technologies: ["PHP", "JavaScript", "Docker"],
     colors: ["#8993BE", "#F7DF1E", "#2496ED"],
   },
   {
-    title: "Ponto da Comida",
-    description:
-      "Landing page para restaurante saudável, com design simples e responsivo. Focada na experiência de usuário em dispositivos móveis, utilizando HTML e CSS.",
+    title: "projeto-ponto-da-comida-titulo",
+    description: "projeto-ponto-da-comida-descricao",
     imageUrl: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
     technologies: ["HTML", "CSS", "JavaScript"],
     colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },
   {
-    title: "Spotify",
-    description:
-      "Clone responsivo da landing page do Spotify, com animações CSS e design otimizado para SEO. Foco na adaptação para diferentes dispositivos.",
+    title: "projeto-spotify-titulo",
+    description: "projeto-spotify-descricao",
     imageUrl: "/projeto-1.png",
     link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS", "JavaScript"],
