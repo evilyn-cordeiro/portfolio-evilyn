@@ -8,7 +8,8 @@ import {
   useTheme,
   IconButton,
 } from "@mui/material";
-import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { LinkOutlined } from "@mui/icons-material";
 
 interface Slide {
