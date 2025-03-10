@@ -35,13 +35,15 @@ const CarouselComponent: React.FC<CarouselProps> = ({
 
   const getImageUrl = (imageUrl?: string) => {
     if (!imageUrl) return "";
-    return isDesktop
+    const newUrl = isDesktop
       ? imageUrl.replace(/(\.)(jpg|jpeg|png|gif)$/i, "-desktop$1$2")
       : imageUrl.replace("-desktop", "");
+    return newUrl;
   };
 
   const itemTemplate = (project: Slide) => {
     const imageUrl = getImageUrl(project.imageUrl);
+
     return (
       <Grid
         container
@@ -178,8 +180,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         circular={true}
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
-        footer
-        page={21}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
           { breakpoint: "600px", numVisible: 1, numScroll: 1 },
