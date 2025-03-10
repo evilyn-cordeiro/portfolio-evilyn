@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
-import { LinkOffOutlined, LinkOutlined } from "@mui/icons-material";
+import { LinkOutlined } from "@mui/icons-material";
 
 interface Slide {
   title: string;

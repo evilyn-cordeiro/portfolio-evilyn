@@ -1,11 +1,7 @@
 {
-  "footer": {
-    "rede-social": "Social Media",
-    "copywriter": "© 2025 Evilyn Cordeiro.",
-    "lang-portugues": "Portuguese-BR",
-    "lang-ingles": "English-EUA"
-  },
-  "tech": {
-    "titulo": "Tech Tools"
-  }
+  "rede-social": "Social Media",
+  "copywriter": "© 2025 Evilyn Cordeiro.",
+  "lang-portugues": "Portuguese-BR",
+  "lang-ingles": "English-EUA",
+  "titulo": "Tech Tools"
 }

@@ -1,6 +1,6 @@
 import { Box, Typography, List, ListItem, ListItemIcon } from "@mui/material";
-import { motion } from "framer-motion"; // Importando o motion do framer-motion
-import { Link as LinkIcon, CheckCircleOutline } from "@mui/icons-material"; // Ícone de link e ícone de competência
+import { motion } from "framer-motion";
+import { CheckCircleOutline } from "@mui/icons-material";
 import { certifications } from "./const";
 
 interface EducationCertificationProps {
@@ -25,9 +25,8 @@ export default function EducationCertification({
       {/* Título com animação */}
       <motion.div
         initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <Typography
           variant="h4"
@@ -70,9 +69,8 @@ export default function EducationCertification({
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}
             style={{
               width: "100%",
               maxWidth: "250px",

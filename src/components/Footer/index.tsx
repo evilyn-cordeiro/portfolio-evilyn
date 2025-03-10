@@ -9,7 +9,8 @@ interface FooterProps {
 }
 
 export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
-  const { t, i18n } = useTranslation();
+  const { t, i18n }: { t: any; i18n: any } = useTranslation();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -44,7 +45,7 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
               marginBottom: 1,
             }}
           >
-            {t("footer.rede-social")}
+            {t("rede-social")}
           </Typography>
           <Box
             sx={{
@@ -91,9 +92,7 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
                 padding: 0,
               }}
             >
-              {i18n.language === "en"
-                ? t("footer.lang-ingles")
-                : t("footer.lang-portugues")}
+              {i18n.language === "en" ? t("lang-ingles") : t("lang-portugues")}
             </Button>
 
             <Menu
@@ -102,10 +101,10 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
               onClose={() => setAnchorEl(null)}
             >
               <MenuItem onClick={() => handleClose("pt")}>
-                {t("footer.lang-portugues")}
+                {t("lang-portugues")}
               </MenuItem>
               <MenuItem onClick={() => handleClose("en")}>
-                {t("footer.lang-ingles")}
+                {t("lang-ingles")}
               </MenuItem>
             </Menu>
           </Box>
@@ -117,7 +116,7 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
               marginTop: 2,
             }}
           >
-            {t("footer.copywriter")}
+            {t("copywriter")}
           </Typography>
         </Grid>
       </Grid>

@@ -9,7 +9,7 @@ interface TechProps {
 }
 
 export default function Tech({ currentTheme }: TechProps) {
-  const { t } = useTranslation();
+  const { t }: { t: any } = useTranslation();
   const [scrollingDown, setScrollingDown] = useState<boolean>(false);
 
   // Função para detectar rolagem
@@ -45,7 +45,7 @@ export default function Tech({ currentTheme }: TechProps) {
           fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
         }}
       >
-        {t("tech.titulo")}
+        {t("titulo")}
         <Box
           sx={{
             height: "4px",
