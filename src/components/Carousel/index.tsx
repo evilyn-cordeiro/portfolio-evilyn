@@ -8,8 +8,7 @@ import {
   useTheme,
   IconButton,
 } from "@mui/material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { ArrowBackIosIcon, ArrowForwardIosIcon } from "../icons";
 import { LinkOutlined } from "@mui/icons-material";
 
 interface Slide {
@@ -43,7 +42,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
 
   const itemTemplate = (project: Slide) => {
     const imageUrl = getImageUrl(project.imageUrl);
-
     return (
       <Grid
         container
@@ -180,6 +178,9 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         circular={true}
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
+        autoplayInterval={2500}
+        footer
+        page={21}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
           { breakpoint: "600px", numVisible: 1, numScroll: 1 },
