@@ -1,8 +1,8 @@
 {
   "rede-social": "Social Media",
   "copywriter": "© 2025 Evilyn Cordeiro.",
-  "lang-portugues": "Portuguese-BR",
-  "lang-ingles": "English-EUA",
+  "lang-portugues": "Portuguese",
+  "lang-ingles": "English",
   "titulo": "Main Technologies",
   "titulo-certificado-udemy-javascripr": "Advanced JavaScript",
   "titulo-certificado-alura-modelagem-dados": "Data Modeling",
@@ -54,5 +54,55 @@
   "projeto-ponto-da-comida-titulo": "Food Point",
   "projeto-ponto-da-comida-descricao": "Landing page for a healthy restaurant, with simple and responsive design. Focused on user experience on mobile devices, using HTML and CSS.",
   "projeto-spotify-titulo": "Spotify",
-  "projeto-spotify-descricao": "Responsive clone of the Spotify landing page, with CSS animations and SEO-optimized design. Focused on adapting to different devices."
+  "projeto-spotify-descricao": "Responsive clone of the Spotify landing page, with CSS animations and SEO-optimized design. Focused on adapting to different devices.",
+  "descricao-cargo": "Software Developer Full Stack",
+  "sobre-mim": "About Me",
+  "descricao-sobre-mim": "As an experienced software developer, I have refined my skills in development, organization, and software architecture through a variety of projects.",
+  "autonomia-front-end": "I have consolidated autonomy in front-end development",
+  "descricao-back-end": "In back-end and databases, I am constantly seeking improvement, with a special focus on creating and integrating APIs.",
+  "atualmente-graduacao": "Currently, I am completing my graduation and preparing for a postgraduate degree in full-stack web development, in addition to working on personal projects that drive my technical evolution.",
+  "linha-do-tempo": "Timeline",
+  "formacao-academica": "Academic Formation",
+  "experiencias-profissionais": "Professional Experiences",
+  "titulo-formacao": "Academic Formation",
+  "titulo-experiencia": "Professional Experiences",
+  "descricao-item": "Details about the experience or education",
+  "estudo": "Study",
+  "trabalho": "Work",
+  "Senior-Sistemas": {
+    "title": "Senior Sistemas",
+    "work": "Software Developer I",
+    "date": "2024 - Present",
+    "city": "Blumenau, Santa Catarina, Brazil"
+  },
+  "Konviva-Edtech-JrII": {
+    "title": "Konviva Edtech",
+    "work": "Front-end Developer Jr II",
+    "date": "2023 - 2024",
+    "city": "Florianópolis, Santa Catarina, Brazil"
+  },
+  "Konviva-Edtech-JrI": {
+    "title": "Konviva Edtech",
+    "work": "Front-end Developer Jr I",
+    "date": "2023 - 2024",
+    "city": "Florianópolis, Santa Catarina, Brazil"
+  },
+  "Toukio-Jr": {
+    "title": "Toukio",
+    "work": "Front-end Developer Jr",
+    "date": "2022 - 2023",
+    "city": "Barbalha, Ceará, Brazil"
+  },
+  "Toukio-Estagio": {
+    "title": "Toukio",
+    "work": "Front-end Development (Internship)",
+    "date": "2021 - 2022",
+    "city": "Barbalha, Ceará, Brazil"
+  },
+  "EEEP-Otilia": {
+    "title": "E.E.E.P Otília Correia Saraiva",
+    "work": "Student Researcher",
+    "date": "2019 - 2021",
+    "city": "Barbalha, Ceará, Brazil"
+  }
 }

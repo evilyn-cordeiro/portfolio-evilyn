@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { KeyboardDoubleArrowDownIcon } from "../icons";
 import { Brightness4, Brightness7 } from "@mui/icons-material"; // Importando os ícones
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface HeroProps {
   currentTheme: any;
@@ -12,6 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const { t }: { t: any } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -114,7 +116,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
               },
             }}
           >
-            Desenvolvedora de Softwares Full Stack
+            {t("descricao-cargo")}
           </Typography>
         </motion.div>
       </Box>

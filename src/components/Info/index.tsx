@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface InfoProps {
   currentTheme: any;
@@ -6,6 +7,8 @@ interface InfoProps {
 }
 
 export default function Info({ currentTheme }: InfoProps) {
+  const { t } = useTranslation(); // Hook do react-i18next
+
   return (
     <Box
       sx={{
@@ -32,7 +35,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
           }}
         >
-          Sobre Mim
+          {t("sobre-mim")} {/* Usando a chave de tradução */}
           <Box
             sx={{
               height: "4px",
@@ -56,16 +59,11 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
-          Como desenvolvedora de software experiente, refinei minhas habilidades
-          em desenvolvimento, organização e arquitetura de software através de
-          uma diversidade de projetos.{" "}
+          {t("descricao-sobre-mim")} {/* Usando a chave de tradução */}
           <strong style={{ color: `${currentTheme.palette.secondary.main}` }}>
-            Possuo autonomia consolidada no front-end
+            {t("autonomia-front-end")}
           </strong>
-          , contribuindo efetivamente em discussões e implementando melhorias
-          significativas nas interfaces. No back-end e bancos de dados, estou em
-          constante busca por aprimoramento, com foco especial na criação e
-          integração de APIs.
+          , {t("descricao-back-end")}
         </Typography>
         <Typography
           variant="h5"
@@ -77,9 +75,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
-          Atualmente, estou concluindo minha graduação e me preparando para uma
-          pós-graduação em desenvolvimento web full stack, além de desenvolver
-          projetos pessoais que impulsionam minha evolução técnica.
+          {t("atualmente-graduacao")} {/* Usando a chave de tradução */}
         </Typography>
       </Box>
 
