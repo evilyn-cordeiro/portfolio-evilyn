@@ -22,11 +22,11 @@ export const darkTheme = createTheme({
       main: "#F44336",
     },
     background: {
-      default: "#212121",
-      paper: "#424242",
+      default: "#121212",
+      paper: "#212121",
     },
     text: {
-      primary: "#E0E0E0",
+      primary: "#FFFFFF",
       secondary: "#B0BEC5",
     },
   },
@@ -35,7 +35,7 @@ export const darkTheme = createTheme({
       fontFamily: "Source Code Pro, monospace",
       fontWeight: "bold",
       fontSize: "2.5rem",
-      color: "#E0E0E0",
+      color: "#FFFFFF",
     },
     h2: {
       fontFamily: "Source Code Pro, monospace",
@@ -44,14 +44,15 @@ export const darkTheme = createTheme({
       color: "#9575CD",
     },
     h3: {
-      color: "#fffff",
+      color: "#ffffff",
       fontFamily: "Source Code Pro, monospace",
     },
     h4: {
       fontFamily: "Source Code Pro, monospace",
     },
     h6: {
-      color: "#ead9ff",
+      color: "#ffff",
+      fontStyle: "italic",
     },
     body1: {
       fontSize: "1rem",
@@ -62,9 +63,9 @@ export const darkTheme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: "#424242",
+          backgroundColor: "#212121",
           color: "#E0E0E0",
-          borderRadius: "20px",
+          borderRadius: "18px",
           border: "2px solid #673AB7",
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
         },
@@ -75,7 +76,7 @@ export const darkTheme = createTheme({
         root: {
           backgroundColor: "#673AB7",
           color: "#FFFFFF",
-          borderRadius: "10px",
+          borderRadius: "8px",
           padding: "10px 20px",
           "&:hover": {
             backgroundColor: "#512DA8",
@@ -83,12 +84,12 @@ export const darkTheme = createTheme({
           },
         },
         text: {
-          backgroundColor: "transparent", // Fundo transparente
-          color: "#E0E0E0", // Cor do texto padrão
+          backgroundColor: "transparent",
+          color: "#E0E0E0",
           "&:hover": {
             boxShadow: "none",
-            backgroundColor: "transparent", // Fundo permanece transparente
-            color: "#BB86FC", // Altera a cor do texto no hover
+            backgroundColor: "transparent",
+            color: "#BB86FC",
           },
         },
       },
@@ -96,7 +97,7 @@ export const darkTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: "#E0E0E0",
+          color: "#FFFFFF",
         },
         h2: {
           color: "#9575CD",
@@ -142,11 +143,11 @@ export const lightTheme = createTheme({
       main: "#F44336",
     },
     background: {
-      default: "#E9E9E9",
-      paper: "#FFFFFF",
+      default: "#FFFFFF",
+      paper: "#E9E9E9",
     },
     text: {
-      primary: "#000000",
+      primary: "#212121",
       secondary: "#757575",
     },
   },
@@ -161,54 +162,55 @@ export const lightTheme = createTheme({
       fontFamily: "Source Code Pro, monospace",
       fontWeight: "bold",
       fontSize: "2rem",
-      color: "#B39DDB", // Roxo mais claro e suave para h2
+      color: "#9B4DCA",
     },
     h3: {
-      color: "#D1C4E9", // Roxo pastel muito suave para h3
+      color: "#5E35B1",
       fontFamily: "Source Code Pro, monospace",
     },
     h4: {
       fontFamily: "Source Code Pro, monospace",
     },
     h6: {
-      color: "#D1C4E9", // Roxo pastel suave para h6
+      color: "#ffff",
+      fontStyle: "italic",
     },
     body1: {
       fontSize: "1rem",
-      color: "#212121", // Texto escuro
+      color: "#212121",
     },
   },
   components: {
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: "#FFFFFF", // Cor branca para o fundo
-          border: "2px solid #9B4DCA", // Bordas roxas mais suaves
-          color: "#212121", // Texto escuro
-          borderRadius: "20px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Sombra mais suave
+          backgroundColor: "#FFFFFF",
+          border: "2px solid #9B4DCA",
+          color: "#212121",
+          borderRadius: "18px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#9B4DCA", // Roxo mais suave para os botões
-          color: "#FFFFFF", // Texto branco
-          borderRadius: "10px",
+          backgroundColor: "#9B4DCA",
+          color: "#FFFFFF",
+          borderRadius: "8px",
           padding: "10px 20px",
           "&:hover": {
-            backgroundColor: "#7E3BA5", // Roxo mais suave no hover
+            backgroundColor: "#7E3BA5",
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
           },
         },
         text: {
-          backgroundColor: "transparent", // Fundo transparente
-          color: "#212121", // Cor do texto padrão
+          backgroundColor: "transparent",
+          color: "#212121",
           "&:hover": {
             boxShadow: "none",
-            backgroundColor: "transparent", // Fundo permanece transparente
-            color: "#7E3BA5", // Altera a cor do texto no hover
+            backgroundColor: "transparent",
+            color: "#7E3BA5",
           },
         },
       },
@@ -216,23 +218,23 @@ export const lightTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: "#212121", // Texto principal escuro
+          color: "#212121",
         },
         h2: {
-          color: "#B39DDB", // Roxo suave para h2
+          color: "#9B4DCA",
         },
         body1: {
-          color: "#212121", // Texto principal escuro
+          color: "#212121",
         },
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#BB86FC", // Roxo suave para links
+          color: "#BB86FC",
           textDecoration: "none",
           "&:hover": {
-            color: "#4CAF50", // Verde claro no hover
+            color: "#4CAF50",
           },
         },
       },

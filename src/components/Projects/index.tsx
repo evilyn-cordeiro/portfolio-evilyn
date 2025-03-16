@@ -18,7 +18,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
         sx={{
           backgroundColor: currentTheme.palette.background.default,
           position: "relative",
-          padding: { xs: "2rem", sm: "3rem", md: "3rem", lg: "5rem" },
+          padding: { xs: "1rem", sm: "3rem", md: "3rem", lg: "5rem" },
         }}
         id="projetos"
         ref={ref}
@@ -26,23 +26,20 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
         <Box
           sx={{
             textAlign: "left",
-            marginBottom: 4,
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "center",
+            marginTop: "1rem",
           }}
         >
           <Button
             variant="text"
             color="primary"
             sx={{
-              px: 4,
-              py: 1.5,
-              borderRadius: "8px",
               fontWeight: "bold",
               display: "flex",
               alignItems: "center",
-              gap: 1,
+              padding: "0px",
               textTransform: "none",
               transition: "0.3s",
               "&:hover": {
