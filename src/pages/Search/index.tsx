@@ -20,13 +20,8 @@ import {
   Skeleton,
 } from "@mui/material";
 import {
-  Filter,
-  Filter1,
-  Filter3TwoTone,
   FilterAlt,
   Search as SearchIcon,
-} from "@mui/icons-material";
-import {
   ViewModule,
   ViewList,
   ArrowBack,
@@ -187,43 +182,45 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         {t("github-projects")}
       </Typography>
 
-      <Box
-        sx={{ display: "flex", alignItems: "center", mb: 4 }}
-        width={"90%"}
-        justifyContent={"center"}
-      >
-        <TextField
-          label={t("search-label")}
-          variant="outlined"
-          placeholder={t("search-placeholder")}
-          fullWidth
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          sx={{ maxWidth: "600px", mr: 2 }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
+      <TextField
+        label={t("search-label")}
+        variant="outlined"
+        placeholder={t("search-placeholder")}
+        fullWidth
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        sx={{ maxWidth: "600px", mb: 4 }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
 
-        <Menu
-          anchorEl={anchorElFilters}
-          open={Boolean(anchorElFilters)}
-          onClose={handleFiltersClose}
+      <Box
+        width="100%"
+        maxWidth="1200px"
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          mb: 3,
+        }}
+      >
+        <ToggleButtonGroup
+          value={viewMode}
+          exclusive
+          onChange={(event, newMode) => newMode && setViewMode(newMode)}
         >
-          <MenuItem onClick={() => handleSortChange("asc")}>
-            {t("sort-asc")}
-          </MenuItem>
-          <MenuItem onClick={() => handleSortChange("desc")}>
-            {t("sort-desc")}
-          </MenuItem>
-          <MenuItem onClick={() => handleSortChange("recent")}>
-            {t("sort-recent")}
-          </MenuItem>
-        </Menu>
+          <ToggleButton value="grid">
+            <ViewModule /> {/* Ícone para modo grade */}
+          </ToggleButton>
+          <ToggleButton value="list">
+            <ViewList /> {/* Ícone para modo lista */}
+          </ToggleButton>
+        </ToggleButtonGroup>
+
         <Button
           onClick={handleFiltersClick}
           startIcon={<FilterAlt />}
@@ -233,20 +230,22 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         </Button>
       </Box>
 
-      <Box sx={{ display: "flex", mb: 3 }}>
-        <ToggleButtonGroup
-          value={viewMode}
-          exclusive
-          onChange={(event, newMode) => newMode && setViewMode(newMode)}
-        >
-          <ToggleButton value="grid">
-            <ViewModule /> {t("view-grid")}
-          </ToggleButton>
-          <ToggleButton value="list">
-            <ViewList /> {t("view-list")}
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
+      <Menu
+        anchorEl={anchorElFilters}
+        open={Boolean(anchorElFilters)}
+        onClose={handleFiltersClose}
+      >
+        <MenuItem onClick={() => handleSortChange("asc")}>
+          {t("sort-asc")}
+        </MenuItem>
+        <MenuItem onClick={() => handleSortChange("desc")}>
+          {t("sort-desc")}
+        </MenuItem>
+        <MenuItem onClick={() => handleSortChange("recent")}>
+          {t("sort-recent")}
+        </MenuItem>
+      </Menu>
+
       <Box
         sx={{
           flex: 1,
