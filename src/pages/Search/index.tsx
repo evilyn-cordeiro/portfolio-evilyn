@@ -13,6 +13,9 @@ import {
   ListItemText,
   ToggleButton,
   ToggleButtonGroup,
+  IconButton,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import {
   ViewModule,
@@ -20,6 +23,7 @@ import {
   ArrowBack,
   Visibility,
   ErrorOutline,
+  MoreVert,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -34,6 +38,9 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [error, setError] = useState<string | null>(null);
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
   const token = process.env.REACT_APP_API_KEY;
 
@@ -60,7 +67,10 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           data.map(async (project: any) => {
             const techResponse = await fetch(project.languages_url);
             const techData = await techResponse.json();
-            return { ...project, technologies: Object.keys(techData) };
+
+            return {
+              ...project,
+            };
           })
         );
 
@@ -76,10 +86,22 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
     fetchProjects();
   }, []);
 
-  // Filtra os projetos com base na pesquisa de nome
   const filteredProjects = projects.filter((project) =>
     project.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleMenuClick = (
+    event: React.MouseEvent<HTMLElement>,
+    project: any
+  ) => {
+    setAnchorEl(event.currentTarget);
+    setSelectedProject(project);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+    setSelectedProject(null);
+  };
 
   return (
     <Box
@@ -88,7 +110,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "2rem",
+        padding: "1.5rem",
         backgroundColor: currentTheme.palette.background.default,
       }}
     >
@@ -97,13 +119,11 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         startIcon={<ArrowBack />}
         sx={{
           alignSelf: "flex-start",
-          marginBottom: "1rem",
-          px: 4,
-          py: 1.5,
+          marginBottom: "2rem",
           fontWeight: "bold",
           display: "flex",
+          padding: "0px",
           alignItems: "center",
-          gap: 1,
           textTransform: "none",
           transition: "0.3s",
           "&:hover": {
@@ -114,7 +134,12 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         Voltar
       </Button>
 
-      <Typography variant="h4" color={currentTheme.palette.text.primary} mb={3}>
+      <Typography
+        variant="h4"
+        color={currentTheme.palette.text.primary}
+        mb={3}
+        textAlign={"center"}
+      >
         Meus Projetos do GitHub
       </Typography>
 
@@ -203,7 +228,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           <Box
             display="grid"
             gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
-            gap={3}
+            gap={1}
             width="100%"
             maxWidth="1200px"
           >
@@ -212,34 +237,45 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
                 key={project.id}
                 sx={{
                   backgroundColor: currentTheme.palette.background.paper,
+                  display: "flex",
+                  flexDirection: "row",
+                  maxHeight: "150px",
                 }}
               >
-                <CardContent>
+                <CardContent sx={{ width: "100%" }}>
                   <Typography
                     variant="h6"
                     color={currentTheme.palette.text.primary}
+                    display={"flex"}
+                    width={"100%"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
                   >
                     {project.name}
+                    <CardActions>
+                      <IconButton
+                        onClick={(e) => handleMenuClick(e, project)}
+                        sx={{ marginLeft: "auto" }}
+                      >
+                        <MoreVert />
+                      </IconButton>
+                    </CardActions>
                   </Typography>
                   <Typography
                     variant="body2"
                     color={currentTheme.palette.text.secondary}
                     mb={2}
+                    sx={{
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
                   >
                     {project.description || "Sem descrição disponível."}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button
-                    variant="outlined"
-                    href={project.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    startIcon={<Visibility />}
-                  >
-                    Visualizar
-                  </Button>
-                </CardActions>
               </Card>
             ))}
           </Box>
@@ -262,26 +298,42 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
                   }
                   secondary={
                     <>
-                      <Typography color={currentTheme.palette.text.secondary}>
+                      <Typography
+                        color={currentTheme.palette.text.secondary}
+                        sx={{
+                          display: "-webkit-box",
+                          WebkitBoxOrient: "vertical",
+                          WebkitLineClamp: 3,
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
                         {project.description || "Sem descrição disponível."}
                       </Typography>
                     </>
                   }
                 />
-                <Button
-                  variant="outlined"
-                  href={project.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  startIcon={<Visibility />}
+                <IconButton
+                  onClick={(e) => handleMenuClick(e, project)}
+                  sx={{ marginLeft: "auto" }}
                 >
-                  Visualizar
-                </Button>
+                  <MoreVert />
+                </IconButton>
               </ListItem>
             ))}
           </List>
         )}
       </Box>
+
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleCloseMenu}
+      >
+        <MenuItem onClick={handleCloseMenu}>
+          <Visibility sx={{ marginRight: 1 }} /> Visualizar
+        </MenuItem>
+      </Menu>
     </Box>
   );
 };
