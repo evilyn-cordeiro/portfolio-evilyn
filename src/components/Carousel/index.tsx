@@ -44,19 +44,11 @@ const CarouselComponent: React.FC<CarouselProps> = ({
   const itemTemplate = (project: Slide) => {
     const imageUrl = getImageUrl(project.imageUrl);
     return (
-      <Grid
-        container
-        spacing={2}
-        alignItems="center"
-        justifyContent="center"
-        sx={{ padding: 1 }}
-      >
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={6}>
           <Box
             sx={{
-              height: { sm: 600, lg: "100%" },
               position: "relative",
-              borderRadius: "10px",
               overflow: "hidden",
             }}
           >
@@ -79,8 +71,8 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                 fontWeight: "bold",
                 color: currentTheme.palette.text.primary,
                 position: "relative",
-                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
-                marginBottom: 6,
+                fontSize: { xs: "1.4rem", sm: "1.5rem", md: "2rem" },
+                marginBottom: 2,
               }}
             >
               {t(project.title)}
@@ -100,15 +92,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                   <LinkOutlined />
                 </IconButton>
               )}
-              <Box
-                sx={{
-                  height: "4px",
-                  width: "200px",
-                  backgroundColor: currentTheme.palette.primary.main,
-                  position: "absolute",
-                  bottom: "-10px",
-                }}
-              />
             </Typography>
             <Typography
               sx={{
@@ -164,12 +147,8 @@ const CarouselComponent: React.FC<CarouselProps> = ({
   return (
     <Box
       sx={{
-        borderRadius: "10px",
-        margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        gap: "2rem",
-        paddingTop: 5,
       }}
     >
       <Carousel
@@ -179,12 +158,35 @@ const CarouselComponent: React.FC<CarouselProps> = ({
         circular={true}
         prevIcon={<ArrowBackIosIcon color="info" />}
         nextIcon={<ArrowForwardIosIcon color={"info"} />}
-        autoplayInterval={2500}
+        autoplayInterval={3000}
+        showIndicators={true}
         responsiveOptions={[
           { breakpoint: "1024px", numVisible: 1, numScroll: 1 },
           { breakpoint: "600px", numVisible: 1, numScroll: 1 },
         ]}
         itemTemplate={itemTemplate}
+        pt={{
+          indicators: {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "1rem",
+              gap: "8px",
+            },
+          },
+          indicator: ({ context }: any) => ({
+            style: {
+              width: "12px",
+              height: "12px",
+              borderRadius: "50%",
+              backgroundColor: context.active
+                ? currentTheme.palette.primary.main
+                : "#ccc",
+              transition: "background-color 0.3s",
+              cursor: "pointer",
+            },
+          }),
+        }}
       />
     </Box>
   );

@@ -11,7 +11,7 @@ import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import { useRef } from "react";
 import { experience, study } from "./const";
-import { certifications } from "../../components/Certification/const";
+import FAQ from "../../components/Chatbot";
 
 interface LandingPageProps {
   currentTheme: any;
@@ -48,6 +48,7 @@ const LandingPage = ({
       />
       <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
+      <FAQ currentTheme={currentTheme} />
       {/* <Form currentTheme={currentTheme} /> */}
       <Footer currentTheme={currentTheme} changeLanguage={changeLanguage} />
     </Box>

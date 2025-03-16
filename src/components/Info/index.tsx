@@ -7,7 +7,7 @@ interface InfoProps {
 }
 
 export default function Info({ currentTheme }: InfoProps) {
-  const { t } = useTranslation(); // Hook do react-i18next
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -22,7 +22,7 @@ export default function Info({ currentTheme }: InfoProps) {
       <Box
         sx={{
           flex: 1,
-          padding: { xs: "3rem", sm: "3rem", md: "3rem", lg: "5rem" },
+          padding: { xs: "2rem", sm: "3rem", md: "3rem", lg: "5rem" },
           maxWidth: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
         }}
       >
@@ -35,7 +35,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
           }}
         >
-          {t("sobre-mim")} {/* Usando a chave de tradução */}
+          {t("sobre-mim")}
           <Box
             sx={{
               height: "4px",
@@ -59,7 +59,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
-          {t("descricao-sobre-mim")} {/* Usando a chave de tradução */}
+          {t("descricao-sobre-mim")}
           <strong style={{ color: `${currentTheme.palette.secondary.main}` }}>
             {t("autonomia-front-end")}
           </strong>
@@ -75,7 +75,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
           }}
         >
-          {t("atualmente-graduacao")} {/* Usando a chave de tradução */}
+          {t("atualmente-graduacao")}
         </Typography>
       </Box>
 
@@ -84,8 +84,8 @@ export default function Info({ currentTheme }: InfoProps) {
           width: {
             xs: "100%",
             sm: "100%",
-            md: "50%",
-            lg: "50%",
+            md: "35%",
+            lg: "35%",
           },
           aspectRatio: "1",
           backgroundImage: 'url("/evilyn.png")',
