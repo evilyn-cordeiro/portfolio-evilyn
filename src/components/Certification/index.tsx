@@ -1,6 +1,7 @@
 import { Box, Typography, List, ListItem, ListItemIcon } from "@mui/material";
-import { motion } from "framer-motion"; // Importando o motion do framer-motion
-import { Link as LinkIcon, CheckCircleOutline } from "@mui/icons-material"; // Ícone de link e ícone de competência
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { CheckCircleOutline } from "@mui/icons-material";
 import { certifications } from "./const";
 
 interface EducationCertificationProps {
@@ -10,6 +11,8 @@ interface EducationCertificationProps {
 export default function EducationCertification({
   currentTheme,
 }: EducationCertificationProps) {
+  const { t }: { t: any } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -22,12 +25,10 @@ export default function EducationCertification({
         textAlign: "center",
       }}
     >
-      {/* Título com animação */}
       <motion.div
         initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <Typography
           variant="h4"
@@ -38,10 +39,10 @@ export default function EducationCertification({
             position: "relative",
             marginBottom: 4,
             letterSpacing: "0.5px",
-            textAlign: "center", // Garantindo o alinhamento centralizado do título
+            textAlign: "center",
           }}
         >
-          Certificações
+          {t("titulo.certificacoes")}
           <Box
             sx={{
               height: "4px",
@@ -50,13 +51,12 @@ export default function EducationCertification({
               position: "absolute",
               bottom: "-10px",
               left: "50%",
-              transform: "translateX(-50%)", // Centralizando a linha abaixo do título
+              transform: "translateX(-50%)",
             }}
           />
         </Typography>
       </motion.div>
 
-      {/* Grid de Certificados */}
       <Box
         sx={{
           width: "100%",
@@ -70,9 +70,8 @@ export default function EducationCertification({
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}
             style={{
               width: "100%",
               maxWidth: "250px",
@@ -84,7 +83,6 @@ export default function EducationCertification({
               margin: "2rem",
             }}
           >
-            {/* Seção da imagem e do card */}
             <Box
               sx={{
                 position: "relative",
@@ -94,7 +92,6 @@ export default function EducationCertification({
                 alignItems: "center",
               }}
             >
-              {/* Círculo com a imagem */}
               <Box
                 sx={{
                   borderRadius: "50%",
@@ -113,7 +110,7 @@ export default function EducationCertification({
               >
                 <img
                   src={item.imgUrl}
-                  alt={item.title}
+                  alt={t(item.title)}
                   style={{
                     width: "90px",
                     height: "90px",
@@ -124,7 +121,6 @@ export default function EducationCertification({
               </Box>
             </Box>
 
-            {/* Informações sobre o Certificado */}
             <Box
               sx={{
                 width: "250px",
@@ -153,10 +149,10 @@ export default function EducationCertification({
                     color: currentTheme.palette.text.primary,
                     fontSize: "1.1rem",
                     letterSpacing: "0.5px",
-                    textAlign: "center", // Alinhando o título do certificado ao centro
+                    textAlign: "center",
                   }}
                 >
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -165,14 +161,13 @@ export default function EducationCertification({
                     marginTop: "0.5rem",
                     fontSize: "0.9rem",
                     fontStyle: "italic",
-                    textAlign: "center", // Centralizando a escola
+                    textAlign: "center",
                   }}
                 >
                   {item.school}
                 </Typography>
               </Box>
 
-              {/* Lista de Competências */}
               <Box sx={{ marginTop: "1rem", textAlign: "left" }}>
                 <List>
                   {item.skills.map((skill, index) => (
@@ -186,7 +181,7 @@ export default function EducationCertification({
                         variant="body2"
                         sx={{ color: currentTheme.palette.text.secondary }}
                       >
-                        {skill}
+                        {t(skill)}
                       </Typography>
                     </ListItem>
                   ))}

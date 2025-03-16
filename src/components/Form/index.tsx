@@ -81,7 +81,7 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
             fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
           }}
         >
-          Preencha o formulário
+          Formulário de Solicitação
           <Box
             sx={{
               height: "4px",
@@ -144,7 +144,6 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
             rows={4}
           />
 
-          {/* Mensagens de erro ou sucesso */}
           {errorMessage && (
             <Typography
               sx={{
@@ -181,7 +180,7 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
             }}
           >
             {loading && <CircularProgress size={24} sx={{ marginRight: 1 }} />}
-            Enviar
+            Solicitar Currículo
           </Button>
         </Box>
       </Box>

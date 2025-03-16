@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* Fonte Poppins para o corpo todo */
 * {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,10 +19,9 @@ h4,
 h5,
 h6 {
   font-family: "Exo 2", sans-serif;
-  font-weight: bold; /* Ou ajuste conforme o peso desejado */
+  font-weight: bold;
 }
 
-/* Exemplo adicional para personalizar ainda mais os títulos */
 h1 {
   font-size: 3rem;
 }
@@ -35,5 +33,3 @@ h2 {
 h3 {
   font-size: 2rem;
 }
-
-/* Adicione o estilo desejado para cada título */
