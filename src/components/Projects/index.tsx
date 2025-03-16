@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { projects } from "../../pages/LandingPage/const";
 import CarouselComponent from "../Carousel";
 import { useNavigate } from "react-router-dom";
 import { ArrowForward } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 interface ProjectsProps {
   currentTheme: any;
@@ -12,6 +13,8 @@ interface ProjectsProps {
 const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
   ({ currentTheme }, ref) => {
     const navigate: any = useNavigate();
+    const { t } = useTranslation();
+
     return (
       <Box
         key={"project"}
@@ -49,7 +52,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
             onClick={() => navigate("/projects")}
             endIcon={<ArrowForward />}
           >
-            Ver mais
+            {t("view-more")}
           </Button>
         </Box>
 

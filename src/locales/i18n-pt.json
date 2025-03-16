@@ -58,7 +58,7 @@
   "descricao-cargo": "Desenvolvedora de Softwares Full Stack",
   "sobre-mim": "Sobre Mim",
   "descricao-sobre-mim": "Como desenvolvedora de software experiente, refinei minhas habilidades em desenvolvimento, organização e arquitetura de software através de uma diversidade de projetos.",
-  "autonomia-front-end": "Possuo autonomia consolidada no front-end",
+  "autonomia-front-end": " Possuo autonomia consolidada no front-end",
   "descricao-back-end": "No back-end e bancos de dados, estou em constante busca por aprimoramento, com foco especial na criação e integração de APIs.",
   "atualmente-graduacao": "Atualmente, estou concluindo minha graduação e me preparando para uma pós-graduação em desenvolvimento web full stack, além de desenvolver projetos pessoais que impulsionam minha evolução técnica.",
   "linha-do-tempo": "Linha do Tempo",
@@ -104,5 +104,21 @@
     "work": "Aluna Pesquisadora",
     "date": "2019 - 2021",
     "city": "Barbalha, Ceará, Brasil"
-  }
+  },
+
+  "github-projects": "Projetos no GitHub",
+  "search-label": "Pesquisar Projetos",
+  "search-placeholder": "Pesquise por nome",
+  "view-grid": "Modo Grade",
+  "view-list": "Modo Lista",
+  "filters": "Filtros",
+  "sort-asc": "A -> Z",
+  "sort-desc": "Z -> A",
+  "sort-recent": "Mais Recentes",
+  "back": "Voltar",
+  "no-projects-found": "Nenhum projeto encontrado.",
+  "error-fetching-projects": "Erro ao buscar projetos. Tente novamente.",
+  "view-project": "Ver Projeto",
+  "no-description": "Sem descrição disponível.",
+  "view-more": "Ver mais"
 }

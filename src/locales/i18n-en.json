@@ -58,7 +58,7 @@
   "descricao-cargo": "Software Developer Full Stack",
   "sobre-mim": "About Me",
   "descricao-sobre-mim": "As an experienced software developer, I have refined my skills in development, organization, and software architecture through a variety of projects.",
-  "autonomia-front-end": "I have consolidated autonomy in front-end development",
+  "autonomia-front-end": " I have consolidated autonomy in front-end development",
   "descricao-back-end": "In back-end and databases, I am constantly seeking improvement, with a special focus on creating and integrating APIs.",
   "atualmente-graduacao": "Currently, I am completing my graduation and preparing for a postgraduate degree in full-stack web development, in addition to working on personal projects that drive my technical evolution.",
   "linha-do-tempo": "Timeline",
@@ -104,5 +104,21 @@
     "work": "Student Researcher",
     "date": "2019 - 2021",
     "city": "Barbalha, Ceará, Brazil"
-  }
+  },
+
+  "github-projects": "GitHub Projects",
+  "search-label": "Search Projects",
+  "search-placeholder": "Search by name",
+  "view-grid": "Grid View",
+  "view-list": "List View",
+  "filters": "Filters",
+  "sort-asc": "A -> Z",
+  "sort-desc": "Z -> A",
+  "sort-recent": "Most Recent",
+  "back": "Back",
+  "no-projects-found": "No projects found.",
+  "error-fetching-projects": "Error fetching projects. Please try again.",
+  "view-project": "View Project",
+  "no-description": "No description available.",
+  "view-more": "View more"
 }
