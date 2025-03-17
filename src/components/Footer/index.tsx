@@ -25,7 +25,7 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
   return (
     <Box
       sx={{
-        padding: "2rem",
+        padding: "1rem",
         backgroundColor: currentTheme.palette.background.paper,
       }}
     >
@@ -37,16 +37,6 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
         textAlign="center"
       >
         <Grid item xs={12} sm={4}>
-          <Typography
-            variant="h6"
-            sx={{
-              color: currentTheme.palette.text.primary,
-              fontWeight: "bold",
-              marginBottom: 1,
-            }}
-          >
-            {t("rede-social")}
-          </Typography>
           <Box
             sx={{
               display: "flex",

@@ -45,7 +45,7 @@ export const darkTheme = createTheme({
     },
     h3: {
       color: "#ffffff",
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "Nova Mono, monospace",
     },
     h4: {
       fontFamily: "Source Code Pro, monospace",

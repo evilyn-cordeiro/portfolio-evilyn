@@ -189,7 +189,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         fullWidth
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        sx={{ maxWidth: "600px", mb: 4 }}
+        sx={{ maxWidth: { sm: "100%", md: "600px", lg: "600px" }, mb: 4 }}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -204,7 +204,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         maxWidth="1200px"
         sx={{
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           mb: 3,
         }}
       >
@@ -214,10 +214,10 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           onChange={(event, newMode) => newMode && setViewMode(newMode)}
         >
           <ToggleButton value="grid">
-            <ViewModule /> {/* Ícone para modo grade */}
+            <ViewModule />
           </ToggleButton>
           <ToggleButton value="list">
-            <ViewList /> {/* Ícone para modo lista */}
+            <ViewList />
           </ToggleButton>
         </ToggleButtonGroup>
 

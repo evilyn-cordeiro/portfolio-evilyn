@@ -30,7 +30,7 @@ export default function Tech({ currentTheme }: TechProps) {
   return (
     <Box
       sx={{
-        padding: "5rem 5rem",
+        padding: "6rem 6rem",
         backgroundColor: currentTheme.palette.background.default,
       }}
     >
@@ -58,9 +58,9 @@ export default function Tech({ currentTheme }: TechProps) {
         />
       </Typography>
 
-      <Grid container spacing={4} justifyContent="center" marginTop={3}>
+      <Grid container spacing={2} justifyContent="center" marginTop={1}>
         {technologies.map((tech, index) => (
-          <Grid item key={index} xs={6} sm={4} md={3}>
+          <Grid item key={index} xs={6} sm={4} md={2.5}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{
