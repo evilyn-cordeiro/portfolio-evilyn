@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   TextField,
-  CircularProgress,
   Typography,
   Card,
   CardContent,
@@ -18,6 +17,7 @@ import {
   MenuItem,
   InputAdornment,
   Skeleton,
+  Chip,
 } from "@mui/material";
 import {
   FilterAlt,
@@ -25,34 +25,46 @@ import {
   ViewModule,
   ViewList,
   ArrowBack,
-  Visibility,
   ErrorOutline,
   MoreVert,
+  Preview,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { GitHubIcon } from "../../components/icons";
+import { ProjectCard, ProjectListItem } from "../../components";
+
+// Definindo um tipo para o projeto
+interface Project {
+  id: number;
+  name: string;
+  description: string;
+  language: string;
+  created_at: string;
+  html_url: string;
+  homepage: string;
+  languages_url: string;
+}
 
 interface SearchProps {
   currentTheme: any;
 }
 
 const Search: React.FC<SearchProps> = ({ currentTheme }) => {
-  const navigate = useNavigate();
-  const [projects, setProjects] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
+  const token = process.env.REACT_APP_API_KEY;
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [search, setSearch] = useState<string>("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [error, setError] = useState<string | null>(null);
-  const { t } = useTranslation();
-
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [anchorElFilters, setAnchorElFilters] = useState<null | HTMLElement>(
     null
   );
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "recent">("asc");
-
-  const token = process.env.REACT_APP_API_KEY;
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -117,7 +129,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
 
   const handleMenuClick = (
     event: React.MouseEvent<HTMLElement>,
-    project: any
+    project: Project
   ) => {
     setAnchorEl(event.currentTarget);
     setSelectedProject(project);
@@ -141,6 +153,30 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
     handleFiltersClose();
   };
 
+  const renderErrorOrNoProjects = () => (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "2rem",
+      }}
+    >
+      <ErrorOutline
+        style={{
+          fontSize: "80px",
+          color: currentTheme.palette.error.main,
+          marginBottom: "1rem",
+        }}
+      />
+      <Typography variant="h6" color={currentTheme.palette.text.primary}>
+        {error || t("no-projects-found")}
+      </Typography>
+    </Box>
+  );
+
   return (
     <Box
       sx={{
@@ -153,6 +189,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         backgroundColor: currentTheme.palette.background.default,
       }}
     >
+      {/* Botão de retorno */}
       <Button
         onClick={() => navigate("/")}
         startIcon={<ArrowBack />}
@@ -173,6 +210,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         {t("back")}
       </Button>
 
+      {/* Título da página */}
       <Typography
         variant="h4"
         color={currentTheme.palette.text.primary}
@@ -182,6 +220,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         {t("github-projects")}
       </Typography>
 
+      {/* Barra de pesquisa */}
       <TextField
         label={t("search-label")}
         variant="outlined"
@@ -199,6 +238,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         }}
       />
 
+      {/* Filtros e Botões de Exibição */}
       <Box
         width="100%"
         maxWidth="1200px"
@@ -230,6 +270,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         </Button>
       </Box>
 
+      {/* Menu de Filtros */}
       <Menu
         anchorEl={anchorElFilters}
         open={Boolean(anchorElFilters)}
@@ -246,6 +287,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         </MenuItem>
       </Menu>
 
+      {/* Exibição dos Projetos */}
       <Box
         sx={{
           flex: 1,
@@ -277,50 +319,8 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
               />
             ))}
           </Box>
-        ) : error ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              padding: "2rem",
-            }}
-          >
-            <ErrorOutline
-              style={{
-                fontSize: "80px",
-                color: currentTheme.palette.error.main,
-                marginBottom: "1rem",
-              }}
-            />
-            <Typography variant="h6" color={currentTheme.palette.text.primary}>
-              {error}
-            </Typography>
-          </Box>
-        ) : filteredProjects.length === 0 ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              padding: "2rem",
-            }}
-          >
-            <ErrorOutline
-              style={{
-                fontSize: "80px",
-                color: currentTheme.palette.error.main,
-                marginBottom: "1rem",
-              }}
-            />
-            <Typography variant="h6" color={currentTheme.palette.text.primary}>
-              {t("no-projects-found")}
-            </Typography>
-          </Box>
+        ) : error || filteredProjects.length === 0 ? (
+          renderErrorOrNoProjects()
         ) : viewMode === "grid" ? (
           <Box
             display="grid"
@@ -330,82 +330,29 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             maxWidth="1200px"
           >
             {filteredProjects.map((project) => (
-              <Card
+              <ProjectCard
                 key={project.id}
-                sx={{
-                  backgroundColor: currentTheme.palette.background.paper,
-                  display: "flex",
-                  flexDirection: "row",
-                  maxHeight: "150px",
-                }}
-              >
-                <CardContent sx={{ width: "100%" }}>
-                  <Typography
-                    variant="h6"
-                    color={currentTheme.palette.text.primary}
-                    display={"flex"}
-                    width={"100%"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                  >
-                    {project.name}
-                    <CardActions>
-                      <IconButton
-                        onClick={(e) => handleMenuClick(e, project)}
-                        sx={{ marginLeft: "auto" }}
-                      >
-                        <MoreVert />
-                      </IconButton>
-                    </CardActions>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color={currentTheme.palette.text.secondary}
-                    mb={2}
-                    sx={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 3,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    {project.description || t("no-description")}
-                  </Typography>
-                </CardContent>
-              </Card>
+                project={project}
+                currentTheme={currentTheme}
+                handleMenuClick={handleMenuClick}
+              />
             ))}
           </Box>
         ) : (
           <List sx={{ width: "100%", maxWidth: "1200px" }}>
             {filteredProjects.map((project) => (
-              <ListItem
+              <ProjectListItem
                 key={project.id}
-                sx={{
-                  backgroundColor: currentTheme.palette.background.paper,
-                  mb: 1,
-                  borderRadius: "8px",
-                }}
-              >
-                <ListItemText
-                  primary={
-                    <Typography color={currentTheme.palette.text.primary}>
-                      {project.name}
-                    </Typography>
-                  }
-                />
-                <IconButton
-                  onClick={(e) => handleMenuClick(e, project)}
-                  sx={{ marginLeft: "auto" }}
-                >
-                  <MoreVert />
-                </IconButton>
-              </ListItem>
+                project={project}
+                currentTheme={currentTheme}
+                handleMenuClick={handleMenuClick}
+              />
             ))}
           </List>
         )}
       </Box>
 
+      {/* Menu de Ações */}
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
@@ -419,9 +366,20 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             handleCloseMenu();
           }}
         >
-          <Visibility sx={{ marginRight: 1 }} />
+          <GitHubIcon sx={{ marginRight: 1 }} />
           {t("view-project")}
         </MenuItem>
+        {selectedProject?.homepage && (
+          <MenuItem
+            onClick={() => {
+              window.open(selectedProject.homepage, "_blank");
+              handleCloseMenu();
+            }}
+          >
+            <Preview sx={{ marginRight: 1 }} />
+            {t("acessar-homepage")}
+          </MenuItem>
+        )}
       </Menu>
     </Box>
   );

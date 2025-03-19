@@ -8,7 +8,7 @@ interface TechProps {
   currentTheme: any;
 }
 
-export default function Tech({ currentTheme }: TechProps) {
+const Tech: React.FC<TechProps> = ({ currentTheme }) => {
   const { t }: { t: any } = useTranslation();
   const [scrollingDown, setScrollingDown] = useState<boolean>(false);
 
@@ -127,4 +127,6 @@ export default function Tech({ currentTheme }: TechProps) {
       </Grid>
     </Box>
   );
-}
+};
+
+export default Tech;

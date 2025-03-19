@@ -1,6 +1,6 @@
 import { Box, Typography, List, ListItem, ListItemIcon } from "@mui/material";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { CheckCircleOutline } from "@mui/icons-material";
 import { certifications } from "./const";
 
@@ -8,10 +8,10 @@ interface EducationCertificationProps {
   currentTheme: any;
 }
 
-export default function EducationCertification({
+const EducationCertification: React.FC<EducationCertificationProps> = ({
   currentTheme,
-}: EducationCertificationProps) {
-  const { t }: { t: any } = useTranslation();
+}) => {
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -193,4 +193,6 @@ export default function EducationCertification({
       </Box>
     </Box>
   );
-}
+};
+
+export default EducationCertification;

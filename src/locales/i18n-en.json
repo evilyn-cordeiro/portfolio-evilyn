@@ -118,7 +118,8 @@
   "back": "Back",
   "no-projects-found": "No projects found.",
   "error-fetching-projects": "Error fetching projects. Please try again.",
-  "view-project": "View Project",
+  "view-project": "View Repositpry",
   "no-description": "No description available.",
-  "view-more": "View more"
+  "view-more": "View more",
+  "acoes": "Preview"
 }

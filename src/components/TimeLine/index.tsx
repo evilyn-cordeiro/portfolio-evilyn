@@ -2,16 +2,18 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const TimelineItem = ({
-  item,
-  index,
-  currentTheme,
-  isEducation = false,
-}: {
+interface TimelineItemProps {
   item: any;
   index: number;
   currentTheme: any;
   isEducation?: boolean;
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({
+  item,
+  index,
+  currentTheme,
+  isEducation = false,
 }) => {
   const { t } = useTranslation();
 
@@ -51,7 +53,7 @@ const TimelineItem = ({
             fontSize: { xs: "1rem", sm: "1.2rem" },
           }}
         >
-          {isEducation ? t(item.title) : t(item.title)}{" "}
+          {t(item.title)}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -61,7 +63,7 @@ const TimelineItem = ({
             fontSize: { xs: "0.9rem", sm: "1rem" },
           }}
         >
-          {isEducation ? t(item.school) : t(item.work)}{" "}
+          {isEducation ? t(item.school) : t(item.work)}
         </Typography>
         <Typography
           variant="body2"
@@ -71,7 +73,7 @@ const TimelineItem = ({
             fontSize: { xs: "0.8rem", sm: "0.9rem" },
           }}
         >
-          {isEducation ? t(item.date) : t(item.date)}
+          {t(item.date)}
         </Typography>
         {isEducation && (
           <Typography
@@ -89,14 +91,16 @@ const TimelineItem = ({
   );
 };
 
-const Timeline = ({
-  currentTheme,
-  study,
-  experience,
-}: {
+interface TimelineProps {
   currentTheme: any;
   study: any[];
   experience: any[];
+}
+
+const Timeline: React.FC<TimelineProps> = ({
+  currentTheme,
+  study,
+  experience,
 }) => {
   const { t } = useTranslation();
 
@@ -121,8 +125,7 @@ const Timeline = ({
           fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
         }}
       >
-        {t("linha-do-tempo")}{" "}
-        {/* Usando a chave de tradução para "Linha do Tempo" */}
+        {t("linha-do-tempo")}
         <Box
           sx={{
             height: "4px",
@@ -211,7 +214,7 @@ const Timeline = ({
               marginBottom: "2rem",
             }}
           >
-            {t("experiencias-profissionais")}{" "}
+            {t("experiencias-profissionais")}
           </Typography>
 
           <motion.div

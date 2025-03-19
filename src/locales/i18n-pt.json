@@ -118,7 +118,9 @@
   "back": "Voltar",
   "no-projects-found": "Nenhum projeto encontrado.",
   "error-fetching-projects": "Erro ao buscar projetos. Tente novamente.",
-  "view-project": "Ver Projeto",
+  "view-project": "Ver Repositório",
   "no-description": "Sem descrição disponível.",
-  "view-more": "Ver mais"
+  "view-more": "Ver mais",
+  "acoes": "Ações",
+  "acessar-homepage": "Pré-visualização"
 }
