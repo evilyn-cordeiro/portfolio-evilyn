@@ -5,6 +5,7 @@ import EducationCertification from "./Certification";
 import Form from "./Form";
 import ProjectCard from "./ProjectCard";
 import ProjectListItem from "./ProjectListItem";
+import Footer from "./Footer";
 
 export {
   Hero,
@@ -14,4 +15,5 @@ export {
   Form,
   ProjectCard,
   ProjectListItem,
+  Footer,
 };

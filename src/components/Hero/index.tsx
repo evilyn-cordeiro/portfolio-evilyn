@@ -105,6 +105,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         >
           <Typography
             variant="h6"
+            color={"#fff"}
             sx={{
               marginBottom: 3,
               fontSize: {

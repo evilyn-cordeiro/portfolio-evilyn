@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 function App() {
   const { i18n } = useTranslation();
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);

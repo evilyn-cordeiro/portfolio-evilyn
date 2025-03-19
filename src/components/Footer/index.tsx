@@ -8,19 +8,20 @@ interface FooterProps {
   changeLanguage: (lang: string) => void;
 }
 
-export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
-  const { t, i18n }: { t: any; i18n: any } = useTranslation();
-
+const Footer = ({ currentTheme, changeLanguage }: FooterProps) => {
+  const { t, i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) =>
     setAnchorEl(event.currentTarget);
-  };
 
-  const handleClose = (lang: string) => {
+  const handleMenuClose = (lang: string) => {
     changeLanguage(lang);
     setAnchorEl(null);
   };
+
+  const getButtonText = () =>
+    i18n.language === "en" ? t("lang-ingles") : t("lang-portugues");
 
   return (
     <Box
@@ -45,55 +46,37 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
               alignItems: "center",
             }}
           >
-            <a
-              style={{
-                textTransform: "none",
-                textDecoration: "none",
-                color: currentTheme.palette.text.secondary,
-              }}
-              href="https://www.linkedin.com/in/evilyn-araujo-profiledev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              style={{
-                textTransform: "none",
-                textDecoration: "none",
-                color: currentTheme.palette.text.secondary,
-              }}
-              href="https://github.com/evilyn-cordeiro"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
             <Button
-              type="button"
               variant="text"
-              startIcon={
-                <Language sx={{ color: currentTheme.palette.text.secondary }} />
-              }
-              onClick={handleClick}
+              onClick={handleMenuClick}
               sx={{
                 color: currentTheme.palette.text.secondary,
                 textTransform: "none",
                 padding: 0,
+                display: "flex",
+                alignItems: "center",
               }}
             >
-              {i18n.language === "en" ? t("lang-ingles") : t("lang-portugues")}
+              <Language sx={{ marginRight: 1 }} />
+              {getButtonText()}
             </Button>
 
             <Menu
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={() => setAnchorEl(null)}
+              PaperProps={{
+                sx: {
+                  backgroundColor: currentTheme.palette.background.paper,
+                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                  borderRadius: "8px",
+                },
+              }}
             >
-              <MenuItem onClick={() => handleClose("pt")}>
+              <MenuItem onClick={() => handleMenuClose("pt")}>
                 {t("lang-portugues")}
               </MenuItem>
-              <MenuItem onClick={() => handleClose("en")}>
+              <MenuItem onClick={() => handleMenuClose("en")}>
                 {t("lang-ingles")}
               </MenuItem>
             </Menu>
@@ -112,4 +95,6 @@ export default function Footer({ currentTheme, changeLanguage }: FooterProps) {
       </Grid>
     </Box>
   );
-}
+};
+
+export default Footer;

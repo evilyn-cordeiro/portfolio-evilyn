@@ -4,16 +4,16 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#673AB7",
+      main: "#4169E1",
     },
     secondary: {
-      main: "#9575CD",
+      main: "#607D8B",
     },
     info: {
-      main: "#BB86FC",
+      main: "#B0BEC5",
     },
     success: {
-      main: "#8fe292",
+      main: "#4CAF50",
     },
     warning: {
       main: "#FFEB3B",
@@ -31,30 +31,28 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
+    fontFamily: "'Roboto', sans-serif",
     h1: {
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "'Playfair Display', serif",
       fontWeight: "bold",
       fontSize: "2.5rem",
       color: "#FFFFFF",
     },
     h2: {
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "'Playfair Display', serif",
       fontWeight: "bold",
       fontSize: "2rem",
-      color: "#9575CD",
+      color: "#4169E1",
     },
     h3: {
-      color: "#ffffff",
-      fontFamily: "Nova Mono, monospace",
+      fontFamily: "'Merriweather', serif",
+      color: "#B0BEC5",
     },
     h4: {
-      fontFamily: "Source Code Pro, monospace",
-    },
-    h6: {
-      color: "#ffff",
-      fontStyle: "italic",
+      fontFamily: "'Source Code Pro', monospace",
     },
     body1: {
+      fontFamily: "'Roboto', sans-serif",
       fontSize: "1rem",
       color: "#E0E0E0",
     },
@@ -66,7 +64,7 @@ export const darkTheme = createTheme({
           backgroundColor: "#212121",
           color: "#E0E0E0",
           borderRadius: "18px",
-          border: "2px solid #673AB7",
+          border: "2px solid #4169E1",
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
         },
       },
@@ -74,12 +72,12 @@ export const darkTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#673AB7",
+          backgroundColor: "#4169E1",
           color: "#FFFFFF",
           borderRadius: "8px",
           padding: "10px 20px",
           "&:hover": {
-            backgroundColor: "#512DA8",
+            backgroundColor: "#3651A5",
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
           },
         },
@@ -89,7 +87,7 @@ export const darkTheme = createTheme({
           "&:hover": {
             boxShadow: "none",
             backgroundColor: "transparent",
-            color: "#BB86FC",
+            color: "#4169E1",
           },
         },
       },
@@ -100,7 +98,7 @@ export const darkTheme = createTheme({
           color: "#FFFFFF",
         },
         h2: {
-          color: "#9575CD",
+          color: "#4169E1",
         },
         body1: {
           color: "#E0E0E0",
@@ -110,10 +108,10 @@ export const darkTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#BB86FC",
+          color: "#4169E1",
           textDecoration: "none",
           "&:hover": {
-            color: "#4CAF50",
+            color: "#FFEB3B",
           },
         },
       },
@@ -125,13 +123,13 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#9B4DCA",
+      main: "#4169E1",
     },
     secondary: {
-      main: "#B39DDB",
+      main: "#607D8B",
     },
     info: {
-      main: "#BB86FC",
+      main: "#B0BEC5",
     },
     success: {
       main: "#4CAF50",
@@ -144,7 +142,7 @@ export const lightTheme = createTheme({
     },
     background: {
       default: "#FFFFFF",
-      paper: "#E9E9E9",
+      paper: "#F5F5F5",
     },
     text: {
       primary: "#212121",
@@ -152,30 +150,28 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
+    fontFamily: "'Roboto', sans-serif",
     h1: {
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "'Playfair Display', serif",
       fontWeight: "bold",
       fontSize: "2.5rem",
       color: "#212121",
     },
     h2: {
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "'Playfair Display', serif",
       fontWeight: "bold",
       fontSize: "2rem",
-      color: "#9B4DCA",
+      color: "#4169E1",
     },
     h3: {
-      color: "#5E35B1",
-      fontFamily: "Source Code Pro, monospace",
+      fontFamily: "'Merriweather', serif",
+      color: "#607D8B",
     },
     h4: {
-      fontFamily: "Source Code Pro, monospace",
-    },
-    h6: {
-      color: "#ffff",
-      fontStyle: "italic",
+      fontFamily: "'Source Code Pro', monospace",
     },
     body1: {
+      fontFamily: "'Roboto', sans-serif",
       fontSize: "1rem",
       color: "#212121",
     },
@@ -185,7 +181,7 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          border: "2px solid #9B4DCA",
+          border: "2px solid #4169E1",
           color: "#212121",
           borderRadius: "18px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
@@ -195,12 +191,12 @@ export const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#9B4DCA",
+          backgroundColor: "#4169E1",
           color: "#FFFFFF",
           borderRadius: "8px",
           padding: "10px 20px",
           "&:hover": {
-            backgroundColor: "#7E3BA5",
+            backgroundColor: "#3651A5",
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
           },
         },
@@ -210,7 +206,7 @@ export const lightTheme = createTheme({
           "&:hover": {
             boxShadow: "none",
             backgroundColor: "transparent",
-            color: "#7E3BA5",
+            color: "#4169E1",
           },
         },
       },
@@ -221,7 +217,7 @@ export const lightTheme = createTheme({
           color: "#212121",
         },
         h2: {
-          color: "#9B4DCA",
+          color: "#4169E1",
         },
         body1: {
           color: "#212121",
@@ -231,10 +227,10 @@ export const lightTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#BB86FC",
+          color: "#4169E1",
           textDecoration: "none",
           "&:hover": {
-            color: "#4CAF50",
+            color: "#FFEB3B",
           },
         },
       },

@@ -1,5 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import IconButton from "@mui/material/IconButton"; // Para os ícones clicáveis
 
 interface InfoProps {
   currentTheme: any;
@@ -16,14 +19,15 @@ export default function Info({ currentTheme }: InfoProps) {
         flexDirection: { xs: "column", md: "row" },
         backgroundColor: currentTheme.palette.background.paper,
         alignItems: "center",
-        justifyContent: "space-between",
       }}
     >
       <Box
         sx={{
           flex: 1,
-          padding: { xs: "2rem", sm: "3rem", md: "3rem", lg: "5rem" },
-          maxWidth: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          padding: { xs: "2rem", sm: "4rem", md: "4rem", lg: "8rem" },
         }}
       >
         <Typography
@@ -32,7 +36,7 @@ export default function Info({ currentTheme }: InfoProps) {
             fontWeight: "bold",
             color: currentTheme.palette.text.primary,
             position: "relative",
-            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
+            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.2rem" },
           }}
         >
           {t("sobre-mim")}
@@ -43,9 +47,6 @@ export default function Info({ currentTheme }: InfoProps) {
               backgroundColor: currentTheme.palette.primary.main,
               position: "absolute",
               bottom: "-10px",
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
             }}
           />
         </Typography>
@@ -56,7 +57,7 @@ export default function Info({ currentTheme }: InfoProps) {
             color: currentTheme.palette.text.secondary,
             lineHeight: "1.8",
             textAlign: "justify",
-            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
           }}
         >
           {t("descricao-sobre-mim")}
@@ -72,32 +73,49 @@ export default function Info({ currentTheme }: InfoProps) {
             color: currentTheme.palette.text.secondary,
             lineHeight: "1.8",
             textAlign: "justify",
-            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
           }}
         >
           {t("atualmente-graduacao")}
         </Typography>
-      </Box>
 
-      <Box
-        sx={{
-          width: {
-            xs: "100%",
-            sm: "100%",
-            md: "35%",
-            lg: "35%",
-          },
-          aspectRatio: "1",
-          backgroundImage: 'url("/evilyn.png")',
-          backgroundSize: "cover",
-          objectFit: "scale-down",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "100%",
-          overflow: "hidden",
-          transition: "all 0.3s ease-in-out",
-        }}
-      ></Box>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "2rem",
+          }}
+        >
+          <IconButton
+            href="https://www.linkedin.com/in/evilyn-araujo-profiledev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: currentTheme.palette.text.secondary }}
+          >
+            <LinkedInIcon />
+          </IconButton>
+
+          <IconButton
+            href="https://github.com/evilyn-cordeiro"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: currentTheme.palette.text.secondary }}
+          >
+            <GitHubIcon />
+          </IconButton>
+
+          <IconButton
+            href="https://www.behance.net/evilyndev"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: currentTheme.palette.text.secondary }}
+          >
+            <i className="devicon-behance-plain"></i>
+          </IconButton>
+        </Box>
+      </Box>
     </Box>
   );
 }

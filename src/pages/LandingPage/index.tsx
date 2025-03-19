@@ -6,7 +6,7 @@ import {
   Hero,
   Tech,
 } from "../../components";
-import Info from "../../components/Info";
+import Info from "../../components/AboutMe";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import { useRef } from "react";
