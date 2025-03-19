@@ -3,21 +3,15 @@ import {
   Box,
   TextField,
   Typography,
-  Card,
-  CardContent,
-  CardActions,
   Button,
-  List,
-  ListItem,
-  ListItemText,
-  ToggleButton,
-  ToggleButtonGroup,
-  IconButton,
   Menu,
   MenuItem,
   InputAdornment,
   Skeleton,
-  Chip,
+  List,
+  ToggleButtonGroup,
+  ToggleButton,
+  IconButton,
 } from "@mui/material";
 import {
   FilterAlt,
@@ -26,9 +20,10 @@ import {
   ViewList,
   ArrowBack,
   ErrorOutline,
-  MoreVert,
   Preview,
-} from "@mui/icons-material";
+  ChevronLeft,
+  ChevronRight,
+} from "@mui/icons-material"; // Ícones de navegação
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { GitHubIcon } from "../../components/icons";
@@ -63,6 +58,8 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
     null
   );
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "recent">("asc");
+  const [currentPage, setCurrentPage] = useState(1); // Adicionando estado para a página atual
+  const [projectsPerPage] = useState(6); // Número de projetos por página
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -127,6 +124,14 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
       }
     });
 
+  // Calcular o índice dos projetos para a página atual
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = filteredProjects.slice(
+    indexOfFirstProject,
+    indexOfLastProject
+  );
+
   const handleMenuClick = (
     event: React.MouseEvent<HTMLElement>,
     project: Project
@@ -153,6 +158,10 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
     handleFiltersClose();
   };
 
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
+
   const renderErrorOrNoProjects = () => (
     <Box
       sx={{
@@ -177,6 +186,8 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
     </Box>
   );
 
+  const pageCount = Math.ceil(filteredProjects.length / projectsPerPage);
+
   return (
     <Box
       sx={{
@@ -185,11 +196,9 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         justifyContent: "center",
         alignItems: "center",
         padding: "1.5rem",
-        minHeight: "100vh",
         backgroundColor: currentTheme.palette.background.default,
       }}
     >
-      {/* Botão de retorno */}
       <Button
         onClick={() => navigate("/")}
         startIcon={<ArrowBack />}
@@ -210,7 +219,6 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         {t("back")}
       </Button>
 
-      {/* Título da página */}
       <Typography
         variant="h4"
         color={currentTheme.palette.text.primary}
@@ -220,7 +228,6 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         {t("github-projects")}
       </Typography>
 
-      {/* Barra de pesquisa */}
       <TextField
         label={t("search-label")}
         variant="outlined"
@@ -238,7 +245,6 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         }}
       />
 
-      {/* Filtros e Botões de Exibição */}
       <Box
         width="100%"
         maxWidth="1200px"
@@ -270,7 +276,6 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         </Button>
       </Box>
 
-      {/* Menu de Filtros */}
       <Menu
         anchorEl={anchorElFilters}
         open={Boolean(anchorElFilters)}
@@ -287,7 +292,6 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         </MenuItem>
       </Menu>
 
-      {/* Exibição dos Projetos */}
       <Box
         sx={{
           flex: 1,
@@ -297,7 +301,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           flexDirection: viewMode === "grid" ? "row" : "column",
           justifyContent: viewMode === "grid" ? "center" : "start",
           alignItems: viewMode === "grid" ? "flex-start" : "center",
-          minHeight: "60vh",
+          minHeight: "50vh",
         }}
       >
         {loading ? (
@@ -314,7 +318,8 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
               <Skeleton
                 variant="rectangular"
                 width="100%"
-                height={150}
+                sx={{ borderRadius: "8px" }}
+                height={180}
                 key={i}
               />
             ))}
@@ -329,7 +334,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             width="100%"
             maxWidth="1200px"
           >
-            {filteredProjects.map((project) => (
+            {currentProjects.map((project) => (
               <ProjectCard
                 key={project.id}
                 project={project}
@@ -340,7 +345,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           </Box>
         ) : (
           <List sx={{ width: "100%", maxWidth: "1200px" }}>
-            {filteredProjects.map((project) => (
+            {currentProjects.map((project) => (
               <ProjectListItem
                 key={project.id}
                 project={project}
@@ -350,6 +355,26 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             ))}
           </List>
         )}
+      </Box>
+
+      <Box
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <IconButton
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          <ChevronLeft />
+        </IconButton>
+        <Typography sx={{ margin: "0 10px" }}>
+          {t("page")} {currentPage} {t("of")} {pageCount}
+        </Typography>
+        <IconButton
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === pageCount}
+        >
+          <ChevronRight />
+        </IconButton>
       </Box>
 
       {/* Menu de Ações */}
@@ -377,7 +402,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             }}
           >
             <Preview sx={{ marginRight: 1 }} />
-            {t("acessar-homepage")}
+            {t("access-homepage")}
           </MenuItem>
         )}
       </Menu>

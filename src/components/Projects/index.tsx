@@ -19,7 +19,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
       <Box
         key={"project"}
         sx={{
-          backgroundColor: currentTheme.palette.background.default,
+          backgroundColor: currentTheme.palette.background.paper,
           position: "relative",
           padding: { xs: "1rem", sm: "3rem", md: "3rem", lg: "5rem" },
         }}

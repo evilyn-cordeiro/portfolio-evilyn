@@ -17,7 +17,7 @@ export default function Info({ currentTheme }: InfoProps) {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        backgroundColor: currentTheme.palette.background.paper,
+        backgroundColor: currentTheme.palette.background.default,
         alignItems: "center",
       }}
     >
@@ -94,7 +94,7 @@ export default function Info({ currentTheme }: InfoProps) {
             rel="noopener noreferrer"
             sx={{ color: currentTheme.palette.text.secondary }}
           >
-            <LinkedInIcon />
+            <LinkedInIcon fontSize={"large"} />
           </IconButton>
 
           <IconButton
@@ -103,7 +103,7 @@ export default function Info({ currentTheme }: InfoProps) {
             rel="noopener noreferrer"
             sx={{ color: currentTheme.palette.text.secondary }}
           >
-            <GitHubIcon />
+            <GitHubIcon fontSize={"large"} />
           </IconButton>
 
           <IconButton
@@ -112,7 +112,10 @@ export default function Info({ currentTheme }: InfoProps) {
             rel="noopener noreferrer"
             sx={{ color: currentTheme.palette.text.secondary }}
           >
-            <i className="devicon-behance-plain"></i>
+            <i
+              className="devicon-behance-plain"
+              style={{ fontSize: "26.5px" }}
+            ></i>
           </IconButton>
         </Box>
       </Box>

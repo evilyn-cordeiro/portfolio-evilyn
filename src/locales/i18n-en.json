@@ -1,5 +1,5 @@
 {
-  "rede-social": "Social Media",
+  "rede-social": "Social Network",
   "copywriter": "© 2025 Evilyn Cordeiro.",
   "lang-portugues": "Portuguese",
   "lang-ingles": "English",
@@ -23,12 +23,12 @@
   "titulo.certificacoes": "Certifications",
   "tech-javascript": "JavaScript",
   "tech-javascript-description": "Essential programming language for web development, used both on the client-side (frontend) and server-side (backend, with Node.js).",
-  "tech-nodejs": "Node JS",
+  "tech-nodejs": "Node.js",
   "tech-nodejs-description": "Essential programming language for web development, used both on the client-side (frontend) and server-side (backend, with Node.js).",
   "tech-react": "React",
   "tech-react-description": "JavaScript library for building dynamic and reactive user interfaces, especially for Single Page Applications (SPA).",
   "tech-angular": "Angular",
-  "tech-angular-description": "JavaScript library for building dynamic and reactive user interfaces, especially for Single Page Applications (SPA).",
+  "tech-angular-description": "JavaScript framework for building dynamic and reactive user interfaces, especially for Single Page Applications (SPA).",
   "tech-typescript": "TypeScript",
   "tech-typescript-description": "A superset of JavaScript that adds static typing and object-oriented features, making the code safer and more scalable.",
   "tech-css": "CSS",
@@ -55,10 +55,10 @@
   "projeto-ponto-da-comida-descricao": "Landing page for a healthy restaurant, with simple and responsive design. Focused on user experience on mobile devices, using HTML and CSS.",
   "projeto-spotify-titulo": "Spotify",
   "projeto-spotify-descricao": "Responsive clone of the Spotify landing page, with CSS animations and SEO-optimized design. Focused on adapting to different devices.",
-  "descricao-cargo": "Software Developer Full Stack",
+  "descricao-cargo": "Full Stack Software Developer",
   "sobre-mim": "About Me",
   "descricao-sobre-mim": "As an experienced software developer, I have refined my skills in development, organization, and software architecture through a variety of projects.",
-  "autonomia-front-end": " I have consolidated autonomy in front-end development",
+  "autonomia-front-end": "I have consolidated autonomy in front-end development",
   "descricao-back-end": "In back-end and databases, I am constantly seeking improvement, with a special focus on creating and integrating APIs.",
   "atualmente-graduacao": "Currently, I am completing my graduation and preparing for a postgraduate degree in full-stack web development, in addition to working on personal projects that drive my technical evolution.",
   "linha-do-tempo": "Timeline",
@@ -105,7 +105,6 @@
     "date": "2019 - 2021",
     "city": "Barbalha, Ceará, Brazil"
   },
-
   "github-projects": "GitHub Projects",
   "search-label": "Search Projects",
   "search-placeholder": "Search by name",
@@ -118,8 +117,10 @@
   "back": "Back",
   "no-projects-found": "No projects found.",
   "error-fetching-projects": "Error fetching projects. Please try again.",
-  "view-project": "View Repositpry",
+  "view-project": "View Repository",
   "no-description": "No description available.",
   "view-more": "View more",
-  "acoes": "Preview"
+  "acoes": "Actions",
+  "page": "Page",
+  "of": "of"
 }

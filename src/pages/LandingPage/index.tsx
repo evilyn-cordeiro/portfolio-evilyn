@@ -39,8 +39,8 @@ const LandingPage = ({
         scrollTo={projectsRef}
         toggleTheme={toggleTheme}
       />
-      <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Info currentTheme={currentTheme} scrollTo={formRef} />
+      <Projects currentTheme={currentTheme} ref={projectsRef} />
       <Experiences
         currentTheme={currentTheme}
         study={study}

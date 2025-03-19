@@ -170,7 +170,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
             style: {
               display: "flex",
               justifyContent: "center",
-              marginTop: "1rem",
               gap: "8px",
             },
           },
@@ -183,7 +182,6 @@ const CarouselComponent: React.FC<CarouselProps> = ({
                 ? currentTheme.palette.primary.main
                 : "#ccc",
               transition: "background-color 0.3s",
-              cursor: "pointer",
             },
           }),
         }}

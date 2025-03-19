@@ -37,8 +37,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         alignItems: "center",
         textAlign: "center",
         position: "relative",
+        backgroundColor: currentTheme.palette.background.default,
+        color: "white",
       }}
     >
+      {/* Vídeo de fundo minimalista */}
       <video
         autoPlay
         loop
@@ -54,50 +57,44 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
           objectFit: "cover",
           zIndex: 0,
           filter:
-            currentTheme.palette.mode === "dark" ? "brightness(0.4)" : "none",
+            currentTheme.palette.mode === "dark"
+              ? "brightness(0.4)"
+              : "brightness(0.6)",
         }}
       >
         <source src={"/heroDark.mp4"} type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
       </video>
 
-      <Box sx={{ maxWidth: "600px", padding: "20px", zIndex: 1 }}>
+      <Box sx={{ zIndex: 1, padding: "0 20px" }}>
+        {/* Animação para o nome */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <motion.div
-            style={{
+          <Typography
+            className="hero-title"
+            variant="h3"
+            sx={{
+              fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+              fontWeight: 600,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
               display: "inline-block",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-            }}
-            initial={{ width: 0 }}
-            animate={{ width: "auto" }}
-            transition={{
-              duration: 2.5,
-              delay: 1,
+              background:
+                "linear-gradient(45deg, #fff, #4169E1, #1E3A8A, #27408B)", // Gradiente azul claro e escuro
+              backgroundClip: "text",
+              color: "transparent",
+              WebkitBackgroundClip: "text", // Para Safari
+              animation: "gradientShift 8s ease infinite", // Animação suave para o gradiente
             }}
           >
-            <Typography
-              variant="h3"
-              color={"#fff"}
-              sx={{
-                fontSize: {
-                  xs: "2rem",
-                  sm: "2.5rem",
-                  md: "3.3rem",
-                  lg: "3.5rem",
-                  xl: "4rem",
-                },
-              }}
-            >
-              EVILYN CORDEIRO
-            </Typography>
-          </motion.div>
+            EVILYN CORDEIRO
+          </Typography>
         </motion.div>
 
+        {/* Animação para a descrição */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
@@ -105,16 +102,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         >
           <Typography
             variant="h6"
-            color={"#fff"}
             sx={{
               marginBottom: 3,
-              fontSize: {
-                xs: "1rem",
-                sm: "1.1rem",
-                md: "1.2rem",
-                lg: "1.2rem",
-                xl: "1.2rem",
-              },
+              fontSize: "1.2rem",
+              fontWeight: 400,
+              letterSpacing: "1px",
             }}
           >
             {t("descricao-cargo")}
@@ -122,6 +114,7 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         </motion.div>
       </Box>
 
+      {/* Botão de alternância de tema */}
       <Button
         onClick={toggleTheme}
         sx={{
@@ -144,10 +137,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         )}
       </Button>
 
+      {/* Ícone de rolagem */}
       <motion.div
         style={{
           position: "absolute",
-          bottom: "80px",
+          bottom: "40px",
           zIndex: 1,
         }}
         animate={{
