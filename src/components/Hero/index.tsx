@@ -66,8 +66,14 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
         Seu navegador não suporta o elemento de vídeo.
       </video>
 
-      <Box sx={{ zIndex: 1, padding: "0 20px" }}>
-        {/* Animação para o nome */}
+      <Box
+        sx={{
+          zIndex: 1,
+          padding: "0 20px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
@@ -79,14 +85,13 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
             sx={{
               fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
               fontWeight: 600,
-              letterSpacing: "2px",
               textTransform: "uppercase",
               display: "inline-block",
               background:
-                "linear-gradient(45deg, #fff, #4169E1, #1E3A8A, #27408B)", // Gradiente azul claro e escuro
+                "linear-gradient(45deg, #4169E1,#fff, #4169E1,#fff, #1E3A8A)", // Gradiente azul claro e escuro
               backgroundClip: "text",
               color: "transparent",
-              WebkitBackgroundClip: "text", // Para Safari
+              WebkitBackgroundClip: "text",
               animation: "gradientShift 8s ease infinite", // Animação suave para o gradiente
             }}
           >
@@ -101,12 +106,11 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
               marginBottom: 3,
-              fontSize: "1.2rem",
+              fontSize: "1rem",
               fontWeight: 400,
-              letterSpacing: "1px",
             }}
           >
             {t("descricao-cargo")}
