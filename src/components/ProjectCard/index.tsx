@@ -59,6 +59,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             WebkitLineClamp: 2,
             overflow: "hidden",
             textOverflow: "ellipsis",
+            height: "2rem",
+            lineHeight: "1rem",
           }}
         >
           {project.description || "No description available"}

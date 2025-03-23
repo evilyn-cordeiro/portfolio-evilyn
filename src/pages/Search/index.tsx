@@ -193,11 +193,11 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         padding: "1.5rem",
-        height: "100vh",
         backgroundColor: currentTheme.palette.background.default,
+        minHeight: "100vh",
       }}
     >
       <Button
@@ -252,6 +252,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          mb: 3,
         }}
       >
         <ToggleButtonGroup
@@ -307,7 +308,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(250, 1fr))",
               gap: 1,
               width: "100%",
               maxWidth: "1200px",
@@ -328,7 +329,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
         ) : viewMode === "grid" ? (
           <Box
             display="grid"
-            gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+            gridTemplateColumns="repeat(auto-fill, minmax(300px, 2fr))"
             gap={1}
             width="100%"
             maxWidth="1200px"
@@ -354,32 +355,32 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             ))}
           </List>
         )}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <IconButton
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            <ChevronLeft />
-          </IconButton>
-          <Typography sx={{ margin: "0 10px" }}>
-            {t("page")} {currentPage} {t("of")} {pageCount}
-          </Typography>
-          <IconButton
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === pageCount}
-          >
-            <ChevronRight />
-          </IconButton>
-        </Box>
       </Box>
 
-      {/* Menu de Ações */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <IconButton
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          <ChevronLeft />
+        </IconButton>
+        <Typography sx={{ margin: "0 10px" }}>
+          {t("page")} {currentPage} {t("of")} {pageCount}
+        </Typography>
+        <IconButton
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === pageCount}
+        >
+          <ChevronRight />
+        </IconButton>
+      </Box>
+
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
