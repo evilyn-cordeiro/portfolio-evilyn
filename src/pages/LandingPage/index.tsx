@@ -49,7 +49,7 @@ const LandingPage = ({
       <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
       <FAQ currentTheme={currentTheme} />
-      {/* <Form currentTheme={currentTheme} /> */}
+      <Form currentTheme={currentTheme} />
       <Footer currentTheme={currentTheme} changeLanguage={changeLanguage} />
     </Box>
   );
