@@ -2,7 +2,7 @@
   "rede-social": "Rede Social",
   "copywriter": "© 2025 Evilyn Cordeiro.",
   "lang-portugues": "Português",
-  "lang-ingles": "Inglês",
+  "lang-ingles": "English",
   "titulo": "Principais Tecnologias",
   "titulo-certificado-udemy-javascripr": "JavaScript Avançado",
   "titulo-certificado-alura-modelagem-dados": "Modelagem de Dados",
@@ -124,5 +124,13 @@
   "acoes": "Ações",
   "acessar-homepage": "Pré-visualização",
   "page": "Página",
-  "of": "de"
+  "of": "de",
+  "formTitle": "Formulário de Solicitação",
+  "name": "Nome",
+  "email": "Email",
+  "company": "Empresa",
+  "messageOptional": "Mensagem (Opcional)",
+  "successMessage": "Envio realizado. Logo receberá meu currículo por e-mail!",
+  "errorMessage": "Erro ao enviar os dados. Tente novamente.",
+  "submit": "Solicitar Currículo"
 }

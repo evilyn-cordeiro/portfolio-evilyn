@@ -1,7 +1,7 @@
 {
   "rede-social": "Social Network",
   "copywriter": "© 2025 Evilyn Cordeiro.",
-  "lang-portugues": "Portuguese",
+  "lang-portugues": "Português",
   "lang-ingles": "English",
   "titulo": "Main Technologies",
   "titulo-certificado-udemy-javascripr": "Advanced JavaScript",
@@ -122,5 +122,13 @@
   "view-more": "View more",
   "acoes": "Actions",
   "page": "Page",
-  "of": "of"
+  "of": "of",
+  "formTitle": "Request Form",
+  "name": "Name",
+  "email": "Email",
+  "company": "Company",
+  "messageOptional": "Message (Optional)",
+  "successMessage": "Submission successful. You will receive my resume by email soon!",
+  "errorMessage": "Error sending data. Please try again.",
+  "submit": "Request Resume"
 }

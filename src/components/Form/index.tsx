@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Button,
   CircularProgress,
@@ -6,6 +7,7 @@ import {
   Box,
   Typography,
 } from "@mui/material";
+import { sendFormData } from "../../services/formService";
 
 interface FormularioProps {
   currentTheme: any;
@@ -13,57 +15,39 @@ interface FormularioProps {
 
 const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
   ({ currentTheme }, ref) => {
-    const [nome, setNome] = useState("");
-    const [email, setEmail] = useState("");
-    const [empresa, setEmpresa] = useState("");
-    const [mensagem, setMensagem] = useState("");
+    const { t } = useTranslation();
+    const [formData, setFormData] = useState({
+      nome: "",
+      email: "",
+      empresa: "",
+      mensagem: "",
+    });
     const [loading, setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
+    const [message, setMessage] = useState({ type: "", text: "" });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setLoading(true);
-      setErrorMessage("");
-      setSuccessMessage("");
+      setMessage({ type: "", text: "" });
 
-      const data = { nome, email, empresa, mensagem };
+      const result = await sendFormData(formData);
+      setLoading(false);
 
-      try {
-        const response = await fetch(
-          "https://backend-portfolio-7x4q.onrender.com/api/form",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        );
-
-        const result = await response.json();
-        if (response.ok) {
-          setSuccessMessage(
-            "Envio realizado. Logo receberá meu currículo por e-mail!"
-          );
-          setNome("");
-          setEmail("");
-          setEmpresa("");
-          setMensagem("");
-        } else {
-          setErrorMessage(result.message);
-        }
-      } catch (error) {
-        setErrorMessage("Erro ao enviar os dados. Tente novamente.");
-      } finally {
-        setLoading(false);
+      if (result.success) {
+        setMessage({ type: "success", text: t("successMessage") });
+        setFormData({ nome: "", email: "", empresa: "", mensagem: "" });
+      } else {
+        setMessage({ type: "error", text: t("errorMessage") });
       }
     };
 
     return (
       <Box
-        key={"form"}
-        id={"form"}
         ref={ref}
         sx={{
           backgroundColor: currentTheme.palette.background.paper,
@@ -78,26 +62,12 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
           sx={{
             fontWeight: "bold",
             color: currentTheme.palette.text.primary,
-            position: "relative",
             textAlign: "center",
             marginBottom: "3rem",
-            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem" },
           }}
         >
-          Formulário de Solicitação
-          <Box
-            sx={{
-              height: "4px",
-              width: "200px",
-              backgroundColor: currentTheme.palette.primary.main,
-              position: "absolute",
-              bottom: "-10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          />
+          {t("formTitle")}
         </Typography>
-        {/* Formulário */}
         <Box
           component="form"
           sx={{
@@ -107,69 +77,61 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
             padding: "2rem",
             maxWidth: "350px",
             width: "100%",
-            height: "100%",
           }}
           onSubmit={handleSubmit}
         >
           <TextField
-            label="Nome"
+            label={t("name")}
+            name="nome"
             variant="outlined"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            value={formData.nome}
+            onChange={handleChange}
             required
             fullWidth
           />
           <TextField
-            label="Email"
+            label={t("email")}
+            name="email"
             variant="outlined"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
             required
             fullWidth
           />
           <TextField
-            label="Empresa"
+            label={t("company")}
+            name="empresa"
             variant="outlined"
-            value={empresa}
-            onChange={(e) => setEmpresa(e.target.value)}
+            value={formData.empresa}
+            onChange={handleChange}
             required
             fullWidth
           />
-          {/* Campo de mensagem - Opcional */}
           <TextField
-            label="Mensagem (Opcional)"
+            label={t("messageOptional")}
+            name="mensagem"
             variant="outlined"
-            value={mensagem}
-            onChange={(e) => setMensagem(e.target.value)}
+            value={formData.mensagem}
+            onChange={handleChange}
             fullWidth
             multiline
             rows={4}
           />
-
-          {errorMessage && (
+          {message.text && (
             <Typography
               sx={{
-                color: currentTheme.palette.error.main,
+                color:
+                  message.type === "error"
+                    ? currentTheme.palette.error.main
+                    : currentTheme.palette.success.main,
                 fontSize: "0.875rem",
                 textAlign: "center",
               }}
             >
-              {errorMessage}
+              {message.text}
             </Typography>
           )}
-          {successMessage && (
-            <Typography
-              sx={{
-                color: currentTheme.palette.success.main,
-                fontSize: "0.875rem",
-                textAlign: "center",
-              }}
-            >
-              {successMessage}
-            </Typography>
-          )}
-
           <Button
             variant="contained"
             color="primary"
@@ -183,7 +145,7 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
             }}
           >
             {loading && <CircularProgress size={24} sx={{ marginRight: 1 }} />}
-            Solicitar Currículo
+            {t("submit")}
           </Button>
         </Box>
       </Box>
