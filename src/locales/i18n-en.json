@@ -130,5 +130,16 @@
   "messageOptional": "Message (Optional)",
   "successMessage": "Submission successful. You will receive my resume by email soon!",
   "errorMessage": "Error sending data. Please try again.",
-  "submit": "Request Resume"
+  "submit": "Request Resume",
+  "experiencia-bot": "I have about 5 years of experience in development. 💻",
+  "contratar-bot": "You can contact me via email at evilyndeveloper@gmail.com or visit my LinkedIn (link in the last section). 📧",
+  "usar-projeto-bot": "Sure! Just don't forget to tag me so I can follow along, it will be a pleasure 🙂",
+  "desculpe-nao-entendi": "Sorry, I didn't understand. Could you rephrase? 🤔",
+  "abrir-chat": "Open chat",
+  "chatbot": "Chatbot",
+  "reset-chat": "Reset chat",
+  "qual-sua-experiencia": "What is your experience?",
+  "como-posso-te-contratar": "How can I hire you?",
+  "posso-usar-esse-projeto": "Can I use this project?",
+  "voce-pode-me-enviar-seu-curriculo": "Can you send me your resume?"
 }

@@ -132,5 +132,16 @@
   "messageOptional": "Mensagem (Opcional)",
   "successMessage": "Envio realizado. Logo receberá meu currículo por e-mail!",
   "errorMessage": "Erro ao enviar os dados. Tente novamente.",
-  "submit": "Solicitar Currículo"
+  "submit": "Solicitar Currículo",
+  "experiencia-bot": "Atuo há cerca de 5 anos com desenvolvimento. 💻",
+  "contratar-bot": "Entre em contato pelo e-mail evilyndeveloper@gmail.com ou acesse meu LinkedIn (link na última sessão). 📧",
+  "usar-projeto-bot": "Sim! Mas não esqueça de me marcar para que eu possa acompanhar, será um prazer 🙂",
+  "desculpe-nao-entendi": "Desculpe, não entendi. Pode reformular? 🤔",
+  "abrir-chat": "Abrir chat",
+  "chatbot": "Chatbot",
+  "reset-chat": "Resetar chat",
+  "qual-sua-experiencia": "Qual a sua experiência?",
+  "como-posso-te-contratar": "Como posso te contratar?",
+  "posso-usar-esse-projeto": "Posso usar esse projeto?",
+  "voce-pode-me-enviar-seu-curriculo": "Você pode me enviar seu currículo?"
 }

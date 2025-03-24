@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState, useMemo, useCallback } from "react";
 import { Box, Button, Typography, IconButton, Avatar } from "@mui/material";
 import {
   Chat as ChatIcon,
@@ -13,25 +13,21 @@ interface ChatbotProps {
 }
 
 const predefinedQuestions = [
-  "Qual sua experiência?",
-  "Como posso te contratar?",
-  "Posso usar esse projeto?",
+  "qual-sua-experiencia",
+  "como-posso-te-contratar",
+  "posso-usar-esse-projeto",
 ];
 
 const responses: Record<string, string> = {
-  "qual sua experiência?": "Atuo há cerca de 5 anos com desenvolvimento. 💻",
-  "como posso te contratar?":
-    "Entre em contato pelo e-mail evilyndeveloper@gmail.com ou acesse meu LinkedIn (link na última sessão). 📧",
-  "posso usar esse projeto?":
-    "Sim! Mas não esqueça de me marcar para que eu possa acompanhar, será um prazer 🙂",
+  "qual-sua-experiencia": "experiencia-bot",
+  "como-posso-te-contratar": "contratar-bot",
+  "posso-usar-esse-projeto": "usar-projeto-bot",
 };
 
-// Estado inicial do chat
 const initialState = {
   messages: [] as { text: string; sender: "user" | "bot"; name: string }[],
 };
 
-// Reducer para gerenciar mensagens do chat
 const chatReducer = (state: typeof initialState, action: any) => {
   switch (action.type) {
     case "ADD_MESSAGE":
@@ -45,25 +41,26 @@ const chatReducer = (state: typeof initialState, action: any) => {
 
 const Chatbot: React.FC<ChatbotProps> = ({ currentTheme }) => {
   const [state, dispatch] = useReducer(chatReducer, initialState);
-  const [isOpen, setIsOpen] = useState(false);
-  const [userName, setUserName] = useState<string>("Usuário");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { t } = useTranslation();
 
-  const sendMessage = (userMessage: string) => {
-    const formattedMessage = userMessage.toLowerCase();
-    const botResponse =
-      responses[formattedMessage] ||
-      "Desculpe, não entendi. Pode reformular? 🤔";
+  const sendMessage = useCallback(
+    (userMessage: string) => {
+      const formattedMessage = userMessage.toLowerCase();
+      const botResponse =
+        t(responses[formattedMessage]) || t("desculpe-nao-entendi");
 
-    dispatch({
-      type: "ADD_MESSAGE",
-      payload: { text: userMessage, sender: "user", name: userName },
-    });
-    dispatch({
-      type: "ADD_MESSAGE",
-      payload: { text: botResponse, sender: "bot", name: "Bot" },
-    });
-  };
+      dispatch({
+        type: "ADD_MESSAGE",
+        payload: { text: t(userMessage), sender: "user", name: "User" },
+      });
+      dispatch({
+        type: "ADD_MESSAGE",
+        payload: { text: botResponse, sender: "bot", name: "Bot" },
+      });
+    },
+    [t]
+  );
 
   const handleQuestionClick = (question: string) => {
     sendMessage(question);
@@ -73,13 +70,68 @@ const Chatbot: React.FC<ChatbotProps> = ({ currentTheme }) => {
     dispatch({ type: "RESET_CHAT" });
   };
 
-  // Verifica se há mensagens no chat
   const hasMessages = state.messages.length > 0;
+
+  const renderMessages = useMemo(() => {
+    return state.messages.map((msg, index) => (
+      <Box
+        key={index}
+        sx={{
+          display: "flex",
+          flexDirection: msg.sender === "user" ? "row-reverse" : "row",
+          alignItems: "center",
+          marginBottom: "10px",
+        }}
+      >
+        {msg.sender === "bot" && (
+          <Avatar
+            alt="Bot Avatar"
+            src="https://via.placeholder.com/40"
+            sx={{
+              marginLeft: "10px",
+              marginRight: "10px",
+              backgroundColor: currentTheme.palette.primary.main,
+            }}
+          />
+        )}
+        <Typography
+          sx={{
+            maxWidth: "80%",
+            backgroundColor:
+              msg.sender === "user"
+                ? currentTheme.palette.primary.light
+                : currentTheme.palette.background.default,
+            color:
+              msg.sender === "user"
+                ? currentTheme.palette.primary.contrastText
+                : currentTheme.palette.text.primary,
+            padding: "8px 12px",
+            borderRadius: "15px",
+            wordWrap: "break-word",
+            fontSize: "1rem",
+          }}
+        >
+          <strong>{msg.name}:</strong> {msg.text}
+        </Typography>
+        {msg.sender === "user" && (
+          <Avatar
+            alt="User Avatar"
+            src="https://via.placeholder.com/40"
+            sx={{
+              marginLeft: "10px",
+              marginRight: "10px",
+              backgroundColor: currentTheme.palette.secondary.main,
+            }}
+          />
+        )}
+      </Box>
+    ));
+  }, [state.messages, currentTheme]);
 
   return (
     <>
       <IconButton
-        aria-label="Abrir chat"
+        aria-label={t("abrir-chat")}
         onClick={() => setIsOpen(!isOpen)}
         sx={{
           position: "fixed",
@@ -128,65 +180,9 @@ const Chatbot: React.FC<ChatbotProps> = ({ currentTheme }) => {
               gutterBottom
               sx={{ color: currentTheme.palette.text.primary }}
             >
-              {t("Chatbot")}
+              {t("chatbot")}
             </Typography>
-
-            {state.messages.map((msg, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: "flex",
-                  flexDirection: msg.sender === "user" ? "row-reverse" : "row",
-                  alignItems: "center",
-                  marginBottom: "10px",
-                }}
-              >
-                {msg.sender === "bot" && (
-                  <Avatar
-                    alt="Bot Avatar"
-                    src="https://via.placeholder.com/40"
-                    sx={{
-                      marginLeft: "10px",
-                      marginRight: "10px",
-                      backgroundColor: currentTheme.palette.primary.main,
-                    }}
-                  />
-                )}
-
-                <Typography
-                  sx={{
-                    maxWidth: "80%",
-                    backgroundColor:
-                      msg.sender === "user"
-                        ? currentTheme.palette.primary.light
-                        : currentTheme.palette.background.default,
-                    color:
-                      msg.sender === "user"
-                        ? currentTheme.palette.primary.contrastText
-                        : currentTheme.palette.text.primary,
-                    padding: "8px 12px",
-                    borderRadius: "15px",
-                    wordWrap: "break-word",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <strong>{msg.name}:</strong> {msg.text}
-                </Typography>
-
-                {msg.sender === "user" && (
-                  <Avatar
-                    alt="User Avatar"
-                    src="https://via.placeholder.com/40"
-                    sx={{
-                      marginLeft: "10px",
-                      marginRight: "10px",
-                      backgroundColor: currentTheme.palette.secondary.main,
-                    }}
-                  />
-                )}
-              </Box>
-            ))}
-
+            {renderMessages}
             <Box
               sx={{
                 display: "flex",
@@ -216,7 +212,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ currentTheme }) => {
             </Box>
           </Box>
 
-          {/* BOTÃO DE RESET DO CHAT - Só aparece se há mensagens */}
           {hasMessages && (
             <Box
               sx={{
@@ -231,12 +226,9 @@ const Chatbot: React.FC<ChatbotProps> = ({ currentTheme }) => {
                 variant="contained"
                 color="secondary"
                 onClick={resetChat}
-                sx={{
-                  textTransform: "none",
-                  fontWeight: "bold",
-                }}
+                sx={{ textTransform: "none", fontWeight: "bold" }}
               >
-                Voltar ao Início
+                {t("reset-chat")}
               </Button>
             </Box>
           )}
