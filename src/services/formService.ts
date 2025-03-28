@@ -1,9 +1,12 @@
+import i18n from "../i18n";
+
 export const sendFormData = async (formData: {
   nome: string;
   email: string;
   empresa: string;
   mensagem?: string;
 }) => {
+  const idioma = i18n.language;
   try {
     const response = await fetch(
       "https://backend-portfolio-7x4q.onrender.com/api/form",
@@ -12,7 +15,10 @@ export const sendFormData = async (formData: {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          idioma,
+        }),
       }
     );
 
