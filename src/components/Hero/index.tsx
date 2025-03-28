@@ -60,7 +60,6 @@ const Hero: React.FC<HeroProps> = ({
         color: "white",
       }}
     >
-      {/* Vídeo de fundo minimalista */}
       <video
         autoPlay
         loop
@@ -106,19 +105,15 @@ const Hero: React.FC<HeroProps> = ({
               fontWeight: 600,
               textTransform: "uppercase",
               display: "inline-block",
-              background:
-                "linear-gradient(45deg, #4169E1,#fff, #4169E1,#fff, #1E3A8A)", // Gradiente azul claro e escuro
+              background: "linear-gradient(45deg, #768fda, #1E3A8A, #9eb4ee)",
               backgroundClip: "text",
               color: "transparent",
-              WebkitBackgroundClip: "text",
-              animation: "gradientShift 8s ease infinite", // Animação suave para o gradiente
             }}
           >
             EVILYN CORDEIRO
           </Typography>
         </motion.div>
 
-        {/* Animação para a descrição */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
@@ -137,73 +132,72 @@ const Hero: React.FC<HeroProps> = ({
         </motion.div>
       </Box>
 
-      {/* Botão de alternância de tema */}
-      <Button
-        onClick={toggleTheme}
-        sx={{
-          position: "absolute",
-          top: "20px",
-          right: "20px",
-          color: "#fff",
-          background: "transparent",
-          padding: "0.5rem",
-          "&:hover": {
-            background: "none",
+      <Box
+        width={"100%"}
+        display={"flex"}
+        justifyContent={"space-between"}
+        position={"absolute"}
+        alignItems={"center"}
+        top={"20px"}
+        padding={1}
+      >
+        <Button
+          variant="text"
+          onClick={handleMenuClick}
+          sx={{
             color: "#fff",
-          },
-        }}
-      >
-        {currentTheme.palette.mode === "dark" ? (
-          <Brightness7 />
-        ) : (
-          <Brightness4 />
-        )}
-      </Button>
+            textTransform: "none",
+            display: "flex",
+            alignItems: "center",
+            "&:hover": {
+              background: "none",
+              color: "#fff",
+            },
+          }}
+        >
+          <Language sx={{ marginRight: 1 }} />
+          {getButtonText()}
+        </Button>
 
-      {/* Botão de troca de idioma */}
-      <Button
-        variant="text"
-        onClick={handleMenuClick}
-        sx={{
-          position: "absolute",
-          top: "20px",
-          right: "90px", // Ajuste para o botão de idioma ficar um pouco à esquerda do botão de tema
-          color: "#fff",
-          textTransform: "none",
-          padding: "0.5rem",
-          display: "flex",
-          alignItems: "center",
-          "&:hover": {
-            background: "none",
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={() => setAnchorEl(null)}
+          PaperProps={{
+            sx: {
+              backgroundColor: currentTheme.palette.background.paper,
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+              borderRadius: "8px",
+            },
+          }}
+        >
+          <MenuItem onClick={() => handleMenuClose("pt")}>
+            {t("lang-portugues")}
+          </MenuItem>
+          <MenuItem onClick={() => handleMenuClose("en")}>
+            {t("lang-ingles")}
+          </MenuItem>
+        </Menu>
+        <Button
+          onClick={toggleTheme}
+          sx={{
             color: "#fff",
-          },
-        }}
-      >
-        <Language sx={{ marginRight: 1 }} />
-        {getButtonText()}
-      </Button>
+            background: "transparent",
+            padding: "0.5rem",
+            "&:hover": {
+              background: "none",
+              color: "#fff",
+            },
+          }}
+        >
+          {currentTheme.palette.mode === "dark" ? (
+            <Brightness7 />
+          ) : (
+            <Brightness4 />
+          )}
+        </Button>
+      </Box>
 
-      <Menu
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={() => setAnchorEl(null)}
-        PaperProps={{
-          sx: {
-            backgroundColor: currentTheme.palette.background.paper,
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-            borderRadius: "8px",
-          },
-        }}
-      >
-        <MenuItem onClick={() => handleMenuClose("pt")}>
-          {t("lang-portugues")}
-        </MenuItem>
-        <MenuItem onClick={() => handleMenuClose("en")}>
-          {t("lang-ingles")}
-        </MenuItem>
-      </Menu>
-
-      {/* Ícone de rolagem */}
       <motion.div
         style={{
           position: "absolute",

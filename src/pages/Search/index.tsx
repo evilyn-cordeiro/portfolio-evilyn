@@ -405,7 +405,7 @@ const Search: React.FC<SearchProps> = ({ currentTheme }) => {
             }}
           >
             <Preview sx={{ marginRight: 1 }} />
-            {t("access-homepage")}
+            {t("acessar-homepage")}
           </MenuItem>
         )}
       </Menu>

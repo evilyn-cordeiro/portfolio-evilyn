@@ -1,18 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { Box, Grid, Typography, Button, Menu, MenuItem } from "@mui/material";
-import { useState } from "react";
-import { Language } from "@mui/icons-material";
+import { Box, Grid, Typography } from "@mui/material";
 
 interface FooterProps {
   currentTheme: any;
 }
 
 const Footer = ({ currentTheme }: FooterProps) => {
-  const { t, i18n } = useTranslation();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  const getButtonText = () =>
-    i18n.language === "en" ? t("lang-ingles") : t("lang-portugues");
+  const { t } = useTranslation();
 
   return (
     <Box
