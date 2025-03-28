@@ -1,19 +1,26 @@
-import { Box, Typography, Button } from "@mui/material";
-import { useEffect, useState } from "react";
-import { KeyboardDoubleArrowDownIcon } from "../icons";
-import { Brightness4, Brightness7 } from "@mui/icons-material";
+import { Box, Button, Typography, Menu, MenuItem } from "@mui/material";
+import { useState, useEffect } from "react";
+import { Language, Brightness4, Brightness7 } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { KeyboardDoubleArrowDownIcon } from "../icons";
 
 interface HeroProps {
   currentTheme: any;
   toggleTheme: () => void;
   scrollTo: React.RefObject<HTMLElement>;
+  changeLanguage: (lang: string) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
+const Hero: React.FC<HeroProps> = ({
+  currentTheme,
+  toggleTheme,
+  scrollTo,
+  changeLanguage,
+}) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const { t }: { t: any } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,6 +34,18 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
       scrollTo.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = (lang: string) => {
+    changeLanguage(lang);
+    setAnchorEl(null);
+  };
+
+  const getButtonText = () =>
+    i18n.language === "en" ? t("lang-ingles") : t("lang-portugues");
 
   return (
     <Box
@@ -140,6 +159,49 @@ const Hero: React.FC<HeroProps> = ({ currentTheme, toggleTheme, scrollTo }) => {
           <Brightness4 />
         )}
       </Button>
+
+      {/* Botão de troca de idioma */}
+      <Button
+        variant="text"
+        onClick={handleMenuClick}
+        sx={{
+          position: "absolute",
+          top: "20px",
+          right: "90px", // Ajuste para o botão de idioma ficar um pouco à esquerda do botão de tema
+          color: "#fff",
+          textTransform: "none",
+          padding: "0.5rem",
+          display: "flex",
+          alignItems: "center",
+          "&:hover": {
+            background: "none",
+            color: "#fff",
+          },
+        }}
+      >
+        <Language sx={{ marginRight: 1 }} />
+        {getButtonText()}
+      </Button>
+
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
+        PaperProps={{
+          sx: {
+            backgroundColor: currentTheme.palette.background.paper,
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+          },
+        }}
+      >
+        <MenuItem onClick={() => handleMenuClose("pt")}>
+          {t("lang-portugues")}
+        </MenuItem>
+        <MenuItem onClick={() => handleMenuClose("en")}>
+          {t("lang-ingles")}
+        </MenuItem>
+      </Menu>
 
       {/* Ícone de rolagem */}
       <motion.div

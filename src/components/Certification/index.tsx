@@ -99,12 +99,12 @@ const EducationCertification: React.FC<EducationCertificationProps> = ({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: `2px 15px 25px ${currentTheme.palette.primary.main}`,
+                  border: `1px solid ${currentTheme.palette.primary.main}`,
                   zIndex: 2,
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   "&:hover": {
                     transform: "scale(1.05)",
-                    boxShadow: `2px 10px 20px ${currentTheme.palette.primary.light}`,
+                    boxShadow: `2px 5px 10px ${currentTheme.palette.primary.light}`,
                   },
                 }}
               >

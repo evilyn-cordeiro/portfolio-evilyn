@@ -78,7 +78,6 @@ export const darkTheme = createTheme({
           padding: "10px 20px",
           "&:hover": {
             backgroundColor: "#3651A5",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
           },
         },
         text: {
@@ -197,7 +196,6 @@ export const lightTheme = createTheme({
           padding: "10px 20px",
           "&:hover": {
             backgroundColor: "#3651A5",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
           },
         },
         text: {

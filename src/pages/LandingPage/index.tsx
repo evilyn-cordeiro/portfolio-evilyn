@@ -38,6 +38,7 @@ const LandingPage = ({
         currentTheme={currentTheme}
         scrollTo={projectsRef}
         toggleTheme={toggleTheme}
+        changeLanguage={changeLanguage}
       />
       <Info currentTheme={currentTheme} scrollTo={formRef} />
       <Projects currentTheme={currentTheme} ref={projectsRef} />
@@ -50,7 +51,7 @@ const LandingPage = ({
       <Tech currentTheme={currentTheme} />
       <FAQ currentTheme={currentTheme} />
       <Form currentTheme={currentTheme} />
-      <Footer currentTheme={currentTheme} changeLanguage={changeLanguage} />
+      <Footer currentTheme={currentTheme} />
     </Box>
   );
 };
