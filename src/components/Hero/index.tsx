@@ -138,8 +138,8 @@ const Hero: React.FC<HeroProps> = ({
         justifyContent={"space-between"}
         position={"absolute"}
         alignItems={"center"}
-        top={"20px"}
-        padding={1}
+        top={"0"}
+        padding={2}
       >
         <Button
           variant="text"

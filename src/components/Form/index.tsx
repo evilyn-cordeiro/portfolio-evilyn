@@ -50,7 +50,7 @@ const Formulario = React.forwardRef<HTMLElement, FormularioProps>(
       <Box
         ref={ref}
         sx={{
-          backgroundColor: currentTheme.palette.background.paper,
+          backgroundColor: currentTheme.palette.background.default,
           padding: "5rem 1rem",
           display: "flex",
           flexDirection: "column",

@@ -27,7 +27,7 @@ const Footer = ({ currentTheme }: FooterProps) => {
             variant="body2"
             sx={{
               color: currentTheme.palette.text.secondary,
-              marginTop: 2,
+              marginTop: 1,
             }}
           >
             {t("copywriter")}

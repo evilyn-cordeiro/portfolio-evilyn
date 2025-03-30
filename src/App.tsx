@@ -7,6 +7,7 @@ import { darkTheme, lightTheme } from "./theme";
 import LandingPage from "./pages/LandingPage";
 import ProjectsPage from "./pages/Search";
 import { useTranslation } from "react-i18next";
+import { Footer } from "./components";
 
 function App() {
   const { i18n } = useTranslation();
@@ -45,6 +46,7 @@ function App() {
             />
           </Routes>
         </Router>
+        <Footer currentTheme={isDarkMode ? darkTheme : lightTheme} />
       </I18nextProvider>
     </ThemeProvider>
   );

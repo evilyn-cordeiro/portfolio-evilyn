@@ -1,11 +1,5 @@
 import { Box } from "@mui/material";
-import {
-  EducationCertification,
-  Experiences,
-  Form,
-  Hero,
-  Tech,
-} from "../../components";
+import { Experiences, Form, Hero, Tech } from "../../components";
 import Info from "../../components/AboutMe";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
@@ -47,11 +41,9 @@ const LandingPage = ({
         study={study}
         experience={experience}
       />
-      <EducationCertification currentTheme={currentTheme} />
       <Tech currentTheme={currentTheme} />
       <FAQ currentTheme={currentTheme} />
       <Form currentTheme={currentTheme} />
-      <Footer currentTheme={currentTheme} />
     </Box>
   );
 };

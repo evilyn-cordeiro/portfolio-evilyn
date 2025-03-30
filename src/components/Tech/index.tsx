@@ -31,7 +31,7 @@ const Tech: React.FC<TechProps> = ({ currentTheme }) => {
     <Box
       sx={{
         padding: "6rem 3rem",
-        backgroundColor: currentTheme.palette.background.default,
+        backgroundColor: currentTheme.palette.background.paper,
       }}
     >
       <Typography
