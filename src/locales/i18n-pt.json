@@ -54,7 +54,7 @@
   "projeto-ponto-da-comida-titulo": "Ponto da Comida",
   "projeto-ponto-da-comida-descricao": "Landing page para restaurante saudável, com design simples e responsivo. Focada na experiência de usuário em dispositivos móveis, utilizando HTML e CSS.",
   "projeto-spotify-titulo": "Catálogo de Filmes",
-  "projeto-spotify-descricao": "Clone responsivo da landing page do Spotify, com animações CSS e design otimizado para SEO. Foco na adaptação para diferentes dispositivos.",
+  "projeto-spotify-descricao": "Sistema de catálogo de filmes com autenticação de usuários, operações CRUD e um módulo de cadastro para gerenciamento dos filmes registrados.",
   "descricao-cargo": "Desenvolvedora de Softwares Full Stack",
   "sobre-mim": "Sobre Mim",
   "descricao-sobre-mim": "Como desenvolvedora de software experiente, refinei minhas habilidades em desenvolvimento, organização e arquitetura de software através de uma diversidade de projetos.",

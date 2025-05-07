@@ -10,7 +10,7 @@ export const projects = [
     title: "projeto-spotify-titulo",
     description: "projeto-spotify-descricao",
     imageUrl: "/projeto-1.png",
-    link: "https://spotify-ivory-sigma.vercel.app/",
+    link: "https://github.com/evilyn-cordeiro/movies-app",
     technologies: ["Node Js", "React Js", "Postgres"],
     colors: ["#8CC84B", "#61DAFB", "#336791"],
   },
