@@ -105,7 +105,7 @@ const Hero: React.FC<HeroProps> = ({
               fontWeight: 600,
               textTransform: "uppercase",
               display: "inline-block",
-              background: "linear-gradient(45deg, #768fda, #1E3A8A, #9eb4ee)",
+              background: "#fff",
               backgroundClip: "text",
               color: "transparent",
             }}

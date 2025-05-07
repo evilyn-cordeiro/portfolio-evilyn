@@ -7,26 +7,18 @@ import {
 } from "../../components/icons";
 export const projects = [
   {
-    title: "projeto-vitta-clinic-titulo",
-    description: "projeto-vitta-clinic-descricao",
-    imageUrl: "/projeto-4.png",
-    link: "https://github.com/thigodev/VittaClinic",
-    technologies: ["PHP", "JavaScript", "Docker"],
-    colors: ["#8993BE", "#F7DF1E", "#2496ED"],
+    title: "projeto-spotify-titulo",
+    description: "projeto-spotify-descricao",
+    imageUrl: "/projeto-1.png",
+    link: "https://spotify-ivory-sigma.vercel.app/",
+    technologies: ["Node Js", "React Js", "Postgres"],
+    colors: ["#8CC84B", "#61DAFB", "#336791"],
   },
   {
     title: "projeto-ponto-da-comida-titulo",
     description: "projeto-ponto-da-comida-descricao",
     imageUrl: "/projeto-5.png",
     link: "https://food-point-beryl.vercel.app/",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    colors: ["#E34F26", "#1572B6", "#F7DF1E"],
-  },
-  {
-    title: "projeto-spotify-titulo",
-    description: "projeto-spotify-descricao",
-    imageUrl: "/projeto-1.png",
-    link: "https://spotify-ivory-sigma.vercel.app/",
     technologies: ["HTML", "CSS", "JavaScript"],
     colors: ["#E34F26", "#1572B6", "#F7DF1E"],
   },

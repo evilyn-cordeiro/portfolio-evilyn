@@ -46,7 +46,6 @@ export const darkTheme = createTheme({
     },
     h3: {
       fontFamily: "'Merriweather', serif",
-      color: "#B0BEC5",
     },
     h4: {
       fontFamily: "'Source Code Pro', monospace",
@@ -164,7 +163,6 @@ export const lightTheme = createTheme({
     },
     h3: {
       fontFamily: "'Merriweather', serif",
-      color: "#607D8B",
     },
     h4: {
       fontFamily: "'Source Code Pro', monospace",
